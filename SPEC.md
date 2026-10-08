@@ -4,7 +4,7 @@ Repo `smarz1223/type-disgusting` | Site `typedisgusting.redplanetanalytics.com` 
 Repo code is the source of truth. If this file disagrees with `fetch_data.py`, the code wins.
 
 ## League format (2026-27)
-- 8 teams, Yahoo head-to-head points, keeper league. No median game.
+- 8 teams, Yahoo head-to-head points. No keepers (Yahoo keeper tools are on, but the league does not use them). No median game.
 - Regular season weeks 1-23. Playoffs: top 4, weeks 24-25, reseeding on, 3rd place game (no payout).
 - Standings tiebreaker: points for. Playoff tiebreaker (Yahoo): better regular season record.
 - Payouts: $100 fee, $800 pool. Champion $500, 2nd $100, regular season 1st $200.
