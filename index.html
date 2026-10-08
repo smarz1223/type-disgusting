@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Type Disgusting Fantasy Hockey</title>
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --arena:#0B1650; --arena2:#13237A; --blue:#2547D0; --ice:#EAF1F9; --ice2:#DCE6F5;
+  --board:#FFFFFF; --line:#0B1650; --rule:#AFC0DE; --dim:#4D5878; --ink:#0A0F2C;
+  --red:#E3261B; --lamp:#FFC21A; --good:#2F8A5C; --bad:#B8433C;
+  --pixel:"Press Start 2P","Courier New",monospace;
+  --led:"VT323","Courier New",monospace;
+  --body:"Chakra Petch","Arial Narrow",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45}
+body{padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0);
+  background:var(--ice) repeating-linear-gradient(0deg,rgba(37,71,208,.035) 0 2px,transparent 2px 4px)}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--lamp);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* header: arena + jumbotron */
+header{background:linear-gradient(180deg,#050A2A 0,var(--arena) 70%,var(--arena2) 100%);color:#fff}
+.brand{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;padding:16px 0 14px}
+.brand img{display:block;height:150px;width:auto;image-rendering:pixelated;border:3px solid #fff;box-shadow:5px 5px 0 #000}
+.jumbo{justify-self:end;min-width:300px;background:#050505;border:3px solid #3A3F49;box-shadow:5px 5px 0 #000;padding:10px 14px 8px;
+  background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1.2px);background-size:4px 4px}
+.jumbo .row{display:flex;justify-content:space-between;gap:16px;font-family:var(--led);font-size:26px;line-height:1.05;color:var(--lamp);
+  text-shadow:0 0 6px rgba(255,194,26,.55)}
+.jumbo .row b{font-weight:400;color:#fff;text-shadow:0 0 6px rgba(255,255,255,.4)}
+.jumbo .stat{margin-top:6px;display:flex;align-items:center;gap:8px;font-family:var(--led);font-size:20px;color:#9DB0E0;cursor:help}
+.jumbo .stat i{width:10px;height:10px;background:#38D46A;box-shadow:0 0 6px #38D46A}
+.jumbo .stat.warn i{background:var(--lamp);box-shadow:0 0 6px var(--lamp)}
+.jumbo .stat.fail i{background:var(--red);box-shadow:0 0 6px var(--red)}
+/* rink lines under the arena */
+.rink{height:18px;background:linear-gradient(180deg,var(--ice) 0 4px,var(--blue) 4px 7px,var(--ice) 7px 8px,var(--red) 8px 11px,var(--ice) 11px 12px,var(--blue) 12px 15px,var(--ice) 15px)}
+nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:0 0 10px}
+nav::-webkit-scrollbar{display:none}
+nav button{font-family:var(--pixel);font-size:11px;line-height:1;color:#C9D4F2;background:transparent;border:2px solid transparent;
+  padding:10px 12px;cursor:pointer;white-space:nowrap}
+nav button:hover{color:#fff;border-color:#4A5BA8}
+nav button[aria-selected=true]{color:#fff;background:var(--red);border-color:#fff;box-shadow:3px 3px 0 #000}
+
+main.wrap{padding-top:22px;padding-bottom:60px}
+section.page{display:none}section.page.on{display:block}
+h2{font-family:var(--pixel);font-size:20px;line-height:1.3;margin:0 0 10px;color:var(--arena)}
+h3{font-family:var(--pixel);font-size:14px;line-height:1.4;margin:34px 0 12px;color:var(--arena)}
+.lede{color:var(--dim);margin:0 0 16px;max-width:72ch}
+.note{color:var(--dim);font-size:14px;margin-top:10px;max-width:80ch}
+
+/* pickers */
+.picker{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.picker button{font-family:var(--body);font-weight:600;font-size:15px;color:var(--ink);background:var(--board);
+  border:2px solid var(--line);padding:5px 10px;cursor:pointer;min-height:36px}
+.picker button:hover{background:var(--ice2)}
+.picker button[aria-pressed=true]{background:var(--blue);color:#fff;box-shadow:3px 3px 0 var(--line)}
+
+/* Genesis menu boxes */
+.tbl,.panel,.mu,.rule-sec{background:var(--board);border:2px solid var(--line);box-shadow:4px 4px 0 var(--line)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:15px}
+th,td{padding:7px 10px;text-align:right;white-space:nowrap}
+th{color:var(--arena);font-weight:700;font-size:13px;border-bottom:2px solid var(--line);background:var(--ice2);position:sticky;top:0}
+td{border-bottom:1px solid #D5DEEE}
+th:first-child,td:first-child,th.l,td.l{text-align:left}
+tr:last-child td{border-bottom:0}
+td.team{font-weight:700}
+tr.cut td{border-bottom:3px solid var(--red)}
+.tag{display:inline-block;font-family:var(--pixel);font-size:8px;padding:3px 5px 2px;margin-left:8px;vertical-align:2px;background:var(--red);color:#fff}
+.W{color:#1E7A4C;font-weight:700}.L{color:#B3261E;font-weight:700}.T{color:#9A6400;font-weight:700}
+.muted{color:var(--dim)}
+.panel{padding:16px}
+.panel h4{font-family:var(--pixel);font-size:11px;margin:0 0 12px;color:var(--arena)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.chart{position:relative;height:420px}.chart.sm{height:300px}
+
+/* scoreboard bars */
+.bars{display:grid;gap:4px}
+.bar{display:grid;grid-template-columns:112px 1fr 80px 40px;align-items:center;gap:10px;height:30px}
+.bar .nm{font-weight:700}
+.bar .track{height:18px;background:var(--ice2)}
+.bar .fill{height:100%;background:repeating-linear-gradient(90deg,var(--blue) 0 6px,#3A5CE0 6px 8px)}
+.bar.lose .fill{background:repeating-linear-gradient(90deg,#9DAACB 0 6px,#AEB9D4 6px 8px)}
+.bar .pts{font-family:var(--led);font-size:26px;text-align:right;line-height:1}
+.bar .res{font-family:var(--pixel);font-size:10px;text-align:right}
+
+/* matchup cards */
+.matchups{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.mu{padding:0}
+.mu .side{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:8px 12px}
+.mu .side+.side{border-top:2px dashed var(--rule)}
+.mu .side .t{font-weight:700;color:var(--dim)}
+.mu .side .s{font-family:var(--led);font-size:30px;line-height:1;color:var(--dim)}
+.mu .side.win{background:var(--arena)}
+.mu .side.win .t{color:#fff}.mu .side.win .s{color:var(--lamp)}
+.mu .foot{font-size:13px;color:var(--dim);padding:5px 12px;background:var(--ice2)}
+.kpis{display:flex;flex-wrap:wrap;gap:14px;margin:4px 0 18px}
+.kpi{background:#050505;border:2px solid var(--line);box-shadow:3px 3px 0 var(--line);padding:6px 12px 6px;min-width:120px}
+.kpi b{display:block;font-family:var(--led);font-weight:400;font-size:34px;line-height:1;color:var(--lamp)}
+.kpi span{color:#C9D4F2;font-size:13px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;margin:8px 0}
+.legend i{display:inline-block;width:12px;height:12px;margin-right:5px;vertical-align:-1px;border:1px solid var(--line)}
+.seat{font-size:13px;font-weight:600;padding:5px 8px!important;text-align:center!important}
+.loading{color:var(--dim);padding:40px 0}
+th.sortable{cursor:pointer;user-select:none}
+th.sortable:hover{color:var(--blue)}
+th.asc::after{content:" ▲";font-size:9px;color:var(--red)}
+th.desc::after{content:" ▼";font-size:9px;color:var(--red)}
+td.dv{min-width:150px;vertical-align:middle;text-align:center}
+.dvc{position:relative;height:12px;margin-bottom:4px}
+.dvc::before{content:"";position:absolute;top:-3px;bottom:-3px;left:calc(50% - 1px);width:2px;background:var(--dim)}
+.dvc.lead::before{left:auto;right:0}
+.dvbar{position:absolute;top:0;height:12px}
+.dvbar.pos{left:50%;background:var(--good)}
+.dvbar.neg{right:50%;background:var(--bad)}
+.dvc.lead .dvbar.neg{right:0}
+td.dv small{color:var(--dim);margin-left:5px}
+
+/* rules */
+.rules{max-width:1040px}
+.rule-sec{padding:20px 22px;margin:0 0 22px;scroll-margin-top:12px}
+.rule-sec h3{margin:0 0 14px;display:flex;align-items:center;gap:12px}
+.rule-sec h3 .n{font-size:11px;color:#fff;background:var(--red);padding:6px 7px 5px}
+.rule-sec ul{margin:6px 0 0;padding-left:20px}.rule-sec li{margin:5px 0;max-width:72ch}
+.rule-sec p{margin:6px 0;max-width:72ch}
+.slots{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.slot{font-family:var(--pixel);font-size:11px;min-width:48px;text-align:center;padding:10px 8px;background:var(--arena);color:#fff}
+.slot.d{background:var(--blue)}.slot.g{background:var(--red)}
+.slot.bench{background:var(--ice2);color:var(--ink);border:2px dashed var(--rule)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;align-items:start}
+.cite{font-size:14px;color:var(--dim);border-left:4px solid var(--blue);padding:6px 12px;margin:14px 0 0;background:var(--ice)}
+footer{border-top:2px solid var(--line);color:var(--dim);font-size:14px;padding:18px 0 30px}
+
+@media (max-width:760px){
+  .brand{grid-template-columns:1fr}
+  .brand img{height:auto;width:100%;max-width:460px}
+  .jumbo{justify-self:stretch;min-width:0}
+  .bar{grid-template-columns:84px 1fr 64px 30px;gap:6px}
+  .bar .nm{font-size:13px}.bar .pts{font-size:22px}
+  h2{font-size:16px}
+  .chart{height:380px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .jumbo .row{animation:lamp 1.4s steps(2,end) 2}
+  @keyframes lamp{50%{opacity:.25}}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <img src="logo.png" alt="Type Disgusting Fantasy Hockey League">
+      <div class="jumbo" aria-live="polite">
+        <div class="row"><span>SEASON</span><b id="jSeason">----</b></div>
+        <div class="row"><span>THROUGH</span><b id="jWeek">WK --</b></div>
+        <div class="row"><span>1ST PLACE</span><b id="jLead">----</b></div>
+        <div class="stat" id="status" title=""><i></i><span id="statusTxt">Loading</span></div>
+      </div>
+    </div>
+    <nav role="tablist" id="nav"></nav>
+  </div>
+</header>
+<div class="rink" aria-hidden="true"></div>
+<main class="wrap" id="main"><div class="loading">Loading league data…</div></main>
+<footer><div class="wrap" id="foot"></div></footer>
+
+<script>
+const PAGES=[["standings","Standings"],["weekly","Weekly"],["categories","Stat Categories"],["positions","Positions"],["teams","Teams"],["history","League History"],["rules","Rules"]];
+const POS=["F","D","G"], POS_NAME={F:"Forwards",D:"Defensemen",G:"Goalies"}, POS_COL={F:"#2547D0",D:"#E3261B",G:"#FFC21A"};
+const CAT_COL=["#2547D0","#5B7BEA","#0B1650","#E3261B","#FF8A3D","#8FA6D9","#FFC21A","#7A5A00","#3D4A6B","#B9C3D6"];
+let D=null, charts={};
+const $=s=>document.querySelector(s);
+const f2=x=>(+x).toFixed(2), f1=x=>(+x).toFixed(1);
+const f0=x=>Math.round(+x).toLocaleString();
+const fp=x=>{x=+x;return Number.isInteger(x)?x.toLocaleString():x.toFixed(1)};
+const pct=x=>x>=1?"1.000":(+x).toFixed(3).replace(/^0/,"");
+const num=x=>Number.isInteger(+x)?String(+x):(+x).toFixed(1);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ord=n=>n+(["th","st","nd","rd"][(n%100>10&&n%100<14)?0:(n%10<4?n%10:0)]);
+function heat(v,lo,hi,invert){
+  if(hi===lo||v==null)return"";
+  let t=(v-lo)/(hi-lo); if(invert)t=1-t;
+  const c=t>=.5?[47,138,92]:[196,64,56], a=Math.abs(t-.5)*2*.45;
+  return `background:rgba(${c},${a.toFixed(2)})`;
+}
+function colHeat(rows,key,invert){const v=rows.map(r=>+r[key]);const lo=Math.min(...v),hi=Math.max(...v);return r=>heat(+r[key],lo,hi,invert)}
+function mkChart(id,cfg){if(charts[id])charts[id].destroy();const el=document.getElementById(id);if(!el||!window.Chart)return;charts[id]=new Chart(el,cfg)}
+function baseOpts(extra={}){return Object.assign({responsive:true,maintainAspectRatio:false,animation:false,
+  plugins:{legend:{labels:{color:"#0A0F2C",font:{family:"Chakra Petch",size:13}}},tooltip:{mode:"index",intersect:false}},
+  scales:{x:{ticks:{color:"#4D5878"},grid:{color:"#D5DEEE"}},y:{ticks:{color:"#0A0F2C"},grid:{color:"#D5DEEE"}}}},extra)}
+const hbar=()=>baseOpts({indexAxis:"y",scales:{x:{stacked:true,ticks:{color:"#4D5878"},grid:{color:"#D5DEEE"}},y:{stacked:true,ticks:{color:"#0A0F2C",font:{weight:"600"}},grid:{display:false}}}});
+function picker(id,items,cur){return `<div class="picker" id="${id}">${items.map(([v,l])=>`<button aria-pressed="${v==cur}" data-v="${esc(v)}">${esc(l)}</button>`).join("")}</div>`}
+function bindPicker(id,cb){const el=document.getElementById(id);el?.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+  el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x==b));cb(b.dataset.v)})}
+
+/* ---------------- sortable tables ---------------- */
+function sortVal(td){
+  if(!td)return null;
+  if(td.dataset.s!=null)return +td.dataset.s;
+  const t=td.textContent.trim();
+  if(t==="")return null; if(t==="✓")return 1; if(t==="·")return 0;
+  const rec=t.match(/^(\d+(?:\.\d+)?)-(\d+(?:\.\d+)?)-(\d+(?:\.\d+)?)$/);
+  if(rec){const w=+rec[1],l=+rec[2],tt=+rec[3],g=w+l+tt;return g?(w+tt/2)/g+g*1e-6:0}
+  const c=t.replace(/[,#%+$]/g,"");
+  if(/^-?\d*\.?\d/.test(c)&&!isNaN(parseFloat(c)))return parseFloat(c);
+  return t.toLowerCase();
+}
+function sortTable(tbl,idx,th){
+  const numeric=[...tbl.tBodies].some(tb=>[...tb.rows].some(r=>typeof sortVal(r.cells[idx])=="number"&&!r.classList.contains("pin-bot")));
+  const dir=th.classList.contains("desc")?"asc":th.classList.contains("asc")?"desc":(numeric&&idx>0?"desc":"asc");
+  tbl.tHead.querySelectorAll("th").forEach(x=>x.classList.remove("asc","desc"));th.classList.add(dir);
+  [...tbl.tBodies].forEach(tb=>{
+    const rows=[...tb.rows],top=rows.filter(r=>r.classList.contains("pin-top")),bot=rows.filter(r=>r.classList.contains("pin-bot"));
+    const body=rows.filter(r=>!top.includes(r)&&!bot.includes(r));
+    body.sort((a,b)=>{const x=sortVal(a.cells[idx]),y=sortVal(b.cells[idx]);
+      if(x==null&&y==null)return 0;if(x==null)return 1;if(y==null)return -1;
+      const c=typeof x=="number"&&typeof y=="number"?x-y:String(x).localeCompare(String(y));return dir=="asc"?c:-c});
+    [...top,...body,...bot].forEach(r=>tb.appendChild(r));
+  });
+  if(tbl.dataset.cut){const rows=[...tbl.tBodies[0].rows];rows.forEach(r=>r.classList.remove("cut"));
+    if(idx==0&&dir=="asc")rows[+tbl.dataset.cut-1]?.classList.add("cut");}
+}
+function makeSortable(){
+  document.querySelectorAll("#main table").forEach(tbl=>{
+    if(tbl.dataset.sortReady||!tbl.tHead||tbl.dataset.nosort)return;tbl.dataset.sortReady=1;
+    [...tbl.tHead.rows[0].cells].forEach((th,i)=>{th.classList.add("sortable");th.tabIndex=0;th.setAttribute("title",(th.title?th.title+". ":"")+"Click to sort");
+      const go=()=>sortTable(tbl,i,th);th.addEventListener("click",go);th.addEventListener("keydown",e=>{if(e.key=="Enter"||e.key==" "){e.preventDefault();go()}})});
+  });
+}
+new MutationObserver(()=>{clearTimeout(window._st);window._st=setTimeout(makeSortable,30)}).observe(document.getElementById("main"),{childList:true,subtree:true});
+
+/* ---------------- boot ---------------- */
+fetch("data/td_data.json?v="+Date.now()).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(d=>{D=d;boot()})
+ .catch(e=>{$("#main").innerHTML=`<div class="loading">League data didn't load (${esc(e.message)}). Run the "Update Type Disgusting data" workflow in GitHub Actions, then refresh.</div>`});
+
+const allWeeks=()=>[...new Set(D.weekly.map(w=>w.week))].sort((a,b)=>a-b);
+const regWeeks=()=>allWeeks().filter(w=>w<=D.reg_season_weeks);
+const wkLabel=w=>w>D.reg_season_weeks?`Playoffs Wk ${w}`:`Week ${w}`;
+const noScores=`<div class="panel"><p style="margin:0">No weekly scores yet. Enter PF and PA on the Free For All tab and they'll show up after the next daily update.</p></div>`;
+
+function boot(){
+  const leader=D.standings[0];
+  $("#jSeason").textContent=D.season_label;
+  $("#jWeek").textContent=D.weeks_entered?`WK ${allWeeks().slice(-1)[0]}`:"PRESEASON";
+  $("#jLead").textContent=D.weeks_entered?`${leader.team} ${leader.W}-${leader.L}${leader.T?"-"+leader.T:""}`:"----";
+  const st={PASS:["","Verified vs. Yahoo"],PARTIAL:["warn",`Verified thru week ${D.verified_through}`],CHECK:["warn","Check weekly scores"],
+    FAIL:["fail","Data check failed"],PRESEASON:["warn","No scores entered yet"]}[D.recon_status]||["warn",D.recon_status];
+  $("#status").className="stat "+st[0];$("#statusTxt").textContent=st[1];
+  $("#status").title=D.flags.length?D.flags.join("\n"):"Every weekly score ties back to Yahoo's league stat totals.";
+  $("#nav").innerHTML=PAGES.map(([k,l])=>`<button role="tab" data-p="${k}">${l}</button>`).join("");
+  $("#main").innerHTML=PAGES.map(([k])=>`<section class="page" id="p-${k}"></section>`).join("");
+  $("#nav").addEventListener("click",e=>{const b=e.target.closest("button");if(b)show(b.dataset.p)});
+  $("#foot").innerHTML=`Updated ${esc(D.updated)}. Weekly scores come from the league's Free For All sheet. Player stats are season to date from Yahoo team logs (active lineup only) and refresh daily, so they include the current week in progress.<br>Part of <a href="https://redplanetanalytics.com">Red Planet Analytics</a>.`;
+  const h=location.hash.slice(1);show(PAGES.some(p=>p[0]==h)?h:"standings");
+  window.addEventListener("hashchange",()=>{const k=location.hash.slice(1);if(PAGES.some(p=>p[0]==k))show(k)});
+}
+const rendered={};
+function show(p){
+  document.querySelectorAll("#nav button").forEach(b=>b.setAttribute("aria-selected",b.dataset.p==p));
+  document.querySelectorAll("section.page").forEach(s=>s.classList.toggle("on",s.id=="p-"+p));
+  history.replaceState(null,"","#"+p);
+  if(!rendered[p]){rendered[p]=1;({standings:rStandings,weekly:rWeekly,categories:rCategories,positions:rPositions,teams:rTeams,history:rHistory,rules:rRules})[p]()}
+}
+
+/* ---------------- Week scoreboard bars ---------------- */
+function board(week){
+  const rows=D.weekly.filter(w=>w.week==week).sort((a,b)=>b.pf-a.pf);
+  if(!rows.length)return"";
+  const max=rows[0].pf, lo=Math.max(0,Math.floor((rows[rows.length-1].pf*.6)/50)*50), x=v=>Math.max(2,(v-lo)/(max-lo)*100).toFixed(2)+"%";
+  return `<div class="panel"><div class="bars">${rows.map(r=>`<div class="bar ${r.h2h=="W"?"":"lose"}"><div class="nm">${esc(r.team)}</div>
+    <div class="track"><div class="fill" style="width:${x(r.pf)}"></div></div><div class="pts">${fp(r.pf)}</div><div class="res ${r.h2h}">${r.h2h}</div></div>`).join("")}</div>
+    <p class="note">Bars start at ${lo} points so close scores are easy to compare. Grey bars lost their matchup. League average: ${f1(rows[0].avg)}.</p></div>`;
+}
+
+/* ---------------- Standings ---------------- */
+function rStandings(){
+  const s=D.standings, wks=regWeeks(), last=wks[wks.length-1], cut=D.playoff_teams;
+  const hLuck=colHeat(s,"luck"), hPerf=colHeat(s,"perf_rating"), hPF=colHeat(s,"PF"), hPA=colHeat(s,"PA",true);
+  $("#p-standings").innerHTML=`<h2>Standings</h2>
+  <div class="tbl" style="margin-top:14px"><table data-cut="${cut}"><thead><tr><th>Seed</th><th class="l">Team</th><th>Record</th><th>Win %</th><th>PF</th><th>PA</th><th>PPG</th>
+   <th title="Record if you played every team every week">All-play</th><th title="Wins your scores would earn on average against a random opponent">Exp. wins</th>
+   <th title="50 is neutral. Above 50: more wins than your scores earned">Luck</th><th title="Average weekly score vs. the league, 0 to 100">Perf.</th><th title="Weeks with the league's top score">High wks</th></tr></thead><tbody>
+  ${s.map(r=>`<tr class="${r.seed==cut?"cut":""}"><td>${r.seed}</td><td class="team l">${esc(r.team)}${r.status=="playoff"&&D.weeks_entered?'<span class="tag">IN</span>':""}</td>
+   <td><b>${r.W}-${r.L}-${r.T}</b></td><td>${pct(r.win_pct)}</td><td style="${hPF(r)}">${fp(r.PF)}</td><td style="${hPA(r)}">${fp(r.PA)}</td><td>${f1(r.PPG)}</td>
+   <td>${r.allplay}</td><td>${f1(r.exp_wins)}</td><td style="${hLuck(r)}">${f1(r.luck)}</td><td style="${hPerf(r)}">${r.perf_rating==null?"":f1(r.perf_rating)}</td><td>${r.weekly_highs}</td></tr>`).join("")}
+  </tbody></table></div><p class="note">Red rule marks the playoff cutoff (top ${cut}). Ties in the standings go to points for. The 1st place team after week ${D.reg_season_weeks} wins the $200 regular season prize. Click any column header to sort.</p>
+  <h3>Weekly scoreboard</h3>${wks.length?picker("sbWk",wks.map(w=>[w,"Week "+w]),last)+`<div id="sbBox">${board(last)}</div>`:noScores}
+  ${wks.length>1?`<h3>Race for 1st</h3><div class="panel"><div class="chart sm"><canvas id="cRace"></canvas></div><p class="note">Cumulative wins after each week.</p></div>`:""}`;
+  bindPicker("sbWk",w=>{$("#sbBox").innerHTML=board(+w)});
+  if(wks.length>1){
+    const order=s.map(r=>r.team), pal=["#E3261B","#2547D0","#FFC21A","#0B1650","#2F8A5C","#FF8A3D","#8FA6D9","#7A5A00"];
+    mkChart("cRace",{type:"line",data:{labels:wks.map(w=>"Wk "+w),datasets:order.map((t,i)=>{let c=0;return{label:t,borderColor:pal[i%8],backgroundColor:pal[i%8],stepped:true,pointRadius:0,borderWidth:3,
+      data:wks.map(w=>{const r=D.weekly.find(x=>x.week==w&&x.team==t);c+=r?(r.h2h=="W"?1:r.h2h=="T"?.5:0):0;return c})}})},options:baseOpts()});
+  }
+}
+
+/* ---------------- Weekly ---------------- */
+function rWeekly(){
+  const wks=allWeeks(), reg=regWeeks();
+  if(!wks.length){$("#p-weekly").innerHTML=`<h2>Weekly</h2>${noScores}`;return}
+  const last=wks[wks.length-1];
+  $("#p-weekly").innerHTML=`<h2>Weekly</h2><p class="lede">Every matchup, paired from the Free For All scores.</p>
+   ${picker("wkPick",wks.map(w=>[w,wkLabel(w)]),last)}<div id="wkBox"></div>
+   <h3>Season grid</h3><p class="lede">Weekly points, shaded by that week's rank. Letter is the matchup result.</p><div class="tbl" id="gridBox"></div>
+   <h3>Scoring trend</h3><div class="panel"><div class="chart sm"><canvas id="cTrend"></canvas></div></div>`;
+  const draw=w=>{
+    const rows=D.weekly.filter(r=>r.week==w).sort((a,b)=>b.pf-a.pf), seen=new Set(), pairs=[];
+    rows.forEach(r=>{if(seen.has(r.team))return;const o=rows.find(x=>x.team==r.opp);seen.add(r.team);if(o)seen.add(o.team);pairs.push([r,o])});
+    const side=(r)=>r?`<div class="side ${r.h2h=="W"?"win":""}"><span class="t">${esc(r.team)}</span><span class="s">${fp(r.pf)}</span></div>`:"";
+    const close=[...pairs].filter(p=>p[1]).sort((a,b)=>Math.abs(a[0].margin)-Math.abs(b[0].margin))[0];
+    $("#wkBox").innerHTML=`<div class="kpis"><div class="kpi"><b>${fp(rows[0].pf)}</b><span>High: ${esc(rows[0].team)}</span></div>
+      <div class="kpi"><b>${fp(rows[rows.length-1].pf)}</b><span>Low: ${esc(rows[rows.length-1].team)}</span></div>
+      <div class="kpi"><b>${f1(rows[0].avg)}</b><span>League average</span></div>
+      ${close?`<div class="kpi"><b>${fp(Math.abs(close[0].margin))}</b><span>Closest: ${esc(close[0].team)} vs. ${esc(close[1].team)}</span></div>`:""}</div>
+      <div class="matchups">${pairs.map(([a,b])=>`<div class="mu">${side(a)}${side(b)}<div class="foot">${b?`Margin ${fp(Math.abs(a.margin))}`:"Opponent not matched"}</div></div>`).join("")}</div>`;
+  };
+  draw(last);
+  bindPicker("wkPick",w=>draw(+w));
+  const teams=D.standings.map(s=>s.team);
+  $("#gridBox").innerHTML=`<table><thead><tr><th class="l">Team</th>${wks.map(w=>`<th>${w>D.reg_season_weeks?"PO ":"Wk "}${w}</th>`).join("")}<th>Reg. season</th></tr></thead><tbody>
+   ${teams.map(t=>`<tr><td class="team l">${esc(t)}</td>${wks.map(w=>{const r=D.weekly.find(x=>x.week==w&&x.team==t);const n=D.weekly.filter(x=>x.week==w).length;return r?`<td style="${heat(n-r.rank,0,n-1)}">${fp(r.pf)} <span class="muted" style="font-size:12px">${r.h2h}</span></td>`:"<td></td>"}).join("")}<td><b>${fp(D.standings.find(s=>s.team==t).PF)}</b></td></tr>`).join("")}
+   <tr class="pin-bot"><td class="l muted">Average</td>${wks.map(w=>`<td class="muted">${f1(D.weekly.find(x=>x.week==w).avg)}</td>`).join("")}<td></td></tr></tbody></table>`;
+  mkChart("cTrend",{type:"line",data:{labels:wks.map(w=>"Wk "+w),datasets:[
+    {label:"League high",data:wks.map(w=>Math.max(...D.weekly.filter(x=>x.week==w).map(x=>x.pf))),borderColor:"#2547D0",backgroundColor:"#2547D0",borderWidth:3,pointRadius:3},
+    {label:"League average",data:wks.map(w=>D.weekly.find(x=>x.week==w).avg),borderColor:"#E3261B",backgroundColor:"#E3261B",borderWidth:3,pointRadius:3},
+    {label:"League low",data:wks.map(w=>Math.min(...D.weekly.filter(x=>x.week==w).map(x=>x.pf))),borderColor:"#8FA6D9",borderDash:[5,4],pointRadius:3}]},options:baseOpts()});
+}
+
+/* ---------------- Stat categories ---------------- */
+function rCategories(){
+  const teams=D.standings.map(s=>s.team), C=D.categories, L=D.cat_labels, G=D.category_groups;
+  const cats=[...G.Skaters,...G.Goalies];
+  $("#p-categories").innerHTML=`<h2>Stat Categories</h2><p class="lede">Where each team's fantasy points come from, season to date. Active lineup only.</p>
+   <div class="panel"><h4>Points by category</h4><div class="chart"><canvas id="cCat"></canvas></div><p class="note">Goals against are negative points, so that slice extends left of zero.</p></div>
+   <h3>Ahead or behind the league</h3><p class="lede">How far each team is from the league in every scoring category, in fantasy points. Green bars mean ahead, red bars mean behind. Small number is the league rank.</p>
+   ${picker("cmpScope",[["ALL","All categories"],["Skaters","Skaters"],["Goalies","Goalies"]],"ALL")}${picker("cmpBase",[["avg","vs. league average"],["lead","vs. category leader"]],"avg")}<div class="tbl" id="cmpTbl"></div>
+   <h3>Category detail</h3>${picker("grpPick",[["Skaters","Skaters"],["Goalies","Goalies"]],"Skaters")}${picker("modePick",[["pts","Fantasy points"],["raw","Raw stats"]],"pts")}<div class="tbl" id="catTbl"></div>`;
+  const sorted=[...teams].sort((a,b)=>C[b].total-C[a].total);
+  mkChart("cCat",{type:"bar",data:{labels:sorted,datasets:cats.map((k,i)=>({label:L[k],data:sorted.map(t=>C[t].pts[k]),backgroundColor:CAT_COL[i]}))},options:hbar()});
+  let scope="ALL", base="avg";
+  const drawCmp=()=>{
+    const keys=scope=="ALL"?cats:G[scope], cols=[...keys,"Total"];
+    const V=(t,k)=>k=="Total"?keys.reduce((s,kk)=>s+C[t].pts[kk],0):C[t].pts[k];
+    const stats=Object.fromEntries(cols.map(k=>{const vs=teams.map(t=>V(t,k));const avg=vs.reduce((a,b)=>a+b,0)/vs.length,mx=Math.max(...vs);
+      const b=base=="avg"?avg:mx;const m=Math.max(...vs.map(v=>Math.abs(v-b)))||1;return[k,{b,m,vs}]}));
+    const rows=[...teams].sort((a,b)=>V(b,"Total")-V(a,"Total"));
+    const cell=(t,k)=>{const s=stats[k],v=V(t,k),d=v-s.b,rank=1+s.vs.filter(x=>x>v+1e-9).length;
+      const w=(Math.abs(d)/s.m*(base=="avg"?50:100)).toFixed(1), lab=base=="lead"&&Math.abs(d)<1e-9?"Leader":(d>=0?"+":"")+f1(d);
+      return`<td class="dv" data-s="${d.toFixed(4)}" title="${esc(t)}: ${fp(v)} pts, ${ord(rank)} of ${teams.length}"><div class="dvc ${base=="lead"?"lead":""}">${Math.abs(d)>1e-9?`<div class="dvbar ${d>0?"pos":"neg"}" style="width:${w}%"></div>`:""}</div>${lab}<small>#${rank}</small></td>`};
+    $("#cmpTbl").innerHTML=`<table><thead><tr><th class="l">Team</th>${cols.map(k=>`<th style="text-align:center" title="${esc(L[k]||"")}">${esc(k)}</th>`).join("")}</tr></thead><tbody>
+      ${rows.map(t=>`<tr><td class="team l">${esc(t)}</td>${cols.map(k=>cell(t,k)).join("")}</tr>`).join("")}
+      <tr class="pin-bot"><td class="l muted">${base=="avg"?"League avg":"Leader"}</td>${cols.map(k=>`<td class="muted" style="text-align:center">${f1(stats[k].b)}</td>`).join("")}</tr></tbody></table>`;
+  };
+  drawCmp();
+  bindPicker("cmpScope",v=>{scope=v;drawCmp()});
+  bindPicker("cmpBase",v=>{base=v;drawCmp()});
+  let grp="Skaters", mode="pts";
+  const draw=()=>{
+    const keys=G[grp];
+    const rows=teams.map(t=>({team:t,total:C[t].groups[grp],...Object.fromEntries(keys.map(k=>[k,mode=="pts"?C[t].pts[k]:C[t].raw[k]]))})).sort((a,b)=>b.total-a.total);
+    const hs=Object.fromEntries([...keys,"total"].map(k=>[k,colHeat(rows,k,k=="GA"&&mode=="raw")]));
+    $("#catTbl").innerHTML=`<table><thead><tr><th class="l">Team</th>${keys.map(k=>`<th title="${esc(L[k])}">${esc(k)}</th>`).join("")}<th>${grp} pts</th></tr></thead><tbody>
+      ${rows.map(r=>`<tr><td class="team l">${esc(r.team)}</td>${keys.map(k=>`<td style="${hs[k](r)}">${mode=="pts"?fp(r[k]):f0(r[k])}</td>`).join("")}<td style="${hs.total(r)}"><b>${fp(r.total)}</b></td></tr>`).join("")}</tbody></table>`;
+  };
+  draw();
+  bindPicker("grpPick",g=>{grp=g;draw()});
+  bindPicker("modePick",m=>{mode=m;draw()});
+}
+
+/* ---------------- Positions ---------------- */
+function rPositions(){
+  const teams=D.standings.map(s=>s.team), P=D.positions;
+  const tot=t=>POS.reduce((s,p)=>s+P[t][p],0), sorted=[...teams].sort((a,b)=>tot(b)-tot(a));
+  const rows=sorted.map(t=>({team:t,...P[t],total:tot(t)})), hs=Object.fromEntries([...POS,"total"].map(k=>[k,colHeat(rows,k)]));
+  const top=pos=>D.players.filter(p=>p.pos==pos).slice(0,8);
+  $("#p-positions").innerHTML=`<h2>Positions</h2><p class="lede">Fantasy points by position group, season to date. C, LW, and RW all count as forwards.</p>
+   <div class="panel"><h4>Points by position</h4><div class="chart"><canvas id="cPos"></canvas></div></div>
+   <h3>By team</h3><div class="tbl"><table><thead><tr><th class="l">Team</th>${POS.map(p=>`<th>${POS_NAME[p]}</th>`).join("")}<th>Total</th></tr></thead><tbody>
+   ${rows.map(r=>`<tr><td class="team l">${esc(r.team)}</td>${POS.map(p=>`<td style="${hs[p](r)}">${fp(r[p])}</td>`).join("")}<td style="${hs.total(r)}"><b>${fp(r.total)}</b></td></tr>`).join("")}</tbody></table></div>
+   <h3>Top players by position</h3><div class="grid2">${POS.map(pos=>`<div class="panel"><h4>${POS_NAME[pos]}</h4><table data-nosort="1"><tbody>${top(pos).map(p=>`<tr><td class="l">${esc(p.player)} <span class="muted">${esc(p.team||"")}</span></td><td class="l muted">${esc(p.owner)}</td><td><b>${fp(p.points)}</b></td></tr>`).join("")}</tbody></table></div>`).join("")}</div>
+   <p class="note">Points count only while the player was in that team's active lineup, so a traded player's points can be split across owners.</p>`;
+  mkChart("cPos",{type:"bar",data:{labels:sorted,datasets:POS.map(p=>({label:POS_NAME[p],data:sorted.map(t=>P[t][p]),backgroundColor:POS_COL[p]}))},options:hbar()});
+}
+
+/* ---------------- Teams ---------------- */
+function rTeams(){
+  const teams=D.standings.map(s=>s.team), SK=D.category_groups.Skaters, GK=D.category_groups.Goalies;
+  $("#p-teams").innerHTML=`<h2>Teams</h2><p class="lede">Pick a team for its record, weekly results, and every player who has scored for it.</p>${picker("tmPick",teams.map(t=>[t,t]),teams[0])}<div id="tmBox"></div>`;
+  const draw=t=>{
+    const s=D.standings.find(x=>x.team==t), wk=D.weekly.filter(w=>w.team==t).sort((a,b)=>a.week-b.week), pl=D.players.filter(p=>p.owner==t);
+    const posT=POS.map(p=>D.positions[t][p]), sum=posT.reduce((a,b)=>a+b,0);
+    const sk=pl.filter(p=>p.pos!="G"), gl=pl.filter(p=>p.pos=="G");
+    const ptable=(rows,keys)=>`<div class="tbl"><table><thead><tr><th class="l">Player</th><th class="l">Pos</th><th class="l">NHL</th><th>GP</th>${keys.map(k=>`<th title="${esc(D.cat_labels[k])}">${esc(k)}</th>`).join("")}<th>Points</th><th>Share</th></tr></thead><tbody>
+      ${rows.map(p=>`<tr><td class="team l">${esc(p.player)}</td><td class="l">${esc(p.elig||p.pos)}</td><td class="l muted">${esc(p.team||"")}</td><td>${p.gp}</td>${keys.map(k=>`<td>${f0(p.stats[k])}</td>`).join("")}<td><b>${fp(p.points)}</b></td><td>${sum?(p.points/sum*100).toFixed(1)+"%":""}</td></tr>`).join("")}</tbody></table></div>`;
+    $("#tmBox").innerHTML=`<div class="kpis"><div class="kpi"><b>#${s.seed}</b><span>Seed</span></div><div class="kpi"><b>${s.W}-${s.L}-${s.T}</b><span>Record</span></div>
+      <div class="kpi"><b>${fp(s.PF)}</b><span>Points for</span></div><div class="kpi"><b>${s.allplay}</b><span>All-play</span></div><div class="kpi"><b>${f1(s.luck)}</b><span>Luck</span></div></div>
+      <div class="grid2"><div class="panel"><h4>Points by position</h4><div class="chart sm"><canvas id="cTmPos"></canvas></div></div>
+      <div class="panel"><h4>Weekly results</h4>${wk.length?`<table><thead><tr><th class="l">Week</th><th class="l">Opponent</th><th>PF</th><th>PA</th><th>Result</th><th>Rank</th></tr></thead><tbody>
+      ${wk.map(w=>`<tr><td class="l">${w.playoff?"PO ":""}${w.week}</td><td class="l">${esc(w.opp||"")}</td><td>${fp(w.pf)}</td><td>${fp(w.pa)}</td><td class="${w.h2h}">${w.h2h}</td><td>${w.rank}</td></tr>`).join("")}</tbody></table>`:'<p class="muted">No weekly scores yet.</p>'}</div></div>
+      <h3>Skaters who scored</h3>${ptable(sk,SK)}<h3>Goalies who scored</h3>${ptable(gl,GK)}
+      <p class="note">Season to date, including the current week in progress. Share is the player's slice of this team's game log points.</p>`;
+    mkChart("cTmPos",{type:"doughnut",data:{labels:POS.map(p=>POS_NAME[p]),datasets:[{data:posT,backgroundColor:POS.map(p=>POS_COL[p]),borderColor:"#0B1650",borderWidth:2}]},
+      options:{responsive:true,maintainAspectRatio:false,animation:false,plugins:{legend:{position:"right",labels:{color:"#0A0F2C",font:{family:"Chakra Petch",size:14}}}}}});
+  };
+  draw(teams[0]);
+  bindPicker("tmPick",t=>draw(t));
+}
+
+/* ---------------- Rules ---------------- */
+function rRules(){
+  const S=D.standings, regDone=D.last_reg_week>=D.reg_season_weeks, lead=S[0], sc=D.scoring;
+  const pay=[["Champion",500,`Wins the championship in week ${D.playoff_weeks[1]}`],["2nd place",100,`Loses the championship in week ${D.playoff_weeks[1]}`],
+    ["Regular season champion",200,D.weeks_entered?`${regDone?"Won by":"Currently"} ${esc(lead.team)} (${lead.W}-${lead.L}-${lead.T})`:"1st place after week "+D.reg_season_weeks]];
+  const slot=(n,l,c="")=>Array.from({length:n},()=>`<div class="slot ${c}">${l}</div>`).join("");
+  const stbl=(title,rows)=>`<div class="tbl"><table data-nosort="1"><thead><tr><th class="l">${title}</th><th>Points</th></tr></thead><tbody>${rows.map(([k,v])=>`<tr><td class="l">${esc(D.cat_labels[k])} (${esc(k)})</td><td><b>${v}</b></td></tr>`).join("")}</tbody></table></div>`;
+  const src=`<a href="${D.yahoo_url}/settings">Yahoo league settings</a>`;
+  $("#p-rules").innerHTML=`<div class="rules"><h2>Rules</h2><p class="lede">Type Disgusting rules for the ${D.season_label} season.</p>
+  ${picker("rJump",[["r1","Fees & payouts"],["r2","League setup"],["r3","Roster"],["r4","Scoring"],["r5","Playoffs"],["r6","Transactions"]],"")}
+
+  <div class="rule-sec" id="r1"><h3><span class="n">1</span>Fees and payouts</h3>
+   <div class="kpis"><div class="kpi"><b>$100</b><span>Fee per team</span></div><div class="kpi"><b>$800</b><span>Prize pool, 8 teams</span></div></div>
+   <div class="tbl"><table data-nosort="1"><thead><tr><th class="l">Payout</th><th>Amount</th><th class="l">How it's won</th></tr></thead><tbody>
+    ${pay.map(p=>`<tr><td class="l team">${p[0]}</td><td><b>$${p[1]}</b></td><td class="l muted">${p[2]}</td></tr>`).join("")}
+    <tr><td class="l"><b>Total</b></td><td><b>$800</b></td><td></td></tr></tbody></table></div>
+   <p class="note">The 3rd place game is still played, but it no longer pays out.</p>
+   <p class="cite">Source: league payout schedule set by the commissioner.</p></div>
+
+  <div class="rule-sec" id="r2"><h3><span class="n">2</span>League setup</h3><ul>
+   <li><b>8 teams</b>, <b>head-to-head points</b>, no divisions.</li>
+   <li><b>Keeper league</b> with Yahoo keeper tools enabled.</li>
+   <li><b>Live standard draft</b>, 1 minute per pick. No draft pick trades.</li>
+   <li><b>Daily lineups:</b> lineups lock game by game, every day.</li>
+   <li>The league is publicly viewable on Yahoo. New members join by commissioner invite only.</li></ul>
+   <p class="cite">Source: ${src} (League ID 24054), captured Oct 8, 2026.</p></div>
+
+  <div class="rule-sec" id="r3"><h3><span class="n">3</span>Roster</h3>
+   <p>Each team starts 12 players every day:</p>
+   <div class="slots">${slot(2,"C")}${slot(2,"LW")}${slot(2,"RW")}${slot(4,"D","d")}${slot(2,"G","g")}</div>
+   <div class="slots">${slot(5,"BN","bench")}${slot(4,"IR+","bench")}</div>
+   <ul><li><b>Bench:</b> 5 spots. <b>IR+:</b> 4 spots.</li>
+   <li>Injured players can be added straight from free agency into an IR+ slot.</li>
+   <li>No minimum goalie appearances per week.</li></ul>
+   <p class="cite">Source: ${src}, captured Oct 8, 2026.</p></div>
+
+  <div class="rule-sec" id="r4"><h3><span class="n">4</span>Scoring</h3>
+   <div class="two">${stbl("Forwards and defensemen",Object.entries(sc.skaters))}${stbl("Goalies",Object.entries(sc.goalies))}</div>
+   <p class="note">Only players in your active lineup score. Every number on this site is calculated with these values.</p>
+   <p class="cite">Source: ${src}, stat modifiers, captured Oct 8, 2026.</p></div>
+
+  <div class="rule-sec" id="r5"><h3><span class="n">5</span>Schedule, playoffs, and tiebreakers</h3><ul>
+   <li><b>Regular season:</b> weeks 1 to ${D.reg_season_weeks}. Each week is one head-to-head matchup.</li>
+   <li><b>Standings tiebreaker:</b> points for.</li>
+   <li><b>Playoffs:</b> top <b>${D.playoff_teams} teams</b>, weeks ${D.playoff_weeks[0]} and ${D.playoff_weeks[1]}, ending Sunday, March 28, 2027.</li>
+   <li><b>Reseeding:</b> on. After each round the highest remaining seed plays the lowest.</li>
+   <li><b>Playoff tiebreaker:</b> a tied playoff matchup goes to the team with the better regular season record.</li>
+   <li><b>3rd place game:</b> played in week ${D.playoff_weeks[1]}, no payout.</li>
+   <li>Eliminated teams are not locked.</li></ul>
+   <p class="cite">Source: ${src}, captured Oct 8, 2026. Standings tiebreaker set by the commissioner.</p></div>
+
+  <div class="rule-sec" id="r6"><h3><span class="n">6</span>Transactions and trades</h3><ul>
+   <li><b>No waivers.</b> Dropped and undrafted players go straight to free agency.</li>
+   <li><b>Max 4 acquisitions per week</b>, no season limit.</li>
+   <li><b>Trades:</b> no season limit. The commissioner reviews trades, with a 2-day reject window.</li>
+   <li><b>Trade deadline:</b> March 3, 2027.</li></ul>
+   <p class="cite">Source: ${src}, captured Oct 8, 2026.</p></div></div>`;
+  bindPicker("rJump",id=>document.getElementById(id).scrollIntoView({behavior:"smooth"}));
+}
+
+/* ---------------- History ---------------- */
+function rHistory(){
+  const H=D.history;
+  if(!H){$("#p-history").innerHTML=`<h2>League History</h2><div class="panel">History workbook couldn't be read. See the data check flags.</div>`;return}
+  const act=H.alltime.filter(a=>a.active), former=H.alltime.filter(a=>!a.active), LB=H.labels;
+  const cols=[["years","Years"],["games","Games"],["first","1st"],["second","2nd"],["third","3rd"],["top2","Top 2"],["top3","Top 3"],["W","Wins"],["L","Losses"],["T","Ties"],["win_pct","Win %"],["playoffs","Playoffs"],["playoff_pct","Playoff %"]];
+  const hs=Object.fromEntries(cols.map(([k])=>[k,colHeat(act,k,k=="L")]));
+  const cell=(k,v)=>k.endsWith("pct")?pct(v):num(v);
+  const allRow=(a,heatOn)=>`<tr><td class="team l">${esc(a.manager)}</td>${cols.map(([k])=>`<td style="${heatOn?hs[k](a):""}">${cell(k,a[k])}</td>`).join("")}</tr>`;
+  const mgrs=act.map(a=>a.manager), R=H.active_ranks, rkCols=cols.filter(c=>c[0]!="T");
+  const EV={Original:"#FFC21A",New:"#6FCF97",Returning:"#8FA6D9",Departing:"#F08A80",Continuing:"#DCE6F5"};
+  const maxSeats=Math.max(...H.evolution.map(e=>e.seats.length));
+  const titles=[...act,...former].filter(a=>a.first>0).sort((a,b)=>b.first-a.first||b.second-a.second);
+  const tenure=[...H.alltime].sort((a,b)=>b.years-a.years);
+  const first=LB[H.years[0]], lastY=LB[H.years[H.years.length-1]];
+  $("#p-history").innerHTML=`<h2>League History</h2><p class="lede">${first} to ${lastY}. ${H.years.length} seasons, ${H.alltime.length} managers.${H.rookies.length?` ${esc(H.rookies.join(", "))} joined in ${D.season_label} and will appear here after the season.`:""}</p>
+   ${picker("hJump",[["h-all","All-time"],["h-rank","Rankings"],["h-champ","Championships"],["h-year","Year by year"],["h-evo","Evolution"],["h-awd","Records"]],"")}
+   <h3 id="h-all">All-time, sorted by win %</h3><div class="tbl"><table><thead><tr><th class="l">Manager</th>${cols.map(c=>`<th>${c[1]}</th>`).join("")}</tr></thead><tbody>
+    ${act.map(a=>allRow(a,1)).join("")}</tbody><tbody><tr class="pin-top"><td colspan="${cols.length+1}" class="l muted" style="background:var(--ice2)">Former managers</td></tr>${former.map(a=>allRow(a,0)).join("")}</tbody></table></div>
+   <h3 id="h-rank">Active manager rankings</h3><p class="lede">1 is best in each column. Fewest losses ranks first.</p><div class="tbl"><table><thead><tr><th class="l">Manager</th>${rkCols.map(c=>`<th>${c[1]}</th>`).join("")}</tr></thead><tbody>
+    ${mgrs.map(m=>`<tr><td class="team l">${esc(m)}</td>${rkCols.map(([k])=>`<td style="${heat(R[m][k],1,mgrs.length,true)}">${R[m][k]}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
+   <div class="panel" style="margin-top:20px"><h4>Playoff % vs. win %</h4><div class="chart sm"><canvas id="cPvW"></canvas></div></div>
+   <h3 id="h-champ">Championships</h3><div class="grid2"><div class="tbl"><table><thead><tr><th class="l">Season</th><th class="l">Champion</th><th class="l">Runner-up</th><th class="l">3rd</th><th>Champ record</th></tr></thead><tbody>
+    ${[...H.championships].reverse().map(c=>`<tr><td class="l" data-s="${c.year}">${c.label}</td><td class="team l">${esc(c.champion)}</td><td class="l">${esc(c.runner_up)}</td><td class="l muted">${esc(c.third)}</td><td>${c.W!=null?`${num(c.W)}-${num(c.L)}-${num(c.T)}`:""}</td></tr>`).join("")}</tbody></table></div>
+    <div class="panel"><h4>Titles by manager</h4><div class="chart sm"><canvas id="cTitles"></canvas></div></div></div>
+   <h3 id="h-year">Wins by season</h3><div class="tbl"><table><thead><tr><th class="l">Season</th>${mgrs.map(m=>`<th>${esc(m)}</th>`).join("")}<th>Games</th></tr></thead><tbody>
+    ${[...H.years].reverse().map(y=>`<tr><td class="l" data-s="${y}">${LB[y]}</td>${mgrs.map(m=>{const v=H.wins_grid[y][m];return`<td style="${v!=null?heat(v/H.games_by_year[y],0,1):""}">${v!=null?num(v):""}</td>`}).join("")}<td class="muted">${H.games_by_year[y]}</td></tr>`).join("")}</tbody></table></div>
+   <p class="note">Short seasons: ${H.years.filter(y=>H.games_by_year[y]<18).map(y=>`${LB[y]} (${H.games_by_year[y]} weeks)`).join(", ")||"none"}.</p>
+   <h3>Playoff appearances</h3><div class="tbl"><table><thead><tr><th class="l">Season</th>${mgrs.map(m=>`<th>${esc(m)}</th>`).join("")}</tr></thead><tbody>
+    ${[...H.years].reverse().map(y=>`<tr><td class="l" data-s="${y}">${LB[y]}</td>${mgrs.map(m=>{const v=H.playoff_grid[y][m];return v==null?"<td></td>":`<td style="text-align:center;${v?"background:rgba(47,138,92,.35)":""}">${v?"✓":"<span class='muted'>·</span>"}</td>`}).join("")}</tr>`).join("")}
+    <tr class="pin-bot"><td class="l"><b>Total</b></td>${mgrs.map(m=>`<td style="text-align:center"><b>${num(act.find(a=>a.manager==m).playoffs)}</b></td>`).join("")}</tr></tbody></table></div>
+   <h3 id="h-evo">League evolution</h3><div class="legend">${["Original","New","Returning","Departing"].map(k=>`<span><i style="background:${EV[k]}"></i>${k}</span>`).join("")}</div>
+    <div class="tbl"><table data-nosort="1"><thead><tr><th class="l">Season</th>${Array.from({length:maxSeats},(_,i)=>`<th style="text-align:center">${i+1}</th>`).join("")}</tr></thead><tbody>
+    ${[...H.evolution].reverse().map(e=>`<tr><td class="l">${e.label}</td>${Array.from({length:maxSeats},(_,i)=>{const s=e.seats[i];return s?`<td class="seat" style="background:${EV[s.type]}">${esc(s.manager)}</td>`:"<td></td>"}).join("")}</tr>`).join("")}</tbody></table></div>
+   <p class="note">"Departing" marks a manager's last season. Seats are kept in place so you can follow who replaced whom.</p>
+   <div class="panel" style="margin-top:20px"><h4>Seasons in the league</h4><div class="chart"><canvas id="cTen"></canvas></div></div>
+   <h3 id="h-awd">Records and awards</h3><div class="tbl"><table><thead><tr><th class="l">Award</th><th>Stat</th><th class="l">Manager</th><th class="l">Season</th></tr></thead><tbody>
+    ${H.awards.map(a=>`<tr><td class="l">${esc(a.award)}</td><td><b>${/Win %/.test(a.award)?pct(a.stat):num(a.stat)}</b></td><td class="team l">${esc(a.managers.join(", "))}</td><td class="l muted">${esc(a.years.join(", "))}</td></tr>`).join("")}</tbody></table></div>`;
+  bindPicker("hJump",id=>document.getElementById(id).scrollIntoView({behavior:"smooth"}));
+  mkChart("cPvW",{type:"bar",data:{labels:mgrs,datasets:[{label:"Win %",data:act.map(a=>a.win_pct),backgroundColor:"#0B1650"},{label:"Playoff %",data:act.map(a=>a.playoff_pct),backgroundColor:"#E3261B"}]},
+    options:baseOpts({scales:{x:{ticks:{color:"#0A0F2C"},grid:{display:false}},y:{min:0,max:1,ticks:{color:"#4D5878",callback:v=>pct(v)},grid:{color:"#D5DEEE"}}}})});
+  mkChart("cTitles",{type:"bar",data:{labels:titles.map(a=>a.manager),datasets:[{label:"Titles",data:titles.map(a=>a.first),backgroundColor:"#FFC21A",borderColor:"#0B1650",borderWidth:2},{label:"Runner-up",data:titles.map(a=>a.second),backgroundColor:"#8FA6D9",borderColor:"#0B1650",borderWidth:2}]},
+    options:baseOpts({scales:{x:{ticks:{color:"#0A0F2C"},grid:{display:false}},y:{ticks:{color:"#4D5878",stepSize:1},grid:{color:"#D5DEEE"}}}})});
+  mkChart("cTen",{type:"bar",data:{labels:tenure.map(a=>a.manager),datasets:[{label:"Seasons",data:tenure.map(a=>a.years),backgroundColor:tenure.map(a=>a.active?"#2547D0":"#AFC0DE")}]},
+    options:baseOpts({indexAxis:"y",plugins:{legend:{display:false}},scales:{x:{ticks:{color:"#4D5878"},grid:{color:"#D5DEEE"}},y:{ticks:{color:"#0A0F2C"},grid:{display:false}}}})});
+}
+</script>
+</body>
+</html>
