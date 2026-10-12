@@ -55,7 +55,7 @@ POSITIONS = ["F", "D", "G"]
 NOTE_FLAGS = ["No new player Notes", "No new player Note", "New Player Notes", "New Player Note",
               "Player Notes", "Player Note", "Video Forecast"]
 STATUS_TAGS = sorted(["IR-LT", "IR-NR", "IR", "DTD", "SUSP", "INJ", "NA", "O"], key=len, reverse=True)
-TEAM_POS_RE = re.compile(r"([A-Za-z]{2,3}) - ((?:C|LW|RW|D|G|Util)(?:,(?:C|LW|RW|D|G|Util))*)\s*$")
+TEAM_POS_RE = re.compile(r"(?<![A-Za-z])([A-Z]{2,3}) - ((?:C|LW|RW|D|G|Util)(?:,(?:C|LW|RW|D|G|Util))*)\s*$")
 
 
 # ----------------------------------------------------------------- HELPERS
@@ -98,12 +98,14 @@ def season_label(y):
 
 def parse_name(raw):
     first = str(raw).split("\n")[0].strip()
-    m = TEAM_POS_RE.search(first)
-    team, elig = (m.group(1).upper(), m.group(2)) if m else (None, "")
-    name = first[:m.start()] if m else first
+    # Swap Yahoo note text for a separator first, so a 2-letter team like
+    # "TB" can't glue onto the end of "Note" (old bug read "eTB").
     for f in NOTE_FLAGS:
-        name = name.replace(f, "")
-    name = name.strip()
+        first = first.replace(f, " | ")
+    m = TEAM_POS_RE.search(first)
+    team, elig = (m.group(1), m.group(2)) if m else (None, "")
+    name = first[:m.start()] if m else first
+    name = name.replace("|", " ").strip()
     for tag in STATUS_TAGS:  # status glued to the name, e.g. "Aleksander BarkovIR-LT"
         if name.endswith(tag) and len(name) > len(tag):
             prev = name[-len(tag) - 1]
