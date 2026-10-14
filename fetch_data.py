@@ -348,8 +348,10 @@ def build_analytics(players, owners):
     raw = {o: collections.Counter() for o in owners}
     pts = {o: collections.Counter() for o in owners}
     by_pos = {o: collections.Counter() for o in owners}
+    gp = {o: {g: 0 for g in CATEGORY_GROUPS} for o in owners}   # games played in active lineup
     for p in players:
         o = p["owner"]
+        gp[o]["Skaters" if p["kind"] == "S" else "Goalies"] += int(p["stats"].get("GP", 0))
         raw[o].update({k: v for k, v in p["stats"].items() if k != "GP"})
         pts[o].update(p["pts_by_cat"])
         if p["pos"]:
@@ -357,7 +359,7 @@ def build_analytics(players, owners):
     cats = {o: {"raw": {k: raw[o].get(k, 0) for k in SCORING},
                 "pts": {k: r2(pts[o].get(k, 0)) for k in SCORING},
                 "groups": {g: r2(sum(pts[o].get(k, 0) for k in ks)) for g, ks in CATEGORY_GROUPS.items()},
-                "total": r2(sum(pts[o].values()))} for o in owners}
+                "total": r2(sum(pts[o].values())), "gp": gp[o]} for o in owners}
     positions = {o: {pos: r2(by_pos[o].get(pos, 0)) for pos in POSITIONS} for o in owners}
     return cats, positions
 

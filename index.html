@@ -344,7 +344,7 @@ function rCategories(){
    <div class="panel"><h4>Points by category</h4><div class="chart"><canvas id="cCat"></canvas></div><p class="note">Goals against are negative points, so that slice extends left of zero.</p></div>
    <h3>Ahead or behind the league</h3><p class="lede">How far each team is from the league in every scoring category, in fantasy points. Green bars mean ahead, red bars mean behind. Small number is the league rank.</p>
    ${picker("cmpScope",[["ALL","All categories"],["Skaters","Skaters"],["Goalies","Goalies"]],"ALL")}${picker("cmpBase",[["avg","vs. league average"],["lead","vs. category leader"]],"avg")}<div class="tbl" id="cmpTbl"></div>
-   <h3>Category detail</h3>${picker("grpPick",[["Skaters","Skaters"],["Goalies","Goalies"]],"Skaters")}${picker("modePick",[["pts","Fantasy points"],["raw","Raw stats"]],"pts")}<div class="tbl" id="catTbl"></div>`;
+   <h3>Category detail</h3>${picker("grpPick",[["Skaters","Skaters"],["Goalies","Goalies"]],"Skaters")}${picker("modePick",[["pts","Fantasy points"],["raw","Raw stats"]],"pts")}<div class="tbl" id="catTbl"></div><p class="note">GP is games played while in the active lineup. It isn't a scoring stat, so it's shown for context only.</p>`;
   const sorted=[...teams].sort((a,b)=>C[b].total-C[a].total);
   mkChart("cCat",{type:"bar",data:{labels:sorted,datasets:cats.map((k,i)=>({label:L[k],data:sorted.map(t=>C[t].pts[k]),backgroundColor:CAT_COL[i]}))},options:hbar()});
   let scope="ALL", base="avg";
@@ -367,10 +367,10 @@ function rCategories(){
   let grp="Skaters", mode="pts";
   const draw=()=>{
     const keys=G[grp];
-    const rows=teams.map(t=>({team:t,total:C[t].groups[grp],...Object.fromEntries(keys.map(k=>[k,mode=="pts"?C[t].pts[k]:C[t].raw[k]]))})).sort((a,b)=>b.total-a.total);
+    const rows=teams.map(t=>({team:t,gp:C[t].gp?C[t].gp[grp]:null,total:C[t].groups[grp],...Object.fromEntries(keys.map(k=>[k,mode=="pts"?C[t].pts[k]:C[t].raw[k]]))})).sort((a,b)=>b.total-a.total);
     const hs=Object.fromEntries([...keys,"total"].map(k=>[k,colHeat(rows,k,k=="GA"&&mode=="raw")]));
-    $("#catTbl").innerHTML=`<table><thead><tr><th class="l">Team</th>${keys.map(k=>`<th title="${esc(L[k])}">${esc(k)}</th>`).join("")}<th>${grp} pts</th></tr></thead><tbody>
-      ${rows.map(r=>`<tr><td class="team l">${esc(r.team)}</td>${keys.map(k=>`<td style="${hs[k](r)}">${mode=="pts"?fp(r[k]):f0(r[k])}</td>`).join("")}<td style="${hs.total(r)}"><b>${fp(r.total)}</b></td></tr>`).join("")}</tbody></table>`;
+    $("#catTbl").innerHTML=`<table><thead><tr><th class="l">Team</th><th title="${grp=="Goalies"?"Goalie":"Skater"} games played while in the active lineup. Not a scoring stat.">GP</th>${keys.map(k=>`<th title="${esc(L[k])}">${esc(k)}</th>`).join("")}<th>${grp} pts</th></tr></thead><tbody>
+      ${rows.map(r=>`<tr><td class="team l">${esc(r.team)}</td><td class="muted" style="border-right:2px solid var(--rule)">${r.gp==null?"":f0(r.gp)}</td>${keys.map(k=>`<td style="${hs[k](r)}">${mode=="pts"?fp(r[k]):f0(r[k])}</td>`).join("")}<td style="${hs.total(r)}"><b>${fp(r.total)}</b></td></tr>`).join("")}</tbody></table>`;
   };
   draw();
   bindPicker("grpPick",g=>{grp=g;draw()});
