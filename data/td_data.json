@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "season_label": "2026-27",
- "updated": "2026-10-13 18:27 UTC",
+ "updated": "2026-10-14 00:04 UTC",
  "weeks_entered": 2,
  "last_reg_week": 2,
  "verified_through": 2,
@@ -483,7 +483,11 @@
     "Skaters": 1784.0,
     "Goalies": 301.0
    },
-   "total": 2085.0
+   "total": 2085.0,
+   "gp": {
+    "Skaters": 80,
+    "Goalies": 12
+   }
   },
   "PHIL": {
    "raw": {
@@ -514,7 +518,11 @@
     "Skaters": 1341.0,
     "Goalies": 308.0
    },
-   "total": 1649.0
+   "total": 1649.0,
+   "gp": {
+    "Skaters": 69,
+    "Goalies": 12
+   }
   },
   "ADAM B": {
    "raw": {
@@ -545,7 +553,11 @@
     "Skaters": 1246.5,
     "Goalies": 255.0
    },
-   "total": 1501.5
+   "total": 1501.5,
+   "gp": {
+    "Skaters": 68,
+    "Goalies": 14
+   }
   },
   "PEDRO": {
    "raw": {
@@ -576,7 +588,11 @@
     "Skaters": 1415.0,
     "Goalies": 211.0
    },
-   "total": 1626.0
+   "total": 1626.0,
+   "gp": {
+    "Skaters": 81,
+    "Goalies": 12
+   }
   },
   "PAT CLARK": {
    "raw": {
@@ -607,7 +623,11 @@
     "Skaters": 1291.0,
     "Goalies": 336.0
    },
-   "total": 1627.0
+   "total": 1627.0,
+   "gp": {
+    "Skaters": 72,
+    "Goalies": 13
+   }
   },
   "SCOTTY": {
    "raw": {
@@ -638,7 +658,11 @@
     "Skaters": 1411.0,
     "Goalies": 120.0
    },
-   "total": 1531.0
+   "total": 1531.0,
+   "gp": {
+    "Skaters": 72,
+    "Goalies": 6
+   }
   },
   "FUR": {
    "raw": {
@@ -669,7 +693,11 @@
     "Skaters": 1325.0,
     "Goalies": 131.0
    },
-   "total": 1456.0
+   "total": 1456.0,
+   "gp": {
+    "Skaters": 67,
+    "Goalies": 10
+   }
   },
   "MEANY": {
    "raw": {
@@ -700,7 +728,11 @@
     "Skaters": 931.5,
     "Goalies": 278.0
    },
-   "total": 1209.5
+   "total": 1209.5,
+   "gp": {
+    "Skaters": 66,
+    "Goalies": 12
+   }
   }
  },
  "category_groups": {
