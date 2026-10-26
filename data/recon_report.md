@@ -1,16 +1,16 @@
 # Type Disgusting Reconciliation: PASS
-Updated 2026-10-25 15:01 UTC | Weeks entered: 3 | Yahoo totals verified through week 3
+Updated 2026-10-26 12:59 UTC | Weeks entered: 4 | Yahoo totals verified through week 4
 
 | Team | Free For All total | Yahoo official | Game log (daily) | Current week so far |
 |---|---|---|---|---|
-| MARZ | 3040.50 | 3040.50 | 3665.50 | 625.00 |
-| PHIL | 2443.00 | 2443.00 | 3213.00 | 770.00 |
-| ADAM B | 2233.50 | 2233.50 | 2821.50 | 588.00 |
-| PEDRO | 2249.00 | 2249.00 | 3182.00 | 933.00 |
-| PAT CLARK | 2307.00 | 2307.00 | 3128.00 | 821.00 |
-| SCOTTY | 2346.50 | 2346.50 | 2914.50 | 568.00 |
-| FUR | 2228.00 | 2228.00 | 2822.00 | 594.00 |
-| MEANY | 2258.50 | 2258.50 | 3037.50 | 779.00 |
+| MARZ | 3716.50 | 3716.50 | 3714.50 | -2.00 |
+| PHIL | 3479.00 | 3479.00 | 3473.00 | -6.00 |
+| ADAM B | 2848.50 | 2848.50 | 2843.50 | -5.00 |
+| PEDRO | 3204.00 | 3204.00 | 3209.00 | 5.00 |
+| PAT CLARK | 3187.00 | 3187.00 | 3185.00 | -2.00 |
+| SCOTTY | 3031.50 | 3031.50 | 3032.50 | 1.00 |
+| FUR | 2937.00 | 2937.00 | 2937.00 | 0.00 |
+| MEANY | 3159.50 | 3159.50 | 3151.50 | -8.00 |
 
 ## Flags
-- None
+- Game log is below entered scores for MARZ, PHIL, ADAM B, PAT CLARK, MEANY. IMPORTHTML may not have refreshed, or a score was typed wrong.
