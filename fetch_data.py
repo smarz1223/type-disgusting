@@ -26,6 +26,10 @@ YAHOO_LEAGUE_URL = "https://hockey.fantasysports.yahoo.com/hockey/24054"
 
 # 2026-27 owners (display names, used everywhere on the site)
 OWNERS = ["MARZ", "PHIL", "ADAM B", "PEDRO", "PAT CLARK", "SCOTTY", "FUR", "MEANY"]
+# Fixed owner colors for charts and owner buttons (kept clear of the theme's navy/blue/red/amber).
+# New owner next season: give them an unused color here.
+OWNER_COLORS = {"MARZ": "#00897B", "PHIL": "#C2185B", "ADAM B": "#F57C00", "PEDRO": "#2E9E44",
+                "PAT CLARK": "#7B4BC4", "SCOTTY": "#4FB3E8", "FUR": "#8D5A2B", "MEANY": "#546E7A"}
 # Yahoo team names -> owners. Free For All and Data Pull use team names.
 # If a team renames itself, add the new name here (old names can stay).
 TEAM_TO_OWNER = {
@@ -54,7 +58,11 @@ POSITIONS = ["F", "D", "G"]
 # Yahoo name-cell cleanup
 NOTE_FLAGS = ["No new player Notes", "No new player Note", "New Player Notes", "New Player Note",
               "Player Notes", "Player Note", "Video Forecast"]
-STATUS_TAGS = sorted(["IR-LT", "IR-NR", "IR", "DTD", "SUSP", "INJ", "NA", "O"], key=len, reverse=True)
+# Yahoo status flags (IR, IR-LT, IR-NR, DTD, NA, O, SUSP, INJ ...) are glued straight onto the name.
+# No fixed list: strip any 1-4 capitals (optionally "-XX" or "+") stuck to a name, keep II/III/IV.
+STATUS_RE = re.compile(r"^(.*?[a-z.'\u00c0-\u024f])([A-Z]{1,4}(?:-[A-Z]{1,4}|\+)?)$")
+KNOWN_FLAGS = {"O", "Q", "D", "P", "DTD", "GTD", "IR", "IR-LT", "IR-NR", "IR+", "NA", "NR", "SUSP", "INJ"}
+SUFFIX_RE = re.compile(r"\s(?:III|II|IV)$")
 TEAM_POS_RE = re.compile(r"(?<![A-Za-z])([A-Z]{2,3}) - ((?:C|LW|RW|D|G|Util)(?:,(?:C|LW|RW|D|G|Util))*)\s*$")
 
 
@@ -106,13 +114,26 @@ def parse_name(raw):
     team, elig = (m.group(1), m.group(2)) if m else (None, "")
     name = first[:m.start()] if m else first
     name = name.replace("|", " ").strip()
-    for tag in STATUS_TAGS:  # status glued to the name, e.g. "Aleksander BarkovIR-LT"
-        if name.endswith(tag) and len(name) > len(tag):
-            prev = name[-len(tag) - 1]
-            if prev.islower() or prev in ".'":
-                name = name[:-len(tag)].strip()
-                break
-    return name, team, elig
+    name, status = split_status(name)
+    return name, team, elig, status
+
+
+def split_status(name):
+    """'Aleksander BarkovIR-LT' -> ('Aleksander Barkov', 'IR-LT'). Real suffixes stay."""
+    name = name.strip()
+    if SUFFIX_RE.search(name):
+        return name, ""
+    # name ending in a Roman numeral plus a flag, e.g. "Will Smith IIIR" = "Will Smith II" + "IR".
+    # Several splits can fit; prefer one whose flag is a familiar Yahoo flag (tie-break only).
+    fits = [m for suf in ("III", "II", "IV")
+            for m in [re.match(r"^(.*\s" + suf + r")([A-Z]{1,4}(?:-[A-Z]{1,4}|\+)?)$", name)] if m]
+    if fits:
+        best = next((m for m in fits if m.group(2) in KNOWN_FLAGS), fits[0])
+        return best.group(1), best.group(2)
+    m = STATUS_RE.match(name)
+    if m:
+        return m.group(1).strip(), m.group(2)
+    return name, ""
 
 
 def pos_group(elig, kind):
@@ -161,8 +182,10 @@ def read_pull(ws, scoring, kind, flags):
             if str(name).strip() == "Totals":
                 totals[owner] = stats
                 continue
-            pname, team, elig = parse_name(name)
-            players.append({"owner": owner, "player": pname, "team": team, "elig": elig,
+            pname, team, elig, status = parse_name(name)
+            if re.search(r"[a-z.'][A-Z]{1,4}$", pname):
+                flags.append(f"Player name may still carry a status flag: {pname} ({owner})")
+            players.append({"owner": owner, "player": pname, "team": team, "elig": elig, "status": status,
                             "pos": pos_group(elig, kind), "kind": kind, "stats": stats})
     return players, totals
 
@@ -544,6 +567,7 @@ def main():
     player_out = sorted(({"owner": p["owner"], "player": p["player"], "team": p["team"],
                           "pos": p["pos"], "elig": p["elig"], "gp": int(p["stats"].get("GP", 0)),
                           "points": r2(p["points"]),
+                          "fpg": r2(p["points"] / p["stats"]["GP"]) if p["stats"].get("GP") else 0.0,
                           "stats": {k: v for k, v in p["stats"].items() if k != "GP"},
                           "pts_by_cat": {k: r2(v) for k, v in p["pts_by_cat"].items()}}
                          for p in players), key=lambda x: -x["points"])
@@ -554,7 +578,8 @@ def main():
            "weeks_entered": weeks_entered, "last_reg_week": reg_weeks[-1] if reg_weeks else 0,
            "verified_through": verified,
            "reg_season_weeks": REG_SEASON_WEEKS, "playoff_weeks": PLAYOFF_WEEKS,
-           "playoff_teams": PLAYOFF_TEAMS, "owners": OWNERS, "recon_status": status,
+           "playoff_teams": PLAYOFF_TEAMS, "owners": OWNERS,
+           "owner_colors": {o: OWNER_COLORS.get(o, "#9E9E9E") for o in OWNERS}, "recon_status": status,
            "recon": recon, "flags": flags, "standings": standings, "weekly": weekly_rows,
            "categories": cats, "category_groups": CATEGORY_GROUPS, "cat_labels": CAT_LABELS,
            "positions": positions, "players": player_out, "history": history,

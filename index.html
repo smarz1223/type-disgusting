@@ -61,6 +61,15 @@ h3{font-family:var(--pixel);font-size:14px;line-height:1.4;margin:34px 0 12px;co
   border:2px solid var(--line);padding:5px 10px;cursor:pointer;min-height:36px}
 .picker button:hover{background:var(--ice2)}
 .picker button[aria-pressed=true]{background:var(--blue);color:#fff;box-shadow:3px 3px 0 var(--line)}
+.picker .dot,.odot{display:inline-block;width:10px;height:10px;margin-right:6px;border:1px solid rgba(0,0,0,.35);vertical-align:0}
+.picker button[aria-pressed=true] .dot{border-color:#fff}
+.ctl{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:flex-start}
+.ctl .picker{margin-bottom:10px}
+.ctl>div:empty{display:none}
+.search{font-family:var(--body);font-size:15px;border:2px solid var(--line);padding:6px 10px;min-height:36px;min-width:200px;background:var(--board);color:var(--ink)}
+.search::placeholder{color:var(--dim)}
+.chart.tall{height:520px}
+.empty{background:var(--board);border:2px dashed var(--rule);padding:18px;color:var(--dim)}
 
 /* Genesis menu boxes */
 .tbl,.panel,.mu,.rule-sec{background:var(--board);border:2px solid var(--line);box-shadow:4px 4px 0 var(--line)}
@@ -148,6 +157,8 @@ footer{border-top:2px solid var(--line);color:var(--dim);font-size:14px;padding:
   .bar .nm{font-size:13px}.bar .pts{font-size:22px}
   h2{font-size:16px}
   .chart{height:380px}
+  .chart.tall{height:440px}
+  .search{min-width:0;width:100%}
 }
 @media (prefers-reduced-motion:no-preference){
   .jumbo .row{animation:lamp 1.4s steps(2,end) 2}
@@ -175,7 +186,7 @@ footer{border-top:2px solid var(--line);color:var(--dim);font-size:14px;padding:
 <footer><div class="wrap" id="foot"></div></footer>
 
 <script>
-const PAGES=[["standings","Standings"],["weekly","Weekly"],["categories","Stat Categories"],["positions","Positions"],["teams","Teams"],["history","League History"],["rules","Rules"]];
+const PAGES=[["standings","Standings"],["weekly","Weekly"],["categories","Stat Categories"],["positions","Positions"],["teams","Teams"],["players","Players"],["history","League History"],["rules","Rules"]];
 const POS=["F","D","G"], POS_NAME={F:"Forwards",D:"Defensemen",G:"Goalies"}, POS_COL={F:"#2547D0",D:"#E3261B",G:"#FFC21A"};
 const CAT_COL=["#2547D0","#5B7BEA","#0B1650","#E3261B","#FF8A3D","#8FA6D9","#FFC21A","#7A5A00","#3D4A6B","#B9C3D6"];
 let D=null, charts={};
@@ -199,6 +210,15 @@ function baseOpts(extra={}){return Object.assign({responsive:true,maintainAspect
   plugins:{legend:{labels:{color:"#0A0F2C",font:{family:"Chakra Petch",size:13}}},tooltip:{mode:"index",intersect:false}},
   scales:{x:{ticks:{color:"#4D5878"},grid:{color:"#D5DEEE"}},y:{ticks:{color:"#0A0F2C"},grid:{color:"#D5DEEE"}}}},extra)}
 const hbar=()=>baseOpts({indexAxis:"y",scales:{x:{stacked:true,ticks:{color:"#4D5878"},grid:{color:"#D5DEEE"}},y:{stacked:true,ticks:{color:"#0A0F2C",font:{weight:"600"}},grid:{display:false}}}});
+const OC=o=>(D&&D.owner_colors&&D.owner_colors[o])||"#9E9E9E";
+function hexA(h,a){const n=parseInt(h.slice(1),16);return `rgba(${n>>16&255},${n>>8&255},${n&255},${a})`}
+/* legend click: highlight one series, grey the rest; click it again to reset */
+function legendHighlight(e,item,legend){
+  const ch=legend.chart, i=item.datasetIndex, reset=ch._hl===i; ch._hl=reset?null:i;
+  ch.data.datasets.forEach((ds,j)=>{ds._c=ds._c||ds.borderColor;const c=reset||j===i?ds._c:"rgba(150,160,185,.35)";
+    ds.borderColor=c;ds.backgroundColor=c;ds.borderWidth=!reset&&j===i?5:3;ds.order=!reset&&j===i?-1:0});
+  ch.update();
+}
 function picker(id,items,cur){return `<div class="picker" id="${id}">${items.map(([v,l])=>`<button aria-pressed="${v==cur}" data-v="${esc(v)}">${esc(l)}</button>`).join("")}</div>`}
 function bindPicker(id,cb){const el=document.getElementById(id);el?.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
   el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x==b));cb(b.dataset.v)})}
@@ -267,9 +287,10 @@ function boot(){
 const rendered={};
 function show(p){
   document.querySelectorAll("#nav button").forEach(b=>b.setAttribute("aria-selected",b.dataset.p==p));
+  const nb=document.querySelector(`#nav button[data-p="${p}"]`);if(nb){const n=$("#nav");n.scrollLeft=nb.offsetLeft-(n.clientWidth-nb.offsetWidth)/2}
   document.querySelectorAll("section.page").forEach(s=>s.classList.toggle("on",s.id=="p-"+p));
   history.replaceState(null,"","#"+p);
-  if(!rendered[p]){rendered[p]=1;({standings:rStandings,weekly:rWeekly,categories:rCategories,positions:rPositions,teams:rTeams,history:rHistory,rules:rRules})[p]()}
+  if(!rendered[p]){rendered[p]=1;({standings:rStandings,weekly:rWeekly,categories:rCategories,positions:rPositions,teams:rTeams,players:rPlayers,history:rHistory,rules:rRules})[p]()}
 }
 
 /* ---------------- Week scoreboard bars ---------------- */
@@ -295,12 +316,12 @@ function rStandings(){
    <td>${r.allplay}</td><td>${f1(r.exp_wins)}</td><td style="${hLuck(r)}">${f1(r.luck)}</td><td style="${hPerf(r)}">${r.perf_rating==null?"":f1(r.perf_rating)}</td><td>${r.weekly_highs}</td></tr>`).join("")}
   </tbody></table></div><p class="note">Red rule marks the playoff cutoff (top ${cut}). Ties in the standings go to points for. The 1st place team after week ${D.reg_season_weeks} wins the $200 regular season prize. Click any column header to sort.</p>
   <h3>Weekly scoreboard</h3>${wks.length?picker("sbWk",wks.map(w=>[w,"Week "+w]),last)+`<div id="sbBox">${board(last)}</div>`:noScores}
-  ${wks.length>1?`<h3>Race for 1st</h3><div class="panel"><div class="chart sm"><canvas id="cRace"></canvas></div><p class="note">Cumulative wins after each week.</p></div>`:""}`;
+  ${wks.length>1?`<h3>Race for 1st</h3><div class="panel"><div class="chart sm"><canvas id="cRace"></canvas></div><p class="note">Cumulative wins after each week. Click an owner in the legend to highlight them, click again to reset.</p></div>`:""}`;
   bindPicker("sbWk",w=>{$("#sbBox").innerHTML=board(+w)});
   if(wks.length>1){
-    const order=s.map(r=>r.team), pal=["#E3261B","#2547D0","#FFC21A","#0B1650","#2F8A5C","#FF8A3D","#8FA6D9","#7A5A00"];
-    mkChart("cRace",{type:"line",data:{labels:wks.map(w=>"Wk "+w),datasets:order.map((t,i)=>{let c=0;return{label:t,borderColor:pal[i%8],backgroundColor:pal[i%8],stepped:true,pointRadius:0,borderWidth:3,
-      data:wks.map(w=>{const r=D.weekly.find(x=>x.week==w&&x.team==t);c+=r?(r.h2h=="W"?1:r.h2h=="T"?.5:0):0;return c})}})},options:baseOpts()});
+    const order=s.map(r=>r.team);
+    mkChart("cRace",{type:"line",data:{labels:wks.map(w=>"Wk "+w),datasets:order.map((t,i)=>{let c=0;return{label:t,borderColor:OC(t),backgroundColor:OC(t),stepped:true,pointRadius:0,borderWidth:3,
+      data:wks.map(w=>{const r=D.weekly.find(x=>x.week==w&&x.team==t);c+=r?(r.h2h=="W"?1:r.h2h=="T"?.5:0):0;return c})}})},options:baseOpts({plugins:{legend:{onClick:legendHighlight,labels:{color:"#0A0F2C",font:{family:"Chakra Petch",size:13}}},tooltip:{mode:"index",intersect:false}}})});
   }
 }
 
@@ -414,6 +435,113 @@ function rTeams(){
   };
   draw(teams[0]);
   bindPicker("tmPick",t=>draw(t));
+}
+
+/* ---------------- Players ---------------- */
+/* force a sort direction on a freshly drawn table (keeps the user's sort when filters change) */
+function setSort(tbl,idx,dir){const th=tbl.tHead.rows[0].cells[idx];if(!th)return;
+  tbl.tHead.querySelectorAll("th").forEach(x=>x.classList.remove("asc","desc"));th.classList.add(dir=="asc"?"desc":"asc");sortTable(tbl,idx,th)}
+function rPlayers(){
+  const el=$("#p-players"), ALL=D.players, SK=D.category_groups.Skaters, GK=D.category_groups.Goalies, OWN=D.owners;
+  if(!ALL.length){el.innerHTML=`<h2>Players</h2><p class="empty">No players have scored yet.</p>`;return}
+  const norm=x=>String(x).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+  const POSB=["C","LW","RW","D"];
+  const st={view:"S",owners:new Set(),pos:new Set(),min:1,q:"",sort:null};
+  const inView=p=>st.view=="G"?p.pos=="G":p.pos!="G";
+  const V=()=>ALL.filter(inView);
+  const match=p=>(!st.owners.size||st.owners.has(p.owner))&&(st.view=="G"||!st.pos.size||p.elig.split(",").some(x=>st.pos.has(x)))
+    &&p.gp>=st.min&&(!st.q||norm(p.player).includes(st.q));
+  el.innerHTML=`<h2>Players</h2>
+   <p class="lede">Every player who has scored on any owner's game log this season, one row per owner stint. Dot size shows games played and dot color matches the owner buttons. Filters grey out dots on the chart and remove rows from the table.</p>
+   ${picker("plView",[["S","Skaters"],["G","Goalies"]],"S")}
+   <div class="picker" id="plOwn" role="group" aria-label="Owner filter"><button data-o="" aria-pressed="true">All owners</button>${OWN.map(o=>`<button data-o="${esc(o)}" aria-pressed="false"><i class="dot" style="background:${OC(o)}"></i>${esc(o)}</button>`).join("")}</div>
+   <div class="ctl"><div id="plPosBox"></div><div id="plMinBox"></div><input id="plQ" class="search" type="search" placeholder="Search player" aria-label="Search player"></div>
+   <p class="note" id="plCount" style="margin:0 0 10px"></p>
+   <div class="panel"><div class="chart tall"><canvas id="cPlayers"></canvas></div><p class="note" id="plNote"></p></div>
+   <h3 id="plTblH">Skaters</h3><div id="plTbl"></div>`;
+  let avgFP=0,avgFPG=0,maxGP=1;
+  const rad=p=>5+8*Math.sqrt(p.gp/maxGP);
+  const plot=()=>{const v=V(),on=v.filter(match),off=v.filter(p=>!match(p));
+    return off.map(p=>({x:p.points,y:p.fpg,p,on:false})).concat(on.map(p=>({x:p.points,y:p.fpg,p,on:true})))};
+  const LBL='600 12px "Chakra Petch", sans-serif';
+  const plug={id:"plAvg",afterDatasetsDraw(ch){
+    const {ctx,chartArea:a,scales:{x,y}}=ch; ctx.save();
+    const xp=x.getPixelForValue(avgFP), yp=y.getPixelForValue(avgFPG);
+    ctx.setLineDash([5,4]);ctx.strokeStyle="rgba(11,22,80,.45)";ctx.lineWidth=1.5;
+    if(xp>=a.left&&xp<=a.right){ctx.beginPath();ctx.moveTo(xp,a.top);ctx.lineTo(xp,a.bottom);ctx.stroke()}
+    if(yp>=a.top&&yp<=a.bottom){ctx.beginPath();ctx.moveTo(a.left,yp);ctx.lineTo(a.right,yp);ctx.stroke()}
+    ctx.setLineDash([]);ctx.fillStyle="#4D5878";ctx.font=LBL;ctx.textBaseline="alphabetic";
+    if(xp>=a.left&&xp<=a.right){ctx.textAlign="left";ctx.fillText("Avg "+f0(avgFP)+" FP",xp+4,a.top+12)}
+    if(yp>=a.top&&yp<=a.bottom){ctx.textAlign="right";ctx.fillText("Avg "+f1(avgFPG)+" per game",a.right-4,yp-4)}
+    const pts=ch.data.datasets[0].data, meta=ch.getDatasetMeta(0);
+    const on=pts.map((d,i)=>({d,i})).filter(o=>o.d.on), pick=new Set();
+    if(on.length<=12)on.forEach(o=>pick.add(o.i));
+    else{on.slice().sort((q,r)=>r.d.x-q.d.x).slice(0,6).forEach(o=>pick.add(o.i));on.slice().sort((q,r)=>r.d.y-q.d.y).slice(0,3).forEach(o=>pick.add(o.i))}
+    const boxes=[];ctx.font=LBL;ctx.textAlign="left";ctx.textBaseline="middle";ctx.lineJoin="round";
+    pick.forEach(i=>{const e=meta.data[i];if(!e)return;const t=pts[i].p.player,w=ctx.measureText(t).width,r0=(e.options&&e.options.radius)||8;
+      let tx=e.x+r0+4;if(tx+w>a.right)tx=e.x-r0-4-w;
+      const b={x:tx,y:e.y-7,w,h:14};
+      if(boxes.some(o=>!(b.x>o.x+o.w||b.x+b.w<o.x||b.y>o.y+o.h||b.y+b.h<o.y)))return;
+      boxes.push(b);ctx.lineWidth=3;ctx.strokeStyle="rgba(255,255,255,.92)";ctx.strokeText(t,tx,e.y);ctx.fillStyle="#0A0F2C";ctx.fillText(t,tx,e.y)});
+    ctx.restore()}};
+  const keys=()=>st.view=="G"?GK:SK;
+  const statLine=p=>keys().map(k=>`${k} ${num(p.stats[k])}`).join(", ");
+  const drawChart=()=>{
+    mkChart("cPlayers",{type:"scatter",plugins:[plug],
+      data:{datasets:[{data:plot(),
+        pointBackgroundColor:c=>c.raw&&c.raw.on?hexA(OC(c.raw.p.owner),.9):"rgba(150,160,185,.25)",
+        pointBorderColor:c=>c.raw&&c.raw.on?"#0B1650":"rgba(150,160,185,.35)",
+        pointBorderWidth:c=>c.raw&&c.raw.on?1.5:1,
+        pointStyle:st.view=="G"?"rectRot":"circle",
+        pointRadius:c=>c.raw?rad(c.raw.p):6, pointHoverRadius:c=>c.raw?rad(c.raw.p)+2:8}]},
+      options:{responsive:true,maintainAspectRatio:false,animation:false,
+        scales:{x:{grace:"5%",title:{display:true,text:"Total fantasy points",color:"#0A0F2C",font:{family:"Chakra Petch",weight:"600"}},ticks:{color:"#4D5878"},grid:{color:"#D5DEEE"}},
+          y:{grace:"5%",title:{display:true,text:"Fantasy points per game",color:"#0A0F2C",font:{family:"Chakra Petch",weight:"600"}},ticks:{color:"#4D5878"},grid:{color:"#D5DEEE"}}},
+        plugins:{legend:{display:false},tooltip:{filter:i=>i.raw.on,callbacks:{title:i=>i[0].raw.p.player,
+          label:i=>{const p=i.raw.p;return[`${p.owner}, ${p.elig}, ${p.team||""}`,`${p.gp} GP, ${fp(p.points)} FP, ${f1(p.fpg)} per game`,statLine(p)]}}}}}});
+  };
+  const drawTable=()=>{
+    const rows=V().filter(match), box=$("#plTbl"), old=box.querySelector("table");
+    if(old){const th=[...old.tHead.rows[0].cells].findIndex(c=>c.classList.contains("asc")||c.classList.contains("desc"));
+      if(th>=0)st.sort={i:th,dir:old.tHead.rows[0].cells[th].classList.contains("asc")?"asc":"desc"}}
+    if(!rows.length){box.innerHTML=`<p class="empty">No players match these filters.</p>`;return}
+    const K=keys();
+    box.innerHTML=`<div class="tbl"><table><thead><tr><th class="l">Player</th><th class="l">Owner</th><th class="l">NHL</th><th class="l">Elig.</th><th>GP</th>
+      ${K.map(k=>`<th title="${esc(D.cat_labels[k])}">${esc(k)}</th>`).join("")}<th>FP</th><th title="Fantasy points per game played">FP / G</th></tr></thead><tbody>
+      ${rows.map(p=>`<tr><td class="team l">${esc(p.player)}</td><td class="l"><i class="odot" style="background:${OC(p.owner)}"></i>${esc(p.owner)}</td><td class="l muted">${esc(p.team||"")}</td>
+        <td class="l">${esc(p.elig)}</td><td>${p.gp}</td>${K.map(k=>`<td>${num(p.stats[k])}</td>`).join("")}<td><b>${fp(p.points)}</b></td><td>${f1(p.fpg)}</td></tr>`).join("")}</tbody></table></div>`;
+    const tbl=box.querySelector("table"), fpIdx=5+K.length;
+    setSort(tbl,st.sort?st.sort.i:fpIdx,st.sort?st.sort.dir:"desc");
+  };
+  const sync=(rechart)=>{
+    const v=V(), rows=v.filter(match);
+    document.querySelectorAll("#plOwn button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.o?st.owners.has(b.dataset.o):!st.owners.size));
+    document.querySelectorAll("#plPos button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.p?st.pos.has(b.dataset.p):!st.pos.size));
+    document.querySelectorAll("#plMin button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.n===st.min));
+    $("#plCount").textContent=`Showing ${rows.length} of ${v.length} ${st.view=="G"?"goalies":"skaters"}`;
+    if(rechart||!charts.cPlayers)drawChart();else{charts.cPlayers.data.datasets[0].data=plot();charts.cPlayers.update()}
+    drawTable();
+  };
+  const setView=view=>{
+    st.view=view;st.pos.clear();st.sort=null;$("#plTbl").innerHTML="";
+    const v=V();maxGP=Math.max(1,...v.map(p=>p.gp));
+    avgFP=v.reduce((a,p)=>a+p.points,0)/v.length;avgFPG=v.reduce((a,p)=>a+p.fpg,0)/v.length;
+    const mins=[1].concat([3,5,10,20,40].filter(n=>n<=maxGP));
+    if(!mins.includes(st.min))st.min=1;
+    $("#plPosBox").innerHTML=view=="G"?"":`<div class="picker" id="plPos" role="group" aria-label="Eligibility filter"><button data-p="" aria-pressed="true">All positions</button>${POSB.map(x=>`<button data-p="${x}" aria-pressed="false">${x}</button>`).join("")}</div>`;
+    $("#plMinBox").innerHTML=mins.length>1?`<div class="picker" id="plMin" role="group" aria-label="Minimum games">${mins.map((n,i)=>`<button data-n="${n}" aria-pressed="${n===st.min}">${i?n+"+ games":"Any games"}</button>`).join("")}</div>`:"";
+    $("#plTblH").textContent=view=="G"?"Goalies":"Skaters";
+    $("#plNote").textContent=`Dashed lines are the ${view=="G"?"goalie":"skater"} averages (${f0(avgFP)} total FP, ${f1(avgFPG)} per game). Top right is volume plus output, top left is big per-game output in fewer games.${view=="S"?" Position buttons match anyone eligible there, so LW also shows LW,RW players.":""} Hover a dot for the stat line.`;
+    const pp=$("#plPos");pp&&pp.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const x=b.dataset.p;
+      if(!x)st.pos.clear();else if(st.pos.has(x))st.pos.delete(x);else st.pos.add(x);sync()});
+    const mn=$("#plMin");mn&&mn.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;st.min=+b.dataset.n;sync()});
+    sync(true);
+  };
+  bindPicker("plView",setView);
+  $("#plOwn").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const o=b.dataset.o;
+    if(!o)st.owners.clear();else if(st.owners.has(o))st.owners.delete(o);else st.owners.add(o);sync()});
+  $("#plQ").addEventListener("input",e=>{st.q=norm(e.target.value.trim());sync()});
+  setView("S");
 }
 
 /* ---------------- Rules ---------------- */

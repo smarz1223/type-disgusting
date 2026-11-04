@@ -37,6 +37,11 @@ Seasons display as start year to end year (history year 2025 = 2025-26).
 - Ignored tabs: Summary, Skaters, Goalies, Games Played, TAKEN DEFENSEMEN, TAKEN FWDD.
 - History workbook: `Data` tab only (Years, Manager, Status, 1st, 2nd, 3rd, Wins, Losses, Ties, Games, Playoffs).
 
+## Player name parsing
+Yahoo glues status flags onto names (seen: IR, IR-LT, IR-NR, DTD, NA). The parser strips any
+1-4 capitals (optionally "-XX" or "+") stuck to a name, keeps II/III/IV/Jr., and swaps note text
+for a separator first so 2-letter teams (TB, NJ, SJ, LA) parse. Leftovers raise a pipeline flag.
+
 ## Data check (badge in the header)
 - PASS: Data Pull points tie to cumulative Free For All PF for every team through the last week entered.
 - PARTIAL: ties through an earlier week (Yahoo table hasn't caught up).
@@ -46,7 +51,16 @@ Seasons display as start year to end year (history year 2025 = 2025-26).
 
 ## Pages
 Standings, Weekly, Stat Categories, Positions (Forwards = C/LW/RW, Defensemen, Goalies),
-Teams, League History (with Records), Rules (Yahoo settings cited).
+Teams, Players, League History (with Records), Rules (Yahoo settings cited).
+- Stat Categories, Category detail: includes GP (active-lineup games, context only, not scored).
+- Players (ported from Game...Blouses): Skaters | Goalies toggle drives both the scatter and the
+  table. Scatter x = total FP, y = FP per game played, dot size = GP (sqrt), goalies drawn as
+  diamonds, dashed averages for the current view. Filters: owner slicer (multi), C/LW/RW/D
+  "eligible at" buttons (skaters only), min games (thresholds up to max GP), accent-insensitive
+  search. Filters grey dots and filter the table; sort is kept when filters change.
+  One row per owner stint (team logs keep dropped and traded players). No draft column (no draft data).
+- Owner colors: fixed per owner in `OWNER_COLORS` (fetch_data.py), used on Players and the
+  Standings race chart. Legend click highlights one owner and greys the rest.
 
 ## Design
 NHL '94 Sega Genesis: navy arena header with logo + LED jumbotron, rink-line stripe,
@@ -55,7 +69,7 @@ Press Start 2P headings/nav, VT323 scoreboard digits, Chakra Petch body, light i
 red #E3261B, lamp #FFC21A, ice #EAF1F9.
 
 ## Rollover checklist (each new season)
-- Update `SEASON`, `OWNERS`, `TEAM_TO_OWNER`, week counts, and scoring if Yahoo settings changed.
+- Update `SEASON`, `OWNERS`, `OWNER_COLORS`, `TEAM_TO_OWNER`, week counts, and scoring if Yahoo settings changed.
 - Point `STATS_URL` at the new season's published workbook.
 - Add the finished season to the history workbook `Data` tab.
 - Recheck the Rules page text against Yahoo settings and payouts.
