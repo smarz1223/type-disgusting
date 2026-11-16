@@ -1,5 +1,5 @@
 # Type Disgusting Reconciliation: PASS
-Updated 2026-11-16 14:01 UTC | Weeks entered: 7 | Yahoo totals verified through week 7
+Updated 2026-11-16 21:11 UTC | Weeks entered: 7 | Yahoo totals verified through week 7
 
 | Team | Free For All total | Yahoo official | Game log (daily) | Current week so far |
 |---|---|---|---|---|
