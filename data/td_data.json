@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "season_label": "2026-27",
- "updated": "2026-11-17 19:58 UTC",
+ "updated": "2026-11-18 19:30 UTC",
  "weeks_entered": 7,
  "last_reg_week": 7,
  "verified_through": 7,
@@ -36,71 +36,69 @@
   {
    "team": "MARZ",
    "weekly_total": 6662.5,
-   "game_log": 6658.5,
-   "in_progress": -4.0,
+   "game_log": 6938.5,
+   "in_progress": 276.0,
    "yahoo_official": 6662.5,
-   "state": "BEHIND"
+   "state": "AHEAD"
   },
   {
    "team": "PHIL",
    "weekly_total": 6148.5,
-   "game_log": 6140.5,
-   "in_progress": -8.0,
+   "game_log": 6461.5,
+   "in_progress": 313.0,
    "yahoo_official": 6148.5,
-   "state": "BEHIND"
+   "state": "AHEAD"
   },
   {
    "team": "ADAM B",
    "weekly_total": 5526.0,
-   "game_log": 5521.0,
-   "in_progress": -5.0,
+   "game_log": 5645.0,
+   "in_progress": 119.0,
    "yahoo_official": 5526.0,
-   "state": "BEHIND"
+   "state": "AHEAD"
   },
   {
    "team": "PEDRO",
    "weekly_total": 5697.0,
-   "game_log": 5694.0,
-   "in_progress": -3.0,
+   "game_log": 5817.0,
+   "in_progress": 120.0,
    "yahoo_official": 5697.0,
-   "state": "BEHIND"
+   "state": "AHEAD"
   },
   {
    "team": "PAT CLARK",
    "weekly_total": 6421.0,
-   "game_log": 6413.0,
-   "in_progress": -8.0,
+   "game_log": 6769.0,
+   "in_progress": 348.0,
    "yahoo_official": 6421.0,
-   "state": "BEHIND"
+   "state": "AHEAD"
   },
   {
    "team": "SCOTTY",
    "weekly_total": 5375.5,
-   "game_log": 5376.5,
-   "in_progress": 1.0,
+   "game_log": 5480.5,
+   "in_progress": 105.0,
    "yahoo_official": 5375.5,
    "state": "AHEAD"
   },
   {
    "team": "FUR",
    "weekly_total": 5824.0,
-   "game_log": 5823.0,
-   "in_progress": -1.0,
+   "game_log": 6139.0,
+   "in_progress": 315.0,
    "yahoo_official": 5824.0,
-   "state": "BEHIND"
+   "state": "AHEAD"
   },
   {
    "team": "MEANY",
    "weekly_total": 5818.5,
-   "game_log": 5808.5,
-   "in_progress": -10.0,
+   "game_log": 6047.5,
+   "in_progress": 229.0,
    "yahoo_official": 5818.5,
-   "state": "BEHIND"
+   "state": "AHEAD"
   }
  ],
- "flags": [
-  "Game log is below entered scores for MARZ, PHIL, ADAM B, PEDRO, PAT CLARK, FUR, MEANY. IMPORTHTML may not have refreshed, or a score was typed wrong."
- ],
+ "flags": [],
  "standings": [
   {
    "team": "MARZ",
@@ -988,282 +986,282 @@
  "categories": {
   "MARZ": {
    "raw": {
-    "G": 92.0,
-    "A": 180.0,
-    "+/-": 86.0,
-    "PIM": 155.0,
-    "PPP": 107.0,
-    "SOG": 622.0,
+    "G": 99.0,
+    "A": 188.0,
+    "+/-": 91.0,
+    "PIM": 159.0,
+    "PPP": 111.0,
+    "SOG": 642.0,
     "W": 23.0,
-    "GA": 110.0,
-    "SV": 952.0,
+    "GA": 114.0,
+    "SV": 972.0,
     "SHO": 2.0
    },
    "pts": {
-    "G": 1380.0,
-    "A": 1800.0,
-    "+/-": 430.0,
-    "PIM": 387.5,
-    "PPP": 535.0,
-    "SOG": 1244.0,
+    "G": 1485.0,
+    "A": 1880.0,
+    "+/-": 455.0,
+    "PIM": 397.5,
+    "PPP": 555.0,
+    "SOG": 1284.0,
     "W": 460.0,
-    "GA": -550.0,
-    "SV": 952.0,
+    "GA": -570.0,
+    "SV": 972.0,
     "SHO": 20.0
    },
    "groups": {
-    "Skaters": 5776.5,
+    "Skaters": 6056.5,
     "Goalies": 882.0
    },
-   "total": 6658.5,
+   "total": 6938.5,
    "gp": {
-    "Skaters": 273,
-    "Goalies": 41
+    "Skaters": 281,
+    "Goalies": 42
    }
   },
   "PHIL": {
    "raw": {
-    "G": 83.0,
-    "A": 167.0,
-    "+/-": 42.0,
-    "PIM": 103.0,
-    "PPP": 97.0,
-    "SOG": 682.0,
-    "W": 21.0,
-    "GA": 101.0,
-    "SV": 924.0,
+    "G": 85.0,
+    "A": 177.0,
+    "+/-": 49.0,
+    "PIM": 111.0,
+    "PPP": 100.0,
+    "SOG": 719.0,
+    "W": 22.0,
+    "GA": 108.0,
+    "SV": 986.0,
     "SHO": 7.0
    },
    "pts": {
-    "G": 1245.0,
-    "A": 1670.0,
-    "+/-": 210.0,
-    "PIM": 257.5,
-    "PPP": 485.0,
-    "SOG": 1364.0,
-    "W": 420.0,
-    "GA": -505.0,
-    "SV": 924.0,
+    "G": 1275.0,
+    "A": 1770.0,
+    "+/-": 245.0,
+    "PIM": 277.5,
+    "PPP": 500.0,
+    "SOG": 1438.0,
+    "W": 440.0,
+    "GA": -540.0,
+    "SV": 986.0,
     "SHO": 70.0
    },
    "groups": {
-    "Skaters": 5231.5,
-    "Goalies": 909.0
+    "Skaters": 5505.5,
+    "Goalies": 956.0
    },
-   "total": 6140.5,
+   "total": 6461.5,
    "gp": {
-    "Skaters": 243,
-    "Goalies": 40
+    "Skaters": 254,
+    "Goalies": 43
    }
   },
   "ADAM B": {
    "raw": {
-    "G": 78.0,
-    "A": 149.0,
-    "+/-": 18.0,
-    "PIM": 106.0,
-    "PPP": 77.0,
-    "SOG": 622.0,
+    "G": 81.0,
+    "A": 153.0,
+    "+/-": 16.0,
+    "PIM": 108.0,
+    "PPP": 80.0,
+    "SOG": 642.0,
     "W": 21.0,
-    "GA": 123.0,
-    "SV": 1062.0,
+    "GA": 129.0,
+    "SV": 1081.0,
     "SHO": 1.0
    },
    "pts": {
-    "G": 1170.0,
-    "A": 1490.0,
-    "+/-": 90.0,
-    "PIM": 265.0,
-    "PPP": 385.0,
-    "SOG": 1244.0,
+    "G": 1215.0,
+    "A": 1530.0,
+    "+/-": 80.0,
+    "PIM": 270.0,
+    "PPP": 400.0,
+    "SOG": 1284.0,
     "W": 420.0,
-    "GA": -615.0,
-    "SV": 1062.0,
+    "GA": -645.0,
+    "SV": 1081.0,
     "SHO": 10.0
    },
    "groups": {
-    "Skaters": 4644.0,
-    "Goalies": 877.0
+    "Skaters": 4779.0,
+    "Goalies": 866.0
    },
-   "total": 5521.0,
+   "total": 5645.0,
    "gp": {
-    "Skaters": 258,
-    "Goalies": 45
+    "Skaters": 268,
+    "Goalies": 46
    }
   },
   "PEDRO": {
    "raw": {
     "G": 74.0,
-    "A": 147.0,
-    "+/-": 22.0,
-    "PIM": 174.0,
+    "A": 150.0,
+    "+/-": 18.0,
+    "PIM": 178.0,
     "PPP": 82.0,
-    "SOG": 648.0,
-    "W": 18.0,
-    "GA": 118.0,
-    "SV": 1073.0,
+    "SOG": 676.0,
+    "W": 19.0,
+    "GA": 123.0,
+    "SV": 1125.0,
     "SHO": 2.0
    },
    "pts": {
     "G": 1110.0,
-    "A": 1470.0,
-    "+/-": 110.0,
-    "PIM": 435.0,
+    "A": 1500.0,
+    "+/-": 90.0,
+    "PIM": 445.0,
     "PPP": 410.0,
-    "SOG": 1296.0,
-    "W": 360.0,
-    "GA": -590.0,
-    "SV": 1073.0,
+    "SOG": 1352.0,
+    "W": 380.0,
+    "GA": -615.0,
+    "SV": 1125.0,
     "SHO": 20.0
    },
    "groups": {
-    "Skaters": 4831.0,
-    "Goalies": 863.0
+    "Skaters": 4907.0,
+    "Goalies": 910.0
    },
-   "total": 5694.0,
+   "total": 5817.0,
    "gp": {
-    "Skaters": 273,
-    "Goalies": 41
+    "Skaters": 285,
+    "Goalies": 43
    }
   },
   "PAT CLARK": {
    "raw": {
-    "G": 105.0,
-    "A": 148.0,
-    "+/-": 50.0,
-    "PIM": 152.0,
-    "PPP": 84.0,
-    "SOG": 654.0,
-    "W": 26.0,
-    "GA": 93.0,
-    "SV": 935.0,
+    "G": 111.0,
+    "A": 157.0,
+    "+/-": 54.0,
+    "PIM": 154.0,
+    "PPP": 88.0,
+    "SOG": 687.0,
+    "W": 28.0,
+    "GA": 98.0,
+    "SV": 985.0,
     "SHO": 1.0
    },
    "pts": {
-    "G": 1575.0,
-    "A": 1480.0,
-    "+/-": 250.0,
-    "PIM": 380.0,
-    "PPP": 420.0,
-    "SOG": 1308.0,
-    "W": 520.0,
-    "GA": -465.0,
-    "SV": 935.0,
+    "G": 1665.0,
+    "A": 1570.0,
+    "+/-": 270.0,
+    "PIM": 385.0,
+    "PPP": 440.0,
+    "SOG": 1374.0,
+    "W": 560.0,
+    "GA": -490.0,
+    "SV": 985.0,
     "SHO": 10.0
    },
    "groups": {
-    "Skaters": 5413.0,
-    "Goalies": 1000.0
+    "Skaters": 5704.0,
+    "Goalies": 1065.0
    },
-   "total": 6413.0,
+   "total": 6769.0,
    "gp": {
-    "Skaters": 256,
-    "Goalies": 41
+    "Skaters": 266,
+    "Goalies": 43
    }
   },
   "SCOTTY": {
    "raw": {
-    "G": 80.0,
-    "A": 140.0,
-    "+/-": 41.0,
+    "G": 83.0,
+    "A": 143.0,
+    "+/-": 36.0,
     "PIM": 177.0,
     "PPP": 61.0,
-    "SOG": 637.0,
+    "SOG": 655.0,
     "W": 17.0,
-    "GA": 95.0,
-    "SV": 675.0,
+    "GA": 97.0,
+    "SV": 703.0,
     "SHO": 1.0
    },
    "pts": {
-    "G": 1200.0,
-    "A": 1400.0,
-    "+/-": 205.0,
+    "G": 1245.0,
+    "A": 1430.0,
+    "+/-": 180.0,
     "PIM": 442.5,
     "PPP": 305.0,
-    "SOG": 1274.0,
+    "SOG": 1310.0,
     "W": 340.0,
-    "GA": -475.0,
-    "SV": 675.0,
+    "GA": -485.0,
+    "SV": 703.0,
     "SHO": 10.0
    },
    "groups": {
-    "Skaters": 4826.5,
-    "Goalies": 550.0
+    "Skaters": 4912.5,
+    "Goalies": 568.0
    },
-   "total": 5376.5,
+   "total": 5480.5,
    "gp": {
-    "Skaters": 250,
-    "Goalies": 30
+    "Skaters": 257,
+    "Goalies": 32
    }
   },
   "FUR": {
    "raw": {
-    "G": 84.0,
-    "A": 168.0,
-    "+/-": 44.0,
-    "PIM": 124.0,
-    "PPP": 93.0,
-    "SOG": 645.0,
-    "W": 14.0,
-    "GA": 120.0,
-    "SV": 908.0,
+    "G": 86.0,
+    "A": 180.0,
+    "+/-": 51.0,
+    "PIM": 126.0,
+    "PPP": 97.0,
+    "SOG": 661.0,
+    "W": 16.0,
+    "GA": 128.0,
+    "SV": 982.0,
     "SHO": 1.0
    },
    "pts": {
-    "G": 1260.0,
-    "A": 1680.0,
-    "+/-": 220.0,
-    "PIM": 310.0,
-    "PPP": 465.0,
-    "SOG": 1290.0,
-    "W": 280.0,
-    "GA": -600.0,
-    "SV": 908.0,
+    "G": 1290.0,
+    "A": 1800.0,
+    "+/-": 255.0,
+    "PIM": 315.0,
+    "PPP": 485.0,
+    "SOG": 1322.0,
+    "W": 320.0,
+    "GA": -640.0,
+    "SV": 982.0,
     "SHO": 10.0
    },
    "groups": {
-    "Skaters": 5225.0,
-    "Goalies": 598.0
+    "Skaters": 5467.0,
+    "Goalies": 672.0
    },
-   "total": 5823.0,
+   "total": 6139.0,
    "gp": {
-    "Skaters": 252,
-    "Goalies": 36
+    "Skaters": 260,
+    "Goalies": 39
    }
   },
   "MEANY": {
    "raw": {
-    "G": 76.0,
-    "A": 161.0,
+    "G": 81.0,
+    "A": 166.0,
     "+/-": 23.0,
     "PIM": 183.0,
-    "PPP": 90.0,
-    "SOG": 635.0,
-    "W": 19.0,
-    "GA": 106.0,
-    "SV": 906.0,
+    "PPP": 92.0,
+    "SOG": 665.0,
+    "W": 20.0,
+    "GA": 111.0,
+    "SV": 955.0,
     "SHO": 1.0
    },
    "pts": {
-    "G": 1140.0,
-    "A": 1610.0,
+    "G": 1215.0,
+    "A": 1660.0,
     "+/-": 115.0,
     "PIM": 457.5,
-    "PPP": 450.0,
-    "SOG": 1270.0,
-    "W": 380.0,
-    "GA": -530.0,
-    "SV": 906.0,
+    "PPP": 460.0,
+    "SOG": 1330.0,
+    "W": 400.0,
+    "GA": -555.0,
+    "SV": 955.0,
     "SHO": 10.0
    },
    "groups": {
-    "Skaters": 5042.5,
-    "Goalies": 766.0
+    "Skaters": 5237.5,
+    "Goalies": 810.0
    },
-   "total": 5808.5,
+   "total": 6047.5,
    "gp": {
-    "Skaters": 254,
-    "Goalies": 40
+    "Skaters": 266,
+    "Goalies": 42
    }
   }
  },
@@ -1297,44 +1295,44 @@
  },
  "positions": {
   "MARZ": {
-   "F": 4157.5,
-   "D": 1619.0,
+   "F": 4382.5,
+   "D": 1674.0,
    "G": 882.0
   },
   "PHIL": {
-   "F": 3541.0,
-   "D": 1690.5,
-   "G": 909.0
+   "F": 3766.0,
+   "D": 1739.5,
+   "G": 956.0
   },
   "ADAM B": {
-   "F": 3296.0,
-   "D": 1348.0,
-   "G": 877.0
+   "F": 3395.0,
+   "D": 1384.0,
+   "G": 866.0
   },
   "PEDRO": {
-   "F": 3134.0,
-   "D": 1697.0,
-   "G": 863.0
+   "F": 3152.0,
+   "D": 1755.0,
+   "G": 910.0
   },
   "PAT CLARK": {
-   "F": 4415.5,
-   "D": 997.5,
-   "G": 1000.0
+   "F": 4699.5,
+   "D": 1004.5,
+   "G": 1065.0
   },
   "SCOTTY": {
-   "F": 3732.5,
-   "D": 1094.0,
-   "G": 550.0
+   "F": 3778.5,
+   "D": 1134.0,
+   "G": 568.0
   },
   "FUR": {
-   "F": 3767.0,
-   "D": 1458.0,
-   "G": 598.0
+   "F": 3911.0,
+   "D": 1556.0,
+   "G": 672.0
   },
   "MEANY": {
-   "F": 3693.5,
-   "D": 1349.0,
-   "G": 766.0
+   "F": 3798.5,
+   "D": 1439.0,
+   "G": 810.0
   }
  },
  "players": [
@@ -1344,24 +1342,24 @@
    "team": "EDM",
    "pos": "F",
    "elig": "C",
-   "gp": 22,
-   "points": 979.0,
-   "fpg": 44.5,
+   "gp": 23,
+   "points": 1018.0,
+   "fpg": 44.26,
    "stats": {
-    "G": 12.0,
-    "A": 41.0,
+    "G": 13.0,
+    "A": 42.0,
     "+/-": 29.0,
     "PIM": 6.0,
-    "PPP": 21.0,
-    "SOG": 62.0
+    "PPP": 23.0,
+    "SOG": 64.0
    },
    "pts_by_cat": {
-    "G": 180.0,
-    "A": 410.0,
+    "G": 195.0,
+    "A": 420.0,
     "+/-": 145.0,
     "PIM": 15.0,
-    "PPP": 105.0,
-    "SOG": 124.0
+    "PPP": 115.0,
+    "SOG": 128.0
    }
   },
   {
@@ -1370,24 +1368,24 @@
    "team": "EDM",
    "pos": "F",
    "elig": "C,LW,RW",
-   "gp": 22,
-   "points": 878.0,
-   "fpg": 39.91,
+   "gp": 23,
+   "points": 927.0,
+   "fpg": 40.3,
    "stats": {
-    "G": 20.0,
-    "A": 21.0,
-    "+/-": 24.0,
+    "G": 21.0,
+    "A": 23.0,
+    "+/-": 25.0,
     "PIM": 6.0,
-    "PPP": 13.0,
-    "SOG": 84.0
+    "PPP": 14.0,
+    "SOG": 86.0
    },
    "pts_by_cat": {
-    "G": 300.0,
-    "A": 210.0,
-    "+/-": 120.0,
+    "G": 315.0,
+    "A": 230.0,
+    "+/-": 125.0,
     "PIM": 15.0,
-    "PPP": 65.0,
-    "SOG": 168.0
+    "PPP": 70.0,
+    "SOG": 172.0
    }
   },
   {
@@ -1396,24 +1394,24 @@
    "team": "EDM",
    "pos": "D",
    "elig": "D",
-   "gp": 22,
-   "points": 757.0,
-   "fpg": 34.41,
+   "gp": 23,
+   "points": 795.0,
+   "fpg": 34.57,
    "stats": {
     "G": 12.0,
-    "A": 24.0,
-    "+/-": 29.0,
+    "A": 25.0,
+    "+/-": 32.0,
     "PIM": 6.0,
-    "PPP": 13.0,
-    "SOG": 56.0
+    "PPP": 14.0,
+    "SOG": 60.0
    },
    "pts_by_cat": {
     "G": 180.0,
-    "A": 240.0,
-    "+/-": 145.0,
+    "A": 250.0,
+    "+/-": 160.0,
     "PIM": 15.0,
-    "PPP": 65.0,
-    "SOG": 112.0
+    "PPP": 70.0,
+    "SOG": 120.0
    }
   },
   {
@@ -1422,24 +1420,76 @@
    "team": "MIN",
    "pos": "F",
    "elig": "LW",
-   "gp": 21,
-   "points": 731.0,
-   "fpg": 34.81,
+   "gp": 22,
+   "points": 787.0,
+   "fpg": 35.77,
    "stats": {
     "G": 16.0,
-    "A": 20.0,
-    "+/-": 18.0,
+    "A": 23.0,
+    "+/-": 21.0,
     "PIM": 2.0,
-    "PPP": 12.0,
-    "SOG": 68.0
+    "PPP": 13.0,
+    "SOG": 71.0
    },
    "pts_by_cat": {
     "G": 240.0,
-    "A": 200.0,
-    "+/-": 90.0,
+    "A": 230.0,
+    "+/-": 105.0,
     "PIM": 5.0,
-    "PPP": 60.0,
-    "SOG": 136.0
+    "PPP": 65.0,
+    "SOG": 142.0
+   }
+  },
+  {
+   "owner": "PAT CLARK",
+   "player": "Cutter Gauthier",
+   "team": "ANA",
+   "pos": "F",
+   "elig": "C,LW,RW",
+   "gp": 21,
+   "points": 685.0,
+   "fpg": 32.62,
+   "stats": {
+    "G": 21.0,
+    "A": 8.0,
+    "+/-": 1.0,
+    "PIM": 6.0,
+    "PPP": 16.0,
+    "SOG": 95.0
+   },
+   "pts_by_cat": {
+    "G": 315.0,
+    "A": 80.0,
+    "+/-": 5.0,
+    "PIM": 15.0,
+    "PPP": 80.0,
+    "SOG": 190.0
+   }
+  },
+  {
+   "owner": "FUR",
+   "player": "Matt Boldy",
+   "team": "MIN",
+   "pos": "F",
+   "elig": "LW,RW",
+   "gp": 23,
+   "points": 665.5,
+   "fpg": 28.93,
+   "stats": {
+    "G": 12.0,
+    "A": 12.0,
+    "+/-": 19.0,
+    "PIM": 19.0,
+    "PPP": 7.0,
+    "SOG": 94.0
+   },
+   "pts_by_cat": {
+    "G": 180.0,
+    "A": 120.0,
+    "+/-": 95.0,
+    "PIM": 47.5,
+    "PPP": 35.0,
+    "SOG": 188.0
    }
   },
   {
@@ -1448,24 +1498,24 @@
    "team": "FLA",
    "pos": "F",
    "elig": "C,LW",
-   "gp": 22,
-   "points": 635.0,
-   "fpg": 28.86,
+   "gp": 23,
+   "points": 646.0,
+   "fpg": 28.09,
    "stats": {
     "G": 11.0,
-    "A": 12.0,
-    "+/-": -3.0,
+    "A": 13.0,
+    "+/-": -4.0,
     "PIM": 56.0,
     "PPP": 13.0,
-    "SOG": 80.0
+    "SOG": 83.0
    },
    "pts_by_cat": {
     "G": 165.0,
-    "A": 120.0,
-    "+/-": -15.0,
+    "A": 130.0,
+    "+/-": -20.0,
     "PIM": 140.0,
     "PPP": 65.0,
-    "SOG": 160.0
+    "SOG": 166.0
    }
   },
   {
@@ -1495,55 +1545,107 @@
    }
   },
   {
-   "owner": "PAT CLARK",
-   "player": "Cutter Gauthier",
-   "team": "ANA",
-   "pos": "F",
-   "elig": "C,LW,RW",
-   "gp": 20,
-   "points": 604.0,
-   "fpg": 30.2,
+   "owner": "PHIL",
+   "player": "Quinn Hughes",
+   "team": "MIN",
+   "pos": "D",
+   "elig": "D",
+   "gp": 23,
+   "points": 620.0,
+   "fpg": 26.96,
    "stats": {
-    "G": 18.0,
-    "A": 7.0,
-    "+/-": 1.0,
+    "G": 7.0,
+    "A": 25.0,
+    "+/-": 14.0,
     "PIM": 6.0,
-    "PPP": 14.0,
-    "SOG": 87.0
+    "PPP": 12.0,
+    "SOG": 60.0
    },
    "pts_by_cat": {
-    "G": 270.0,
-    "A": 70.0,
-    "+/-": 5.0,
+    "G": 105.0,
+    "A": 250.0,
+    "+/-": 70.0,
     "PIM": 15.0,
-    "PPP": 70.0,
-    "SOG": 174.0
+    "PPP": 60.0,
+    "SOG": 120.0
    }
   },
   {
-   "owner": "FUR",
-   "player": "Matt Boldy",
-   "team": "MIN",
+   "owner": "PHIL",
+   "player": "Kyle Connor",
+   "team": "WPG",
    "pos": "F",
-   "elig": "LW,RW",
-   "gp": 22,
-   "points": 599.5,
-   "fpg": 27.25,
+   "elig": "LW",
+   "gp": 21,
+   "points": 603.0,
+   "fpg": 28.71,
    "stats": {
-    "G": 10.0,
-    "A": 11.0,
-    "+/-": 16.0,
-    "PIM": 19.0,
-    "PPP": 6.0,
-    "SOG": 91.0
+    "G": 17.0,
+    "A": 9.0,
+    "+/-": 3.0,
+    "PIM": 4.0,
+    "PPP": 9.0,
+    "SOG": 94.0
    },
    "pts_by_cat": {
-    "G": 150.0,
-    "A": 110.0,
-    "+/-": 80.0,
-    "PIM": 47.5,
-    "PPP": 30.0,
-    "SOG": 182.0
+    "G": 255.0,
+    "A": 90.0,
+    "+/-": 15.0,
+    "PIM": 10.0,
+    "PPP": 45.0,
+    "SOG": 188.0
+   }
+  },
+  {
+   "owner": "PAT CLARK",
+   "player": "Auston Matthews",
+   "team": "TOR",
+   "pos": "F",
+   "elig": "C",
+   "gp": 22,
+   "points": 601.0,
+   "fpg": 27.32,
+   "stats": {
+    "G": 12.0,
+    "A": 18.0,
+    "+/-": 7.0,
+    "PIM": 8.0,
+    "PPP": 10.0,
+    "SOG": 68.0
+   },
+   "pts_by_cat": {
+    "G": 180.0,
+    "A": 180.0,
+    "+/-": 35.0,
+    "PIM": 20.0,
+    "PPP": 50.0,
+    "SOG": 136.0
+   }
+  },
+  {
+   "owner": "MEANY",
+   "player": "Nikita Kucherov",
+   "team": "TB",
+   "pos": "F",
+   "elig": "RW",
+   "gp": 21,
+   "points": 597.0,
+   "fpg": 28.43,
+   "stats": {
+    "G": 8.0,
+    "A": 22.0,
+    "+/-": 13.0,
+    "PIM": 6.0,
+    "PPP": 9.0,
+    "SOG": 66.0
+   },
+   "pts_by_cat": {
+    "G": 120.0,
+    "A": 220.0,
+    "+/-": 65.0,
+    "PIM": 15.0,
+    "PPP": 45.0,
+    "SOG": 132.0
    }
   },
   {
@@ -1573,81 +1675,25 @@
    }
   },
   {
-   "owner": "PHIL",
-   "player": "Kyle Connor",
-   "team": "WPG",
-   "pos": "F",
-   "elig": "LW",
-   "gp": 20,
-   "points": 582.0,
-   "fpg": 29.1,
-   "stats": {
-    "G": 17.0,
-    "A": 9.0,
-    "+/-": 3.0,
-    "PIM": 2.0,
-    "PPP": 9.0,
-    "SOG": 86.0
-   },
-   "pts_by_cat": {
-    "G": 255.0,
-    "A": 90.0,
-    "+/-": 15.0,
-    "PIM": 5.0,
-    "PPP": 45.0,
-    "SOG": 172.0
-   }
-  },
-  {
    "owner": "PAT CLARK",
-   "player": "Auston Matthews",
-   "team": "TOR",
-   "pos": "F",
-   "elig": "C",
-   "gp": 21,
-   "points": 579.0,
-   "fpg": 27.57,
-   "stats": {
-    "G": 12.0,
-    "A": 17.0,
-    "+/-": 8.0,
-    "PIM": 6.0,
-    "PPP": 10.0,
-    "SOG": 62.0
-   },
-   "pts_by_cat": {
-    "G": 180.0,
-    "A": 170.0,
-    "+/-": 40.0,
-    "PIM": 15.0,
-    "PPP": 50.0,
-    "SOG": 124.0
-   }
-  },
-  {
-   "owner": "PHIL",
-   "player": "Quinn Hughes",
+   "player": "Jesper Wallstedt",
    "team": "MIN",
-   "pos": "D",
-   "elig": "D",
-   "gp": 22,
-   "points": 576.0,
-   "fpg": 26.18,
+   "pos": "G",
+   "elig": "G",
+   "gp": 20,
+   "points": 585.0,
+   "fpg": 29.25,
    "stats": {
-    "G": 7.0,
-    "A": 23.0,
-    "+/-": 10.0,
-    "PIM": 6.0,
-    "PPP": 12.0,
-    "SOG": 58.0
+    "W": 15.0,
+    "GA": 40.0,
+    "SV": 485.0,
+    "SHO": 0.0
    },
    "pts_by_cat": {
-    "G": 105.0,
-    "A": 230.0,
-    "+/-": 50.0,
-    "PIM": 15.0,
-    "PPP": 60.0,
-    "SOG": 116.0
+    "W": 300.0,
+    "GA": -200.0,
+    "SV": 485.0,
+    "SHO": 0.0
    }
   },
   {
@@ -1682,72 +1728,24 @@
    "team": "SJ",
    "pos": "F",
    "elig": "C",
-   "gp": 20,
+   "gp": 21,
    "points": 562.0,
-   "fpg": 28.1,
+   "fpg": 26.76,
    "stats": {
     "G": 8.0,
     "A": 18.0,
-    "+/-": 0.0,
+    "+/-": -2.0,
     "PIM": 16.0,
     "PPP": 10.0,
-    "SOG": 86.0
+    "SOG": 91.0
    },
    "pts_by_cat": {
     "G": 120.0,
     "A": 180.0,
-    "+/-": 0.0,
+    "+/-": -10.0,
     "PIM": 40.0,
     "PPP": 50.0,
-    "SOG": 172.0
-   }
-  },
-  {
-   "owner": "MEANY",
-   "player": "Nikita Kucherov",
-   "team": "TB",
-   "pos": "F",
-   "elig": "RW",
-   "gp": 20,
-   "points": 556.0,
-   "fpg": 27.8,
-   "stats": {
-    "G": 8.0,
-    "A": 20.0,
-    "+/-": 10.0,
-    "PIM": 6.0,
-    "PPP": 9.0,
-    "SOG": 63.0
-   },
-   "pts_by_cat": {
-    "G": 120.0,
-    "A": 200.0,
-    "+/-": 50.0,
-    "PIM": 15.0,
-    "PPP": 45.0,
-    "SOG": 126.0
-   }
-  },
-  {
-   "owner": "PAT CLARK",
-   "player": "Jesper Wallstedt",
-   "team": "MIN",
-   "pos": "G",
-   "elig": "G",
-   "gp": 19,
-   "points": 555.0,
-   "fpg": 29.21,
-   "stats": {
-    "W": 14.0,
-    "GA": 37.0,
-    "SV": 460.0,
-    "SHO": 0.0
-   },
-   "pts_by_cat": {
-    "W": 280.0,
-    "GA": -185.0,
-    "SV": 460.0,
-    "SHO": 0.0
+    "SOG": 182.0
    }
   },
   {
@@ -1777,29 +1775,133 @@
    }
   },
   {
+   "owner": "ADAM B",
+   "player": "Tage Thompson",
+   "team": "BUF",
+   "pos": "F",
+   "elig": "C,RW",
+   "gp": 21,
+   "points": 550.0,
+   "fpg": 26.19,
+   "stats": {
+    "G": 13.0,
+    "A": 10.0,
+    "+/-": 7.0,
+    "PIM": 8.0,
+    "PPP": 6.0,
+    "SOG": 85.0
+   },
+   "pts_by_cat": {
+    "G": 195.0,
+    "A": 100.0,
+    "+/-": 35.0,
+    "PIM": 20.0,
+    "PPP": 30.0,
+    "SOG": 170.0
+   }
+  },
+  {
+   "owner": "FUR",
+   "player": "Jason Robertson",
+   "team": "DAL",
+   "pos": "F",
+   "elig": "LW,RW",
+   "gp": 21,
+   "points": 536.0,
+   "fpg": 25.52,
+   "stats": {
+    "G": 10.0,
+    "A": 14.0,
+    "+/-": 12.0,
+    "PIM": 8.0,
+    "PPP": 6.0,
+    "SOG": 68.0
+   },
+   "pts_by_cat": {
+    "G": 150.0,
+    "A": 140.0,
+    "+/-": 60.0,
+    "PIM": 20.0,
+    "PPP": 30.0,
+    "SOG": 136.0
+   }
+  },
+  {
    "owner": "SCOTTY",
    "player": "David Pastrnak",
    "team": "BOS",
    "pos": "F",
    "elig": "RW",
-   "gp": 20,
-   "points": 531.0,
-   "fpg": 26.55,
+   "gp": 21,
+   "points": 534.0,
+   "fpg": 25.43,
    "stats": {
     "G": 9.0,
     "A": 17.0,
-    "+/-": 4.0,
+    "+/-": 3.0,
     "PIM": 6.0,
     "PPP": 9.0,
-    "SOG": 73.0
+    "SOG": 77.0
    },
    "pts_by_cat": {
     "G": 135.0,
     "A": 170.0,
-    "+/-": 20.0,
+    "+/-": 15.0,
     "PIM": 15.0,
     "PPP": 45.0,
-    "SOG": 146.0
+    "SOG": 154.0
+   }
+  },
+  {
+   "owner": "MARZ",
+   "player": "Matthew Tkachuk",
+   "team": "FLA",
+   "pos": "F",
+   "elig": "LW,RW",
+   "gp": 21,
+   "points": 530.0,
+   "fpg": 25.24,
+   "stats": {
+    "G": 6.0,
+    "A": 20.0,
+    "+/-": 3.0,
+    "PIM": 30.0,
+    "PPP": 12.0,
+    "SOG": 45.0
+   },
+   "pts_by_cat": {
+    "G": 90.0,
+    "A": 200.0,
+    "+/-": 15.0,
+    "PIM": 75.0,
+    "PPP": 60.0,
+    "SOG": 90.0
+   }
+  },
+  {
+   "owner": "SCOTTY",
+   "player": "Jack Eichel",
+   "team": "VGK",
+   "pos": "F",
+   "elig": "C",
+   "gp": 23,
+   "points": 528.0,
+   "fpg": 22.96,
+   "stats": {
+    "G": 9.0,
+    "A": 19.0,
+    "+/-": 3.0,
+    "PIM": 2.0,
+    "PPP": 11.0,
+    "SOG": 64.0
+   },
+   "pts_by_cat": {
+    "G": 135.0,
+    "A": 190.0,
+    "+/-": 15.0,
+    "PIM": 5.0,
+    "PPP": 55.0,
+    "SOG": 128.0
    }
   },
   {
@@ -1829,29 +1931,29 @@
    }
   },
   {
-   "owner": "SCOTTY",
-   "player": "Jack Eichel",
-   "team": "VGK",
+   "owner": "PAT CLARK",
+   "player": "Mikko Rantanen",
+   "team": "DAL",
    "pos": "F",
-   "elig": "C",
-   "gp": 22,
-   "points": 526.0,
-   "fpg": 23.91,
+   "elig": "LW,RW",
+   "gp": 20,
+   "points": 519.0,
+   "fpg": 25.95,
    "stats": {
-    "G": 9.0,
-    "A": 18.0,
-    "+/-": 5.0,
-    "PIM": 2.0,
-    "PPP": 11.0,
-    "SOG": 63.0
+    "G": 10.0,
+    "A": 16.0,
+    "+/-": 9.0,
+    "PIM": 16.0,
+    "PPP": 8.0,
+    "SOG": 42.0
    },
    "pts_by_cat": {
-    "G": 135.0,
-    "A": 180.0,
-    "+/-": 25.0,
-    "PIM": 5.0,
-    "PPP": 55.0,
-    "SOG": 126.0
+    "G": 150.0,
+    "A": 160.0,
+    "+/-": 45.0,
+    "PIM": 40.0,
+    "PPP": 40.0,
+    "SOG": 84.0
    }
   },
   {
@@ -1881,81 +1983,29 @@
    }
   },
   {
-   "owner": "ADAM B",
-   "player": "Tage Thompson",
-   "team": "BUF",
-   "pos": "F",
-   "elig": "C,RW",
+   "owner": "MEANY",
+   "player": "Matthew Schaefer",
+   "team": "NYI",
+   "pos": "D",
+   "elig": "D",
    "gp": 20,
-   "points": 503.0,
-   "fpg": 25.15,
+   "points": 508.0,
+   "fpg": 25.4,
    "stats": {
-    "G": 12.0,
-    "A": 9.0,
-    "+/-": 6.0,
-    "PIM": 6.0,
-    "PPP": 6.0,
-    "SOG": 79.0
+    "G": 9.0,
+    "A": 15.0,
+    "+/-": 1.0,
+    "PIM": 14.0,
+    "PPP": 7.0,
+    "SOG": 74.0
    },
    "pts_by_cat": {
-    "G": 180.0,
-    "A": 90.0,
-    "+/-": 30.0,
-    "PIM": 15.0,
-    "PPP": 30.0,
-    "SOG": 158.0
-   }
-  },
-  {
-   "owner": "FUR",
-   "player": "Jason Robertson",
-   "team": "DAL",
-   "pos": "F",
-   "elig": "LW,RW",
-   "gp": 20,
-   "points": 490.0,
-   "fpg": 24.5,
-   "stats": {
-    "G": 10.0,
-    "A": 12.0,
-    "+/-": 9.0,
-    "PIM": 6.0,
-    "PPP": 6.0,
-    "SOG": 65.0
-   },
-   "pts_by_cat": {
-    "G": 150.0,
-    "A": 120.0,
-    "+/-": 45.0,
-    "PIM": 15.0,
-    "PPP": 30.0,
-    "SOG": 130.0
-   }
-  },
-  {
-   "owner": "MARZ",
-   "player": "Matthew Tkachuk",
-   "team": "FLA",
-   "pos": "F",
-   "elig": "LW,RW",
-   "gp": 20,
-   "points": 487.0,
-   "fpg": 24.35,
-   "stats": {
-    "G": 4.0,
-    "A": 20.0,
-    "+/-": 3.0,
-    "PIM": 28.0,
-    "PPP": 12.0,
-    "SOG": 41.0
-   },
-   "pts_by_cat": {
-    "G": 60.0,
-    "A": 200.0,
-    "+/-": 15.0,
-    "PIM": 70.0,
-    "PPP": 60.0,
-    "SOG": 82.0
+    "G": 135.0,
+    "A": 150.0,
+    "+/-": 5.0,
+    "PIM": 35.0,
+    "PPP": 35.0,
+    "SOG": 148.0
    }
   },
   {
@@ -1964,24 +2014,76 @@
    "team": "NSH",
    "pos": "F",
    "elig": "LW",
-   "gp": 20,
-   "points": 485.0,
-   "fpg": 24.25,
+   "gp": 21,
+   "points": 506.0,
+   "fpg": 24.1,
    "stats": {
-    "G": 7.0,
+    "G": 8.0,
     "A": 16.0,
     "+/-": 10.0,
     "PIM": 8.0,
     "PPP": 8.0,
-    "SOG": 55.0
+    "SOG": 58.0
    },
    "pts_by_cat": {
-    "G": 105.0,
+    "G": 120.0,
     "A": 160.0,
     "+/-": 50.0,
     "PIM": 20.0,
     "PPP": 40.0,
+    "SOG": 116.0
+   }
+  },
+  {
+   "owner": "PHIL",
+   "player": "Clayton Keller",
+   "team": "UTA",
+   "pos": "F",
+   "elig": "LW,RW",
+   "gp": 21,
+   "points": 505.0,
+   "fpg": 24.05,
+   "stats": {
+    "G": 5.0,
+    "A": 21.0,
+    "+/-": -4.0,
+    "PIM": 22.0,
+    "PPP": 15.0,
+    "SOG": 55.0
+   },
+   "pts_by_cat": {
+    "G": 75.0,
+    "A": 210.0,
+    "+/-": -20.0,
+    "PIM": 55.0,
+    "PPP": 75.0,
     "SOG": 110.0
+   }
+  },
+  {
+   "owner": "MARZ",
+   "player": "Jake Guentzel",
+   "team": "TB",
+   "pos": "F",
+   "elig": "LW,RW",
+   "gp": 18,
+   "points": 499.0,
+   "fpg": 27.72,
+   "stats": {
+    "G": 10.0,
+    "A": 12.0,
+    "+/-": 17.0,
+    "PIM": 4.0,
+    "PPP": 6.0,
+    "SOG": 52.0
+   },
+   "pts_by_cat": {
+    "G": 150.0,
+    "A": 120.0,
+    "+/-": 85.0,
+    "PIM": 10.0,
+    "PPP": 30.0,
+    "SOG": 104.0
    }
   },
   {
@@ -2011,32 +2113,6 @@
    }
   },
   {
-   "owner": "PHIL",
-   "player": "Clayton Keller",
-   "team": "UTA",
-   "pos": "F",
-   "elig": "LW,RW",
-   "gp": 20,
-   "points": 477.0,
-   "fpg": 23.85,
-   "stats": {
-    "G": 5.0,
-    "A": 20.0,
-    "+/-": -4.0,
-    "PIM": 20.0,
-    "PPP": 14.0,
-    "SOG": 51.0
-   },
-   "pts_by_cat": {
-    "G": 75.0,
-    "A": 200.0,
-    "+/-": -20.0,
-    "PIM": 50.0,
-    "PPP": 70.0,
-    "SOG": 102.0
-   }
-  },
-  {
    "owner": "FUR",
    "player": "Tim Stutzle",
    "team": "OTT",
@@ -2060,6 +2136,32 @@
     "PIM": 10.0,
     "PPP": 20.0,
     "SOG": 98.0
+   }
+  },
+  {
+   "owner": "PHIL",
+   "player": "Mikhail Sergachev",
+   "team": "UTA",
+   "pos": "D",
+   "elig": "D",
+   "gp": 22,
+   "points": 463.5,
+   "fpg": 21.07,
+   "stats": {
+    "G": 6.0,
+    "A": 16.0,
+    "+/-": -2.0,
+    "PIM": 19.0,
+    "PPP": 12.0,
+    "SOG": 58.0
+   },
+   "pts_by_cat": {
+    "G": 90.0,
+    "A": 160.0,
+    "+/-": -10.0,
+    "PIM": 47.5,
+    "PPP": 60.0,
+    "SOG": 116.0
    }
   },
   {
@@ -2089,133 +2191,81 @@
    }
   },
   {
-   "owner": "PHIL",
-   "player": "Roman Josi",
-   "team": "NSH",
-   "pos": "D",
-   "elig": "D",
-   "gp": 21,
-   "points": 459.0,
-   "fpg": 21.86,
-   "stats": {
-    "G": 2.0,
-    "A": 21.0,
-    "+/-": 4.0,
-    "PIM": 12.0,
-    "PPP": 11.0,
-    "SOG": 57.0
-   },
-   "pts_by_cat": {
-    "G": 30.0,
-    "A": 210.0,
-    "+/-": 20.0,
-    "PIM": 30.0,
-    "PPP": 55.0,
-    "SOG": 114.0
-   }
-  },
-  {
    "owner": "PEDRO",
    "player": "Cole Caufield",
    "team": "MTL",
    "pos": "F",
    "elig": "LW,RW",
-   "gp": 20,
-   "points": 459.0,
-   "fpg": 22.95,
+   "gp": 21,
+   "points": 458.0,
+   "fpg": 21.81,
    "stats": {
     "G": 12.0,
     "A": 7.0,
-    "+/-": 6.0,
+    "+/-": 5.0,
     "PIM": 10.0,
     "PPP": 4.0,
-    "SOG": 67.0
+    "SOG": 69.0
    },
    "pts_by_cat": {
     "G": 180.0,
     "A": 70.0,
-    "+/-": 30.0,
+    "+/-": 25.0,
     "PIM": 25.0,
     "PPP": 20.0,
-    "SOG": 134.0
+    "SOG": 138.0
    }
   },
   {
    "owner": "PHIL",
-   "player": "Mikhail Sergachev",
-   "team": "UTA",
+   "player": "Roman Josi",
+   "team": "NSH",
    "pos": "D",
    "elig": "D",
-   "gp": 21,
-   "points": 456.5,
-   "fpg": 21.74,
+   "gp": 22,
+   "points": 450.0,
+   "fpg": 20.45,
    "stats": {
-    "G": 6.0,
-    "A": 16.0,
-    "+/-": -1.0,
-    "PIM": 19.0,
-    "PPP": 12.0,
-    "SOG": 52.0
+    "G": 2.0,
+    "A": 21.0,
+    "+/-": 1.0,
+    "PIM": 12.0,
+    "PPP": 11.0,
+    "SOG": 60.0
    },
    "pts_by_cat": {
-    "G": 90.0,
-    "A": 160.0,
-    "+/-": -5.0,
-    "PIM": 47.5,
-    "PPP": 60.0,
-    "SOG": 104.0
-   }
-  },
-  {
-   "owner": "MARZ",
-   "player": "Jake Guentzel",
-   "team": "TB",
-   "pos": "F",
-   "elig": "LW,RW",
-   "gp": 17,
-   "points": 456.0,
-   "fpg": 26.82,
-   "stats": {
-    "G": 8.0,
-    "A": 12.0,
-    "+/-": 16.0,
-    "PIM": 4.0,
-    "PPP": 6.0,
-    "SOG": 48.0
-   },
-   "pts_by_cat": {
-    "G": 120.0,
-    "A": 120.0,
-    "+/-": 80.0,
-    "PIM": 10.0,
-    "PPP": 30.0,
-    "SOG": 96.0
-   }
-  },
-  {
-   "owner": "PAT CLARK",
-   "player": "Mikko Rantanen",
-   "team": "DAL",
-   "pos": "F",
-   "elig": "LW,RW",
-   "gp": 19,
-   "points": 444.0,
-   "fpg": 23.37,
-   "stats": {
-    "G": 9.0,
-    "A": 13.0,
+    "G": 30.0,
+    "A": 210.0,
     "+/-": 5.0,
-    "PIM": 16.0,
-    "PPP": 8.0,
-    "SOG": 37.0
+    "PIM": 30.0,
+    "PPP": 55.0,
+    "SOG": 120.0
+   }
+  },
+  {
+   "owner": "MEANY",
+   "player": "Mitch Marner",
+   "team": "VGK",
+   "pos": "F",
+   "elig": "C,LW,RW",
+   "gp": 21,
+   "points": 442.0,
+   "fpg": 21.05,
+   "stats": {
+    "G": 3.0,
+    "A": 23.0,
+    "+/-": -2.0,
+    "PIM": 6.0,
+    "PPP": 12.0,
+    "SOG": 51.0
    },
    "pts_by_cat": {
-    "G": 135.0,
-    "A": 130.0,
-    "+/-": 25.0,
-    "PIM": 40.0,
-    "PPP": 40.0,
-    "SOG": 74.0
+    "G": 45.0,
+    "A": 230.0,
+    "+/-": -10.0,
+    "PIM": 15.0,
+    "PPP": 60.0,
+    "SOG": 102.0
    }
   },
   {
@@ -2245,58 +2295,6 @@
    }
   },
   {
-   "owner": "MEANY",
-   "player": "Mitch Marner",
-   "team": "VGK",
-   "pos": "F",
-   "elig": "C,LW,RW",
-   "gp": 20,
-   "points": 436.0,
-   "fpg": 21.8,
-   "stats": {
-    "G": 3.0,
-    "A": 23.0,
-    "+/-": -2.0,
-    "PIM": 6.0,
-    "PPP": 12.0,
-    "SOG": 48.0
-   },
-   "pts_by_cat": {
-    "G": 45.0,
-    "A": 230.0,
-    "+/-": -10.0,
-    "PIM": 15.0,
-    "PPP": 60.0,
-    "SOG": 96.0
-   }
-  },
-  {
-   "owner": "MEANY",
-   "player": "Matthew Schaefer",
-   "team": "NYI",
-   "pos": "D",
-   "elig": "D",
-   "gp": 19,
-   "points": 435.0,
-   "fpg": 22.89,
-   "stats": {
-    "G": 6.0,
-    "A": 15.0,
-    "+/-": -1.0,
-    "PIM": 14.0,
-    "PPP": 7.0,
-    "SOG": 65.0
-   },
-   "pts_by_cat": {
-    "G": 90.0,
-    "A": 150.0,
-    "+/-": -5.0,
-    "PIM": 35.0,
-    "PPP": 35.0,
-    "SOG": 130.0
-   }
-  },
-  {
    "owner": "MARZ",
    "player": "Mark Stone",
    "team": "VGK",
@@ -2320,6 +2318,32 @@
     "PIM": 22.5,
     "PPP": 55.0,
     "SOG": 80.0
+   }
+  },
+  {
+   "owner": "FUR",
+   "player": "Leo Carlsson",
+   "team": "ANA",
+   "pos": "F",
+   "elig": "C",
+   "gp": 19,
+   "points": 416.0,
+   "fpg": 21.89,
+   "stats": {
+    "G": 5.0,
+    "A": 20.0,
+    "+/-": -4.0,
+    "PIM": 4.0,
+    "PPP": 17.0,
+    "SOG": 33.0
+   },
+   "pts_by_cat": {
+    "G": 75.0,
+    "A": 200.0,
+    "+/-": -20.0,
+    "PIM": 10.0,
+    "PPP": 85.0,
+    "SOG": 66.0
    }
   },
   {
@@ -2371,55 +2395,51 @@
    }
   },
   {
-   "owner": "FUR",
-   "player": "Leo Carlsson",
-   "team": "ANA",
-   "pos": "F",
-   "elig": "C",
-   "gp": 18,
-   "points": 407.0,
-   "fpg": 22.61,
+   "owner": "PEDRO",
+   "player": "Adam Fox",
+   "team": "NYR",
+   "pos": "D",
+   "elig": "D",
+   "gp": 22,
+   "points": 404.0,
+   "fpg": 18.36,
    "stats": {
-    "G": 5.0,
-    "A": 19.0,
-    "+/-": -2.0,
-    "PIM": 4.0,
-    "PPP": 16.0,
-    "SOG": 31.0
+    "G": 2.0,
+    "A": 22.0,
+    "+/-": 6.0,
+    "PIM": 10.0,
+    "PPP": 7.0,
+    "SOG": 32.0
    },
    "pts_by_cat": {
-    "G": 75.0,
-    "A": 190.0,
-    "+/-": -10.0,
-    "PIM": 10.0,
-    "PPP": 80.0,
-    "SOG": 62.0
+    "G": 30.0,
+    "A": 220.0,
+    "+/-": 30.0,
+    "PIM": 25.0,
+    "PPP": 35.0,
+    "SOG": 64.0
    }
   },
   {
-   "owner": "PEDRO",
-   "player": "William Nylander",
-   "team": "TOR",
-   "pos": "F",
-   "elig": "C,RW",
-   "gp": 22,
-   "points": 401.0,
-   "fpg": 18.23,
+   "owner": "PHIL",
+   "player": "Jake Oettinger",
+   "team": "DAL",
+   "pos": "G",
+   "elig": "G",
+   "gp": 16,
+   "points": 403.0,
+   "fpg": 25.19,
    "stats": {
-    "G": 11.0,
-    "A": 11.0,
-    "+/-": -8.0,
-    "PIM": 4.0,
-    "PPP": 8.0,
-    "SOG": 58.0
+    "W": 11.0,
+    "GA": 35.0,
+    "SV": 318.0,
+    "SHO": 4.0
    },
    "pts_by_cat": {
-    "G": 165.0,
-    "A": 110.0,
-    "+/-": -40.0,
-    "PIM": 10.0,
-    "PPP": 40.0,
-    "SOG": 116.0
+    "W": 220.0,
+    "GA": -175.0,
+    "SV": 318.0,
+    "SHO": 40.0
    }
   },
   {
@@ -2450,28 +2470,80 @@
   },
   {
    "owner": "PEDRO",
-   "player": "Adam Fox",
-   "team": "NYR",
+   "player": "William Nylander",
+   "team": "TOR",
+   "pos": "F",
+   "elig": "C,RW",
+   "gp": 23,
+   "points": 400.0,
+   "fpg": 17.39,
+   "stats": {
+    "G": 11.0,
+    "A": 11.0,
+    "+/-": -9.0,
+    "PIM": 4.0,
+    "PPP": 8.0,
+    "SOG": 60.0
+   },
+   "pts_by_cat": {
+    "G": 165.0,
+    "A": 110.0,
+    "+/-": -45.0,
+    "PIM": 10.0,
+    "PPP": 40.0,
+    "SOG": 120.0
+   }
+  },
+  {
+   "owner": "FUR",
+   "player": "Jackson LaCombe",
+   "team": "ANA",
+   "pos": "D",
+   "elig": "D",
+   "gp": 22,
+   "points": 399.0,
+   "fpg": 18.14,
+   "stats": {
+    "G": 1.0,
+    "A": 24.0,
+    "+/-": 1.0,
+    "PIM": 14.0,
+    "PPP": 14.0,
+    "SOG": 17.0
+   },
+   "pts_by_cat": {
+    "G": 15.0,
+    "A": 240.0,
+    "+/-": 5.0,
+    "PIM": 35.0,
+    "PPP": 70.0,
+    "SOG": 34.0
+   }
+  },
+  {
+   "owner": "PEDRO",
+   "player": "Mattias Ekholm",
+   "team": "EDM",
    "pos": "D",
    "elig": "D",
    "gp": 21,
-   "points": 387.0,
-   "fpg": 18.43,
+   "points": 393.0,
+   "fpg": 18.71,
    "stats": {
-    "G": 2.0,
-    "A": 21.0,
-    "+/-": 5.0,
-    "PIM": 10.0,
-    "PPP": 7.0,
-    "SOG": 31.0
+    "G": 3.0,
+    "A": 8.0,
+    "+/-": 30.0,
+    "PIM": 28.0,
+    "PPP": 0.0,
+    "SOG": 24.0
    },
    "pts_by_cat": {
-    "G": 30.0,
-    "A": 210.0,
-    "+/-": 25.0,
-    "PIM": 25.0,
-    "PPP": 35.0,
-    "SOG": 62.0
+    "G": 45.0,
+    "A": 80.0,
+    "+/-": 150.0,
+    "PIM": 70.0,
+    "PPP": 0.0,
+    "SOG": 48.0
    }
   },
   {
@@ -2527,6 +2599,58 @@
    }
   },
   {
+   "owner": "FUR",
+   "player": "John Carlson",
+   "team": "TB",
+   "pos": "D",
+   "elig": "D",
+   "gp": 21,
+   "points": 383.0,
+   "fpg": 18.24,
+   "stats": {
+    "G": 6.0,
+    "A": 13.0,
+    "+/-": 7.0,
+    "PIM": 2.0,
+    "PPP": 5.0,
+    "SOG": 49.0
+   },
+   "pts_by_cat": {
+    "G": 90.0,
+    "A": 130.0,
+    "+/-": 35.0,
+    "PIM": 5.0,
+    "PPP": 25.0,
+    "SOG": 98.0
+   }
+  },
+  {
+   "owner": "PHIL",
+   "player": "Wyatt Johnston",
+   "team": "DAL",
+   "pos": "F",
+   "elig": "C,RW",
+   "gp": 19,
+   "points": 382.0,
+   "fpg": 20.11,
+   "stats": {
+    "G": 6.0,
+    "A": 13.0,
+    "+/-": 3.0,
+    "PIM": 2.0,
+    "PPP": 8.0,
+    "SOG": 51.0
+   },
+   "pts_by_cat": {
+    "G": 90.0,
+    "A": 130.0,
+    "+/-": 15.0,
+    "PIM": 5.0,
+    "PPP": 40.0,
+    "SOG": 102.0
+   }
+  },
+  {
    "owner": "MARZ",
    "player": "Shayne Gostisbehere",
    "team": "CAR",
@@ -2553,25 +2677,25 @@
    }
   },
   {
-   "owner": "PHIL",
-   "player": "Jake Oettinger",
-   "team": "DAL",
+   "owner": "PEDRO",
+   "player": "Ilya Sorokin",
+   "team": "NYI",
    "pos": "G",
    "elig": "G",
-   "gp": 15,
-   "points": 374.0,
-   "fpg": 24.93,
+   "gp": 14,
+   "points": 381.0,
+   "fpg": 27.21,
    "stats": {
-    "W": 10.0,
-    "GA": 32.0,
-    "SV": 294.0,
-    "SHO": 4.0
+    "W": 8.0,
+    "GA": 34.0,
+    "SV": 381.0,
+    "SHO": 1.0
    },
    "pts_by_cat": {
-    "W": 200.0,
-    "GA": -160.0,
-    "SV": 294.0,
-    "SHO": 40.0
+    "W": 160.0,
+    "GA": -170.0,
+    "SV": 381.0,
+    "SHO": 10.0
    }
   },
   {
@@ -2580,50 +2704,24 @@
    "team": "NSH",
    "pos": "F",
    "elig": "C,LW,RW",
-   "gp": 17,
-   "points": 371.0,
-   "fpg": 21.82,
+   "gp": 18,
+   "points": 375.0,
+   "fpg": 20.83,
    "stats": {
     "G": 10.0,
-    "A": 9.0,
-    "+/-": -5.0,
+    "A": 10.0,
+    "+/-": -7.0,
     "PIM": 8.0,
     "PPP": 10.0,
-    "SOG": 43.0
+    "SOG": 45.0
    },
    "pts_by_cat": {
     "G": 150.0,
-    "A": 90.0,
-    "+/-": -25.0,
+    "A": 100.0,
+    "+/-": -35.0,
     "PIM": 20.0,
     "PPP": 50.0,
-    "SOG": 86.0
-   }
-  },
-  {
-   "owner": "PEDRO",
-   "player": "Mattias Ekholm",
-   "team": "EDM",
-   "pos": "D",
-   "elig": "D",
-   "gp": 20,
-   "points": 369.0,
-   "fpg": 18.45,
-   "stats": {
-    "G": 3.0,
-    "A": 7.0,
-    "+/-": 28.0,
-    "PIM": 28.0,
-    "PPP": 0.0,
-    "SOG": 22.0
-   },
-   "pts_by_cat": {
-    "G": 45.0,
-    "A": 70.0,
-    "+/-": 140.0,
-    "PIM": 70.0,
-    "PPP": 0.0,
-    "SOG": 44.0
+    "SOG": 90.0
    }
   },
   {
@@ -2650,6 +2748,54 @@
     "PIM": 20.0,
     "PPP": 35.0,
     "SOG": 106.0
+   }
+  },
+  {
+   "owner": "PHIL",
+   "player": "Juuse Saros",
+   "team": "NSH",
+   "pos": "G",
+   "elig": "G",
+   "gp": 14,
+   "points": 365.0,
+   "fpg": 26.07,
+   "stats": {
+    "W": 6.0,
+    "GA": 32.0,
+    "SV": 395.0,
+    "SHO": 1.0
+   },
+   "pts_by_cat": {
+    "W": 120.0,
+    "GA": -160.0,
+    "SV": 395.0,
+    "SHO": 10.0
+   }
+  },
+  {
+   "owner": "FUR",
+   "player": "Lane Hutson",
+   "team": "MTL",
+   "pos": "D",
+   "elig": "D",
+   "gp": 21,
+   "points": 361.0,
+   "fpg": 17.19,
+   "stats": {
+    "G": 3.0,
+    "A": 16.0,
+    "+/-": 4.0,
+    "PIM": 10.0,
+    "PPP": 5.0,
+    "SOG": 43.0
+   },
+   "pts_by_cat": {
+    "G": 45.0,
+    "A": 160.0,
+    "+/-": 20.0,
+    "PIM": 25.0,
+    "PPP": 25.0,
+    "SOG": 86.0
    }
   },
   {
@@ -2705,121 +2851,21 @@
    }
   },
   {
-   "owner": "FUR",
-   "player": "Lane Hutson",
-   "team": "MTL",
-   "pos": "D",
-   "elig": "D",
-   "gp": 20,
-   "points": 354.0,
-   "fpg": 17.7,
-   "stats": {
-    "G": 3.0,
-    "A": 15.0,
-    "+/-": 5.0,
-    "PIM": 10.0,
-    "PPP": 5.0,
-    "SOG": 42.0
-   },
-   "pts_by_cat": {
-    "G": 45.0,
-    "A": 150.0,
-    "+/-": 25.0,
-    "PIM": 25.0,
-    "PPP": 25.0,
-    "SOG": 84.0
-   }
-  },
-  {
-   "owner": "PHIL",
-   "player": "Wyatt Johnston",
-   "team": "DAL",
-   "pos": "F",
-   "elig": "C,RW",
-   "gp": 18,
-   "points": 353.0,
-   "fpg": 19.61,
-   "stats": {
-    "G": 5.0,
-    "A": 13.0,
-    "+/-": 1.0,
-    "PIM": 2.0,
-    "PPP": 8.0,
-    "SOG": 49.0
-   },
-   "pts_by_cat": {
-    "G": 75.0,
-    "A": 130.0,
-    "+/-": 5.0,
-    "PIM": 5.0,
-    "PPP": 40.0,
-    "SOG": 98.0
-   }
-  },
-  {
-   "owner": "PHIL",
-   "player": "Juuse Saros",
-   "team": "NSH",
-   "pos": "G",
-   "elig": "G",
-   "gp": 13,
-   "points": 353.0,
-   "fpg": 27.15,
-   "stats": {
-    "W": 6.0,
-    "GA": 31.0,
-    "SV": 378.0,
-    "SHO": 1.0
-   },
-   "pts_by_cat": {
-    "W": 120.0,
-    "GA": -155.0,
-    "SV": 378.0,
-    "SHO": 10.0
-   }
-  },
-  {
-   "owner": "FUR",
-   "player": "Jackson LaCombe",
-   "team": "ANA",
-   "pos": "D",
-   "elig": "D",
-   "gp": 21,
-   "points": 350.0,
-   "fpg": 16.67,
-   "stats": {
-    "G": 1.0,
-    "A": 21.0,
-    "+/-": 0.0,
-    "PIM": 14.0,
-    "PPP": 12.0,
-    "SOG": 15.0
-   },
-   "pts_by_cat": {
-    "G": 15.0,
-    "A": 210.0,
-    "+/-": 0.0,
-    "PIM": 35.0,
-    "PPP": 60.0,
-    "SOG": 30.0
-   }
-  },
-  {
    "owner": "PEDRO",
    "player": "Alexis Lafreniere",
    "team": "NYR",
    "pos": "F",
    "elig": "LW,RW",
-   "gp": 17,
-   "points": 349.0,
-   "fpg": 20.53,
+   "gp": 18,
+   "points": 355.0,
+   "fpg": 19.72,
    "stats": {
     "G": 7.0,
     "A": 12.0,
     "+/-": -1.0,
     "PIM": 14.0,
     "PPP": 6.0,
-    "SOG": 32.0
+    "SOG": 35.0
    },
    "pts_by_cat": {
     "G": 105.0,
@@ -2827,55 +2873,107 @@
     "+/-": -5.0,
     "PIM": 35.0,
     "PPP": 30.0,
-    "SOG": 64.0
+    "SOG": 70.0
    }
   },
   {
-   "owner": "FUR",
-   "player": "John Carlson",
-   "team": "TB",
+   "owner": "PAT CLARK",
+   "player": "J.T. Miller",
+   "team": "NYR",
+   "pos": "F",
+   "elig": "C,LW,RW",
+   "gp": 18,
+   "points": 346.5,
+   "fpg": 19.25,
+   "stats": {
+    "G": 3.0,
+    "A": 12.0,
+    "+/-": 4.0,
+    "PIM": 29.0,
+    "PPP": 3.0,
+    "SOG": 37.0
+   },
+   "pts_by_cat": {
+    "G": 45.0,
+    "A": 120.0,
+    "+/-": 20.0,
+    "PIM": 72.5,
+    "PPP": 15.0,
+    "SOG": 74.0
+   }
+  },
+  {
+   "owner": "ADAM B",
+   "player": "Zach Werenski",
+   "team": "CBJ",
    "pos": "D",
    "elig": "D",
-   "gp": 20,
-   "points": 341.0,
-   "fpg": 17.05,
+   "gp": 19,
+   "points": 340.0,
+   "fpg": 17.89,
    "stats": {
-    "G": 6.0,
-    "A": 10.0,
+    "G": 3.0,
+    "A": 13.0,
     "+/-": 5.0,
-    "PIM": 2.0,
-    "PPP": 5.0,
-    "SOG": 48.0
+    "PIM": 0.0,
+    "PPP": 4.0,
+    "SOG": 60.0
    },
    "pts_by_cat": {
-    "G": 90.0,
-    "A": 100.0,
+    "G": 45.0,
+    "A": 130.0,
     "+/-": 25.0,
-    "PIM": 5.0,
-    "PPP": 25.0,
-    "SOG": 96.0
+    "PIM": 0.0,
+    "PPP": 20.0,
+    "SOG": 120.0
    }
   },
   {
-   "owner": "PEDRO",
-   "player": "Ilya Sorokin",
-   "team": "NYI",
+   "owner": "PAT CLARK",
+   "player": "Andrei Vasilevskiy",
+   "team": "TB",
    "pos": "G",
    "elig": "G",
-   "gp": 13,
-   "points": 338.0,
-   "fpg": 26.0,
+   "gp": 15,
+   "points": 331.0,
+   "fpg": 22.07,
    "stats": {
-    "W": 7.0,
-    "GA": 33.0,
-    "SV": 353.0,
-    "SHO": 1.0
+    "W": 10.0,
+    "GA": 40.0,
+    "SV": 331.0,
+    "SHO": 0.0
    },
    "pts_by_cat": {
-    "W": 140.0,
-    "GA": -165.0,
-    "SV": 353.0,
-    "SHO": 10.0
+    "W": 200.0,
+    "GA": -200.0,
+    "SV": 331.0,
+    "SHO": 0.0
+   }
+  },
+  {
+   "owner": "ADAM B",
+   "player": "Tomas Hertl",
+   "team": "VGK",
+   "pos": "F",
+   "elig": "C,LW",
+   "gp": 19,
+   "points": 330.0,
+   "fpg": 17.37,
+   "stats": {
+    "G": 7.0,
+    "A": 8.0,
+    "+/-": -1.0,
+    "PIM": 6.0,
+    "PPP": 7.0,
+    "SOG": 50.0
+   },
+   "pts_by_cat": {
+    "G": 105.0,
+    "A": 80.0,
+    "+/-": -5.0,
+    "PIM": 15.0,
+    "PPP": 35.0,
+    "SOG": 100.0
    }
   },
   {
@@ -2901,29 +2999,55 @@
    }
   },
   {
-   "owner": "PAT CLARK",
-   "player": "J.T. Miller",
-   "team": "NYR",
+   "owner": "MEANY",
+   "player": "Logan Cooley",
+   "team": "UTA",
    "pos": "F",
-   "elig": "C,LW,RW",
-   "gp": 17,
-   "points": 327.5,
-   "fpg": 19.26,
+   "elig": "C,LW",
+   "gp": 15,
+   "points": 328.0,
+   "fpg": 21.87,
    "stats": {
-    "G": 3.0,
-    "A": 11.0,
-    "+/-": 3.0,
-    "PIM": 29.0,
-    "PPP": 3.0,
-    "SOG": 35.0
+    "G": 10.0,
+    "A": 8.0,
+    "+/-": -4.0,
+    "PIM": 6.0,
+    "PPP": 11.0,
+    "SOG": 24.0
    },
    "pts_by_cat": {
-    "G": 45.0,
-    "A": 110.0,
-    "+/-": 15.0,
-    "PIM": 72.5,
-    "PPP": 15.0,
-    "SOG": 70.0
+    "G": 150.0,
+    "A": 80.0,
+    "+/-": -20.0,
+    "PIM": 15.0,
+    "PPP": 55.0,
+    "SOG": 48.0
+   }
+  },
+  {
+   "owner": "MEANY",
+   "player": "Drake Batherson",
+   "team": "OTT",
+   "pos": "F",
+   "elig": "LW,RW",
+   "gp": 16,
+   "points": 323.0,
+   "fpg": 20.19,
+   "stats": {
+    "G": 8.0,
+    "A": 8.0,
+    "+/-": 2.0,
+    "PIM": 10.0,
+    "PPP": 4.0,
+    "SOG": 34.0
+   },
+   "pts_by_cat": {
+    "G": 120.0,
+    "A": 80.0,
+    "+/-": 10.0,
+    "PIM": 25.0,
+    "PPP": 20.0,
+    "SOG": 68.0
    }
   },
   {
@@ -2932,76 +3056,24 @@
    "team": "WSH",
    "pos": "D",
    "elig": "D",
-   "gp": 18,
-   "points": 326.0,
-   "fpg": 18.11,
+   "gp": 19,
+   "points": 322.0,
+   "fpg": 16.95,
    "stats": {
     "G": 5.0,
     "A": 10.0,
-    "+/-": 3.0,
+    "+/-": 1.0,
     "PIM": 14.0,
     "PPP": 5.0,
-    "SOG": 38.0
+    "SOG": 41.0
    },
    "pts_by_cat": {
     "G": 75.0,
     "A": 100.0,
-    "+/-": 15.0,
+    "+/-": 5.0,
     "PIM": 35.0,
     "PPP": 25.0,
-    "SOG": 76.0
-   }
-  },
-  {
-   "owner": "ADAM B",
-   "player": "Zach Werenski",
-   "team": "CBJ",
-   "pos": "D",
-   "elig": "D",
-   "gp": 18,
-   "points": 324.0,
-   "fpg": 18.0,
-   "stats": {
-    "G": 2.0,
-    "A": 13.0,
-    "+/-": 6.0,
-    "PIM": 0.0,
-    "PPP": 4.0,
-    "SOG": 57.0
-   },
-   "pts_by_cat": {
-    "G": 30.0,
-    "A": 130.0,
-    "+/-": 30.0,
-    "PIM": 0.0,
-    "PPP": 20.0,
-    "SOG": 114.0
-   }
-  },
-  {
-   "owner": "ADAM B",
-   "player": "Tomas Hertl",
-   "team": "VGK",
-   "pos": "F",
-   "elig": "C,LW",
-   "gp": 18,
-   "points": 324.0,
-   "fpg": 18.0,
-   "stats": {
-    "G": 7.0,
-    "A": 8.0,
-    "+/-": -1.0,
-    "PIM": 6.0,
-    "PPP": 7.0,
-    "SOG": 47.0
-   },
-   "pts_by_cat": {
-    "G": 105.0,
-    "A": 80.0,
-    "+/-": -5.0,
-    "PIM": 15.0,
-    "PPP": 35.0,
-    "SOG": 94.0
+    "SOG": 82.0
    }
   },
   {
@@ -3031,55 +3103,55 @@
    }
   },
   {
-   "owner": "MEANY",
-   "player": "Logan Cooley",
-   "team": "UTA",
-   "pos": "F",
-   "elig": "C,LW",
-   "gp": 14,
-   "points": 313.0,
-   "fpg": 22.36,
-   "stats": {
-    "G": 10.0,
-    "A": 7.0,
-    "+/-": -4.0,
-    "PIM": 6.0,
-    "PPP": 10.0,
-    "SOG": 24.0
-   },
-   "pts_by_cat": {
-    "G": 150.0,
-    "A": 70.0,
-    "+/-": -20.0,
-    "PIM": 15.0,
-    "PPP": 50.0,
-    "SOG": 48.0
-   }
-  },
-  {
    "owner": "PEDRO",
    "player": "Jakob Chychrun",
    "team": "WSH",
    "pos": "D",
    "elig": "D",
-   "gp": 18,
-   "points": 307.0,
-   "fpg": 17.06,
+   "gp": 19,
+   "points": 315.0,
+   "fpg": 16.58,
    "stats": {
     "G": 2.0,
     "A": 11.0,
-    "+/-": -2.0,
-    "PIM": 16.0,
+    "+/-": -3.0,
+    "PIM": 18.0,
     "PPP": 5.0,
-    "SOG": 56.0
+    "SOG": 60.0
    },
    "pts_by_cat": {
     "G": 30.0,
     "A": 110.0,
-    "+/-": -10.0,
-    "PIM": 40.0,
+    "+/-": -15.0,
+    "PIM": 45.0,
     "PPP": 25.0,
-    "SOG": 112.0
+    "SOG": 120.0
+   }
+  },
+  {
+   "owner": "PAT CLARK",
+   "player": "Connor Bedard",
+   "team": "CHI",
+   "pos": "F",
+   "elig": "C,RW",
+   "gp": 14,
+   "points": 310.0,
+   "fpg": 22.14,
+   "stats": {
+    "G": 7.0,
+    "A": 10.0,
+    "+/-": -6.0,
+    "PIM": 12.0,
+    "PPP": 5.0,
+    "SOG": 40.0
+   },
+   "pts_by_cat": {
+    "G": 105.0,
+    "A": 100.0,
+    "+/-": -30.0,
+    "PIM": 30.0,
+    "PPP": 25.0,
+    "SOG": 80.0
    }
   },
   {
@@ -3088,72 +3160,76 @@
    "team": "MTL",
    "pos": "F",
    "elig": "LW,RW",
-   "gp": 20,
-   "points": 304.0,
-   "fpg": 15.2,
+   "gp": 21,
+   "points": 305.0,
+   "fpg": 14.52,
    "stats": {
     "G": 2.0,
     "A": 11.0,
-    "+/-": 1.0,
+    "+/-": 0.0,
     "PIM": 18.0,
     "PPP": 4.0,
-    "SOG": 47.0
+    "SOG": 50.0
    },
    "pts_by_cat": {
     "G": 30.0,
     "A": 110.0,
-    "+/-": 5.0,
+    "+/-": 0.0,
     "PIM": 45.0,
     "PPP": 20.0,
-    "SOG": 94.0
+    "SOG": 100.0
    }
   },
   {
-   "owner": "MEANY",
-   "player": "Drake Batherson",
-   "team": "OTT",
+   "owner": "MARZ",
+   "player": "Vasily Podkolzin",
+   "team": "EDM",
    "pos": "F",
    "elig": "LW,RW",
    "gp": 15,
-   "points": 299.0,
-   "fpg": 19.93,
+   "points": 298.0,
+   "fpg": 19.87,
    "stats": {
-    "G": 7.0,
-    "A": 8.0,
-    "+/-": 2.0,
-    "PIM": 10.0,
-    "PPP": 3.0,
-    "SOG": 32.0
+    "G": 8.0,
+    "A": 5.0,
+    "+/-": 8.0,
+    "PIM": 6.0,
+    "PPP": 5.0,
+    "SOG": 24.0
    },
    "pts_by_cat": {
-    "G": 105.0,
-    "A": 80.0,
-    "+/-": 10.0,
-    "PIM": 25.0,
-    "PPP": 15.0,
-    "SOG": 64.0
+    "G": 120.0,
+    "A": 50.0,
+    "+/-": 40.0,
+    "PIM": 15.0,
+    "PPP": 25.0,
+    "SOG": 48.0
    }
   },
   {
-   "owner": "PAT CLARK",
-   "player": "Andrei Vasilevskiy",
-   "team": "TB",
-   "pos": "G",
-   "elig": "G",
-   "gp": 14,
-   "points": 296.0,
-   "fpg": 21.14,
+   "owner": "PEDRO",
+   "player": "Rasmus Dahlin",
+   "team": "BUF",
+   "pos": "D",
+   "elig": "D",
+   "gp": 17,
+   "points": 295.0,
+   "fpg": 17.35,
    "stats": {
-    "W": 9.0,
-    "GA": 38.0,
-    "SV": 306.0,
-    "SHO": 0.0
+    "G": 3.0,
+    "A": 9.0,
+    "+/-": 0.0,
+    "PIM": 16.0,
+    "PPP": 6.0,
+    "SOG": 45.0
    },
    "pts_by_cat": {
-    "W": 180.0,
-    "GA": -190.0,
-    "SV": 306.0,
-    "SHO": 0.0
+    "G": 45.0,
+    "A": 90.0,
+    "+/-": 0.0,
+    "PIM": 40.0,
+    "PPP": 30.0,
+    "SOG": 90.0
    }
   },
   {
@@ -3183,6 +3259,28 @@
    }
   },
   {
+   "owner": "MEANY",
+   "player": "Linus Ullmark",
+   "team": "OTT",
+   "pos": "G",
+   "elig": "G",
+   "gp": 9,
+   "points": 290.0,
+   "fpg": 32.22,
+   "stats": {
+    "W": 8.0,
+    "GA": 12.0,
+    "SV": 190.0,
+    "SHO": 0.0
+   },
+   "pts_by_cat": {
+    "W": 160.0,
+    "GA": -60.0,
+    "SV": 190.0,
+    "SHO": 0.0
+   }
+  },
+  {
    "owner": "MARZ",
    "player": "Nick Schmaltz",
    "team": "UTA",
@@ -3206,58 +3304,6 @@
     "PIM": 5.0,
     "PPP": 40.0,
     "SOG": 78.0
-   }
-  },
-  {
-   "owner": "PAT CLARK",
-   "player": "Connor Bedard",
-   "team": "CHI",
-   "pos": "F",
-   "elig": "C,RW",
-   "gp": 13,
-   "points": 286.0,
-   "fpg": 22.0,
-   "stats": {
-    "G": 6.0,
-    "A": 10.0,
-    "+/-": -7.0,
-    "PIM": 12.0,
-    "PPP": 5.0,
-    "SOG": 38.0
-   },
-   "pts_by_cat": {
-    "G": 90.0,
-    "A": 100.0,
-    "+/-": -35.0,
-    "PIM": 30.0,
-    "PPP": 25.0,
-    "SOG": 76.0
-   }
-  },
-  {
-   "owner": "PEDRO",
-   "player": "Rasmus Dahlin",
-   "team": "BUF",
-   "pos": "D",
-   "elig": "D",
-   "gp": 16,
-   "points": 286.0,
-   "fpg": 17.88,
-   "stats": {
-    "G": 3.0,
-    "A": 8.0,
-    "+/-": 1.0,
-    "PIM": 16.0,
-    "PPP": 6.0,
-    "SOG": 43.0
-   },
-   "pts_by_cat": {
-    "G": 45.0,
-    "A": 80.0,
-    "+/-": 5.0,
-    "PIM": 40.0,
-    "PPP": 30.0,
-    "SOG": 86.0
    }
   },
   {
@@ -3287,47 +3333,21 @@
    }
   },
   {
-   "owner": "ADAM B",
-   "player": "Nick Suzuki",
-   "team": "MTL",
-   "pos": "F",
-   "elig": "C",
-   "gp": 13,
-   "points": 279.0,
-   "fpg": 21.46,
-   "stats": {
-    "G": 7.0,
-    "A": 6.0,
-    "+/-": 6.0,
-    "PIM": 2.0,
-    "PPP": 3.0,
-    "SOG": 32.0
-   },
-   "pts_by_cat": {
-    "G": 105.0,
-    "A": 60.0,
-    "+/-": 30.0,
-    "PIM": 5.0,
-    "PPP": 15.0,
-    "SOG": 64.0
-   }
-  },
-  {
    "owner": "FUR",
    "player": "Mark Scheifele",
    "team": "WPG",
    "pos": "F",
    "elig": "C",
-   "gp": 14,
-   "points": 277.0,
-   "fpg": 19.79,
+   "gp": 15,
+   "points": 281.0,
+   "fpg": 18.73,
    "stats": {
     "G": 5.0,
     "A": 11.0,
     "+/-": -1.0,
     "PIM": 0.0,
     "PPP": 7.0,
-    "SOG": 31.0
+    "SOG": 33.0
    },
    "pts_by_cat": {
     "G": 75.0,
@@ -3335,7 +3355,33 @@
     "+/-": -5.0,
     "PIM": 0.0,
     "PPP": 35.0,
-    "SOG": 62.0
+    "SOG": 66.0
+   }
+  },
+  {
+   "owner": "ADAM B",
+   "player": "Nick Suzuki",
+   "team": "MTL",
+   "pos": "F",
+   "elig": "C",
+   "gp": 14,
+   "points": 278.0,
+   "fpg": 19.86,
+   "stats": {
+    "G": 7.0,
+    "A": 6.0,
+    "+/-": 5.0,
+    "PIM": 2.0,
+    "PPP": 3.0,
+    "SOG": 34.0
+   },
+   "pts_by_cat": {
+    "G": 105.0,
+    "A": 60.0,
+    "+/-": 25.0,
+    "PIM": 5.0,
+    "PPP": 15.0,
+    "SOG": 68.0
    }
   },
   {
@@ -3387,6 +3433,28 @@
    }
   },
   {
+   "owner": "FUR",
+   "player": "Spencer Knight",
+   "team": "CHI",
+   "pos": "G",
+   "elig": "G",
+   "gp": 16,
+   "points": 267.0,
+   "fpg": 16.69,
+   "stats": {
+    "W": 6.0,
+    "GA": 54.0,
+    "SV": 417.0,
+    "SHO": 0.0
+   },
+   "pts_by_cat": {
+    "W": 120.0,
+    "GA": -270.0,
+    "SV": 417.0,
+    "SHO": 0.0
+   }
+  },
+  {
    "owner": "ADAM B",
    "player": "Moritz Seider",
    "team": "DET",
@@ -3410,6 +3478,32 @@
     "PIM": 37.5,
     "PPP": 20.0,
     "SOG": 80.0
+   }
+  },
+  {
+   "owner": "PAT CLARK",
+   "player": "Will Smith",
+   "team": "SJ",
+   "pos": "F",
+   "elig": "LW,RW",
+   "gp": 20,
+   "points": 262.0,
+   "fpg": 13.1,
+   "stats": {
+    "G": 7.0,
+    "A": 8.0,
+    "+/-": -10.0,
+    "PIM": 4.0,
+    "PPP": 5.0,
+    "SOG": 46.0
+   },
+   "pts_by_cat": {
+    "G": 105.0,
+    "A": 80.0,
+    "+/-": -50.0,
+    "PIM": 10.0,
+    "PPP": 25.0,
+    "SOG": 92.0
    }
   },
   {
@@ -3465,25 +3559,29 @@
    }
   },
   {
-   "owner": "MEANY",
-   "player": "Linus Ullmark",
-   "team": "OTT",
-   "pos": "G",
-   "elig": "G",
-   "gp": 8,
-   "points": 255.0,
-   "fpg": 31.88,
+   "owner": "ADAM B",
+   "player": "Brandt Clarke",
+   "team": "LA",
+   "pos": "D",
+   "elig": "D",
+   "gp": 18,
+   "points": 253.5,
+   "fpg": 14.08,
    "stats": {
-    "W": 7.0,
-    "GA": 11.0,
-    "SV": 170.0,
-    "SHO": 0.0
+    "G": 3.0,
+    "A": 10.0,
+    "+/-": -4.0,
+    "PIM": 23.0,
+    "PPP": 3.0,
+    "SOG": 28.0
    },
    "pts_by_cat": {
-    "W": 140.0,
-    "GA": -55.0,
-    "SV": 170.0,
-    "SHO": 0.0
+    "G": 45.0,
+    "A": 100.0,
+    "+/-": -20.0,
+    "PIM": 57.5,
+    "PPP": 15.0,
+    "SOG": 56.0
    }
   },
   {
@@ -3492,46 +3590,46 @@
    "team": "WSH",
    "pos": "G",
    "elig": "G",
-   "gp": 12,
+   "gp": 13,
    "points": 252.0,
-   "fpg": 21.0,
+   "fpg": 19.38,
    "stats": {
     "W": 7.0,
-    "GA": 35.0,
-    "SV": 287.0,
+    "GA": 39.0,
+    "SV": 307.0,
     "SHO": 0.0
    },
    "pts_by_cat": {
     "W": 140.0,
-    "GA": -175.0,
-    "SV": 287.0,
+    "GA": -195.0,
+    "SV": 307.0,
     "SHO": 0.0
    }
   },
   {
-   "owner": "MARZ",
-   "player": "Vasily Podkolzin",
-   "team": "EDM",
-   "pos": "F",
-   "elig": "LW,RW",
-   "gp": 14,
+   "owner": "MEANY",
+   "player": "Miro Heiskanen",
+   "team": "DAL",
+   "pos": "D",
+   "elig": "D",
+   "gp": 16,
    "points": 249.0,
-   "fpg": 17.79,
+   "fpg": 15.56,
    "stats": {
-    "G": 6.0,
-    "A": 4.0,
-    "+/-": 8.0,
-    "PIM": 6.0,
-    "PPP": 4.0,
-    "SOG": 22.0
+    "G": 4.0,
+    "A": 8.0,
+    "+/-": 3.0,
+    "PIM": 10.0,
+    "PPP": 3.0,
+    "SOG": 27.0
    },
    "pts_by_cat": {
-    "G": 90.0,
-    "A": 40.0,
-    "+/-": 40.0,
-    "PIM": 15.0,
-    "PPP": 20.0,
-    "SOG": 44.0
+    "G": 60.0,
+    "A": 80.0,
+    "+/-": 15.0,
+    "PIM": 25.0,
+    "PPP": 15.0,
+    "SOG": 54.0
    }
   },
   {
@@ -3558,32 +3656,6 @@
     "PIM": 10.0,
     "PPP": 5.0,
     "SOG": 108.0
-   }
-  },
-  {
-   "owner": "PAT CLARK",
-   "player": "Will Smith",
-   "team": "SJ",
-   "pos": "F",
-   "elig": "LW,RW",
-   "gp": 19,
-   "points": 248.0,
-   "fpg": 13.05,
-   "stats": {
-    "G": 7.0,
-    "A": 7.0,
-    "+/-": -9.0,
-    "PIM": 4.0,
-    "PPP": 4.0,
-    "SOG": 44.0
-   },
-   "pts_by_cat": {
-    "G": 105.0,
-    "A": 70.0,
-    "+/-": -45.0,
-    "PIM": 10.0,
-    "PPP": 20.0,
-    "SOG": 88.0
    }
   },
   {
@@ -3662,50 +3734,24 @@
    "team": "FLA",
    "pos": "D",
    "elig": "D",
-   "gp": 15,
-   "points": 242.0,
-   "fpg": 16.13,
+   "gp": 16,
+   "points": 239.0,
+   "fpg": 14.94,
    "stats": {
     "G": 2.0,
     "A": 11.0,
-    "+/-": -3.0,
+    "+/-": -4.0,
     "PIM": 4.0,
     "PPP": 9.0,
-    "SOG": 31.0
+    "SOG": 32.0
    },
    "pts_by_cat": {
     "G": 30.0,
     "A": 110.0,
-    "+/-": -15.0,
+    "+/-": -20.0,
     "PIM": 10.0,
     "PPP": 45.0,
-    "SOG": 62.0
-   }
-  },
-  {
-   "owner": "ADAM B",
-   "player": "Brandt Clarke",
-   "team": "LA",
-   "pos": "D",
-   "elig": "D",
-   "gp": 17,
-   "points": 238.5,
-   "fpg": 14.03,
-   "stats": {
-    "G": 3.0,
-    "A": 9.0,
-    "+/-": -5.0,
-    "PIM": 23.0,
-    "PPP": 3.0,
-    "SOG": 28.0
-   },
-   "pts_by_cat": {
-    "G": 45.0,
-    "A": 90.0,
-    "+/-": -25.0,
-    "PIM": 57.5,
-    "PPP": 15.0,
-    "SOG": 56.0
+    "SOG": 64.0
    }
   },
   {
@@ -3787,25 +3833,55 @@
    }
   },
   {
-   "owner": "FUR",
-   "player": "Spencer Knight",
-   "team": "CHI",
-   "pos": "G",
-   "elig": "G",
-   "gp": 15,
-   "points": 231.0,
-   "fpg": 15.4,
+   "owner": "SCOTTY",
+   "player": "Alex Tuch",
+   "team": "WSH",
+   "pos": "F",
+   "elig": "LW,RW",
+   "gp": 13,
+   "points": 233.0,
+   "fpg": 17.92,
    "stats": {
-    "W": 5.0,
-    "GA": 51.0,
-    "SV": 386.0,
-    "SHO": 0.0
+    "G": 9.0,
+    "A": 1.0,
+    "+/-": 4.0,
+    "PIM": 0.0,
+    "PPP": 0.0,
+    "SOG": 34.0
    },
    "pts_by_cat": {
-    "W": 100.0,
-    "GA": -255.0,
-    "SV": 386.0,
-    "SHO": 0.0
+    "G": 135.0,
+    "A": 10.0,
+    "+/-": 20.0,
+    "PIM": 0.0,
+    "PPP": 0.0,
+    "SOG": 68.0
+   }
+  },
+  {
+   "owner": "PEDRO",
+   "player": "Porter Martone",
+   "team": "PHI",
+   "pos": "F",
+   "elig": "RW",
+   "gp": 23,
+   "points": 230.0,
+   "fpg": 10.0,
+   "stats": {
+    "G": 3.0,
+    "A": 6.0,
+    "+/-": -4.0,
+    "PIM": 20.0,
+    "PPP": 5.0,
+    "SOG": 35.0
+   },
+   "pts_by_cat": {
+    "G": 45.0,
+    "A": 60.0,
+    "+/-": -20.0,
+    "PIM": 50.0,
+    "PPP": 25.0,
+    "SOG": 70.0
    }
   },
   {
@@ -3831,29 +3907,51 @@
    }
   },
   {
-   "owner": "MEANY",
-   "player": "Miro Heiskanen",
-   "team": "DAL",
-   "pos": "D",
-   "elig": "D",
+   "owner": "PEDRO",
+   "player": "Yaroslav Askarov",
+   "team": "SJ",
+   "pos": "G",
+   "elig": "G",
    "gp": 15,
-   "points": 227.0,
-   "fpg": 15.13,
+   "points": 226.0,
+   "fpg": 15.07,
    "stats": {
-    "G": 3.0,
-    "A": 8.0,
-    "+/-": 2.0,
-    "PIM": 10.0,
-    "PPP": 3.0,
-    "SOG": 26.0
+    "W": 5.0,
+    "GA": 51.0,
+    "SV": 381.0,
+    "SHO": 0.0
    },
    "pts_by_cat": {
-    "G": 45.0,
-    "A": 80.0,
+    "W": 100.0,
+    "GA": -255.0,
+    "SV": 381.0,
+    "SHO": 0.0
+   }
+  },
+  {
+   "owner": "PAT CLARK",
+   "player": "Shea Theodore",
+   "team": "VGK",
+   "pos": "D",
+   "elig": "D",
+   "gp": 23,
+   "points": 223.0,
+   "fpg": 9.7,
+   "stats": {
+    "G": 2.0,
+    "A": 5.0,
     "+/-": 10.0,
-    "PIM": 25.0,
-    "PPP": 15.0,
-    "SOG": 52.0
+    "PIM": 2.0,
+    "PPP": 2.0,
+    "SOG": 39.0
+   },
+   "pts_by_cat": {
+    "G": 30.0,
+    "A": 50.0,
+    "+/-": 50.0,
+    "PIM": 5.0,
+    "PPP": 10.0,
+    "SOG": 78.0
    }
   },
   {
@@ -3883,106 +3981,6 @@
    }
   },
   {
-   "owner": "PEDRO",
-   "player": "Porter Martone",
-   "team": "PHI",
-   "pos": "F",
-   "elig": "RW",
-   "gp": 22,
-   "points": 222.0,
-   "fpg": 10.09,
-   "stats": {
-    "G": 3.0,
-    "A": 6.0,
-    "+/-": -4.0,
-    "PIM": 20.0,
-    "PPP": 5.0,
-    "SOG": 31.0
-   },
-   "pts_by_cat": {
-    "G": 45.0,
-    "A": 60.0,
-    "+/-": -20.0,
-    "PIM": 50.0,
-    "PPP": 25.0,
-    "SOG": 62.0
-   }
-  },
-  {
-   "owner": "PEDRO",
-   "player": "Yaroslav Askarov",
-   "team": "SJ",
-   "pos": "G",
-   "elig": "G",
-   "gp": 14,
-   "points": 222.0,
-   "fpg": 15.86,
-   "stats": {
-    "W": 5.0,
-    "GA": 47.0,
-    "SV": 357.0,
-    "SHO": 0.0
-   },
-   "pts_by_cat": {
-    "W": 100.0,
-    "GA": -235.0,
-    "SV": 357.0,
-    "SHO": 0.0
-   }
-  },
-  {
-   "owner": "SCOTTY",
-   "player": "Alex Tuch",
-   "team": "WSH",
-   "pos": "F",
-   "elig": "LW,RW",
-   "gp": 12,
-   "points": 217.0,
-   "fpg": 18.08,
-   "stats": {
-    "G": 8.0,
-    "A": 1.0,
-    "+/-": 5.0,
-    "PIM": 0.0,
-    "PPP": 0.0,
-    "SOG": 31.0
-   },
-   "pts_by_cat": {
-    "G": 120.0,
-    "A": 10.0,
-    "+/-": 25.0,
-    "PIM": 0.0,
-    "PPP": 0.0,
-    "SOG": 62.0
-   }
-  },
-  {
-   "owner": "PAT CLARK",
-   "player": "Shea Theodore",
-   "team": "VGK",
-   "pos": "D",
-   "elig": "D",
-   "gp": 22,
-   "points": 216.0,
-   "fpg": 9.82,
-   "stats": {
-    "G": 2.0,
-    "A": 5.0,
-    "+/-": 9.0,
-    "PIM": 2.0,
-    "PPP": 2.0,
-    "SOG": 38.0
-   },
-   "pts_by_cat": {
-    "G": 30.0,
-    "A": 50.0,
-    "+/-": 45.0,
-    "PIM": 5.0,
-    "PPP": 10.0,
-    "SOG": 76.0
-   }
-  },
-  {
    "owner": "MEANY",
    "player": "Thomas Harley",
    "team": "DAL",
@@ -4009,51 +4007,51 @@
    }
   },
   {
-   "owner": "MEANY",
-   "player": "Charlie McAvoy",
-   "team": "BOS",
-   "pos": "D",
-   "elig": "D",
-   "gp": 14,
-   "points": 212.0,
-   "fpg": 15.14,
-   "stats": {
-    "G": 1.0,
-    "A": 8.0,
-    "+/-": 4.0,
-    "PIM": 20.0,
-    "PPP": 1.0,
-    "SOG": 21.0
-   },
-   "pts_by_cat": {
-    "G": 15.0,
-    "A": 80.0,
-    "+/-": 20.0,
-    "PIM": 50.0,
-    "PPP": 5.0,
-    "SOG": 42.0
-   }
-  },
-  {
    "owner": "FUR",
    "player": "Jacob Fowler",
    "team": "MTL",
    "pos": "G",
    "elig": "G",
-   "gp": 6,
-   "points": 206.0,
-   "fpg": 34.33,
+   "gp": 7,
+   "points": 214.0,
+   "fpg": 30.57,
    "stats": {
     "W": 4.0,
-    "GA": 15.0,
-    "SV": 191.0,
+    "GA": 18.0,
+    "SV": 214.0,
     "SHO": 1.0
    },
    "pts_by_cat": {
     "W": 80.0,
-    "GA": -75.0,
-    "SV": 191.0,
+    "GA": -90.0,
+    "SV": 214.0,
     "SHO": 10.0
+   }
+  },
+  {
+   "owner": "MEANY",
+   "player": "Charlie McAvoy",
+   "team": "BOS",
+   "pos": "D",
+   "elig": "D",
+   "gp": 15,
+   "points": 210.0,
+   "fpg": 14.0,
+   "stats": {
+    "G": 1.0,
+    "A": 8.0,
+    "+/-": 2.0,
+    "PIM": 20.0,
+    "PPP": 1.0,
+    "SOG": 25.0
+   },
+   "pts_by_cat": {
+    "G": 15.0,
+    "A": 80.0,
+    "+/-": 10.0,
+    "PIM": 50.0,
+    "PPP": 5.0,
+    "SOG": 50.0
    }
   },
   {
@@ -4062,13 +4060,13 @@
    "team": "LA",
    "pos": "F",
    "elig": "RW",
-   "gp": 13,
-   "points": 203.0,
-   "fpg": 15.62,
+   "gp": 14,
+   "points": 208.0,
+   "fpg": 14.86,
    "stats": {
     "G": 3.0,
     "A": 5.0,
-    "+/-": -2.0,
+    "+/-": -1.0,
     "PIM": 6.0,
     "PPP": 3.0,
     "SOG": 44.0
@@ -4076,7 +4074,7 @@
    "pts_by_cat": {
     "G": 45.0,
     "A": 50.0,
-    "+/-": -10.0,
+    "+/-": -5.0,
     "PIM": 15.0,
     "PPP": 15.0,
     "SOG": 88.0
@@ -4088,24 +4086,50 @@
    "team": "MTL",
    "pos": "D",
    "elig": "D",
-   "gp": 20,
-   "points": 199.0,
-   "fpg": 9.95,
+   "gp": 21,
+   "points": 206.0,
+   "fpg": 9.81,
    "stats": {
     "G": 0.0,
-    "A": 8.0,
-    "+/-": -1.0,
-    "PIM": 14.0,
+    "A": 9.0,
+    "+/-": -3.0,
+    "PIM": 16.0,
     "PPP": 1.0,
-    "SOG": 42.0
+    "SOG": 43.0
    },
    "pts_by_cat": {
     "G": 0.0,
-    "A": 80.0,
-    "+/-": -5.0,
-    "PIM": 35.0,
+    "A": 90.0,
+    "+/-": -15.0,
+    "PIM": 40.0,
     "PPP": 5.0,
-    "SOG": 84.0
+    "SOG": 86.0
+   }
+  },
+  {
+   "owner": "MEANY",
+   "player": "Dylan Holloway",
+   "team": "STL",
+   "pos": "F",
+   "elig": "C,LW",
+   "gp": 13,
+   "points": 195.0,
+   "fpg": 15.0,
+   "stats": {
+    "G": 4.0,
+    "A": 6.0,
+    "+/-": 1.0,
+    "PIM": 0.0,
+    "PPP": 2.0,
+    "SOG": 30.0
+   },
+   "pts_by_cat": {
+    "G": 60.0,
+    "A": 60.0,
+    "+/-": 5.0,
+    "PIM": 0.0,
+    "PPP": 10.0,
+    "SOG": 60.0
    }
   },
   {
@@ -4135,50 +4159,24 @@
    }
   },
   {
-   "owner": "MEANY",
-   "player": "Dylan Holloway",
-   "team": "STL",
-   "pos": "F",
-   "elig": "C,LW",
-   "gp": 12,
-   "points": 188.0,
-   "fpg": 15.67,
-   "stats": {
-    "G": 4.0,
-    "A": 5.0,
-    "+/-": 2.0,
-    "PIM": 0.0,
-    "PPP": 2.0,
-    "SOG": 29.0
-   },
-   "pts_by_cat": {
-    "G": 60.0,
-    "A": 50.0,
-    "+/-": 10.0,
-    "PIM": 0.0,
-    "PPP": 10.0,
-    "SOG": 58.0
-   }
-  },
-  {
    "owner": "PHIL",
    "player": "Karel Vejmelka",
    "team": "UTA",
    "pos": "G",
    "elig": "G",
-   "gp": 11,
-   "points": 185.0,
-   "fpg": 16.82,
+   "gp": 12,
+   "points": 191.0,
+   "fpg": 15.92,
    "stats": {
     "W": 5.0,
-    "GA": 33.0,
-    "SV": 230.0,
+    "GA": 36.0,
+    "SV": 251.0,
     "SHO": 2.0
    },
    "pts_by_cat": {
     "W": 100.0,
-    "GA": -165.0,
-    "SV": 230.0,
+    "GA": -180.0,
+    "SV": 251.0,
     "SHO": 20.0
    }
   },
@@ -4261,6 +4259,32 @@
    }
   },
   {
+   "owner": "PHIL",
+   "player": "Joel Eriksson Ek",
+   "team": "MIN",
+   "pos": "F",
+   "elig": "C",
+   "gp": 6,
+   "points": 176.0,
+   "fpg": 29.33,
+   "stats": {
+    "G": 2.0,
+    "A": 5.0,
+    "+/-": 8.0,
+    "PIM": 4.0,
+    "PPP": 2.0,
+    "SOG": 18.0
+   },
+   "pts_by_cat": {
+    "G": 30.0,
+    "A": 50.0,
+    "+/-": 40.0,
+    "PIM": 10.0,
+    "PPP": 10.0,
+    "SOG": 36.0
+   }
+  },
+  {
    "owner": "PEDRO",
    "player": "Dylan Larkin",
    "team": "DET",
@@ -4284,6 +4308,32 @@
     "PIM": 10.0,
     "PPP": 15.0,
     "SOG": 64.0
+   }
+  },
+  {
+   "owner": "ADAM B",
+   "player": "Matthew Knies",
+   "team": "CBJ",
+   "pos": "F",
+   "elig": "LW,RW",
+   "gp": 17,
+   "points": 167.0,
+   "fpg": 9.82,
+   "stats": {
+    "G": 4.0,
+    "A": 5.0,
+    "+/-": -4.0,
+    "PIM": 4.0,
+    "PPP": 3.0,
+    "SOG": 26.0
+   },
+   "pts_by_cat": {
+    "G": 60.0,
+    "A": 50.0,
+    "+/-": -20.0,
+    "PIM": 10.0,
+    "PPP": 15.0,
+    "SOG": 52.0
    }
   },
   {
@@ -4339,29 +4389,29 @@
    }
   },
   {
-   "owner": "ADAM B",
-   "player": "Matthew Knies",
-   "team": "CBJ",
+   "owner": "PEDRO",
+   "player": "Mika Zibanejad",
+   "team": "NYR",
    "pos": "F",
-   "elig": "LW,RW",
-   "gp": 16,
-   "points": 163.0,
-   "fpg": 10.19,
+   "elig": "C,RW",
+   "gp": 8,
+   "points": 152.0,
+   "fpg": 19.0,
    "stats": {
-    "G": 4.0,
-    "A": 5.0,
-    "+/-": -4.0,
+    "G": 2.0,
+    "A": 6.0,
+    "+/-": 2.0,
     "PIM": 4.0,
-    "PPP": 3.0,
-    "SOG": 24.0
+    "PPP": 2.0,
+    "SOG": 16.0
    },
    "pts_by_cat": {
-    "G": 60.0,
-    "A": 50.0,
-    "+/-": -20.0,
+    "G": 30.0,
+    "A": 60.0,
+    "+/-": 10.0,
     "PIM": 10.0,
-    "PPP": 15.0,
-    "SOG": 48.0
+    "PPP": 10.0,
+    "SOG": 32.0
    }
   },
   {
@@ -4384,6 +4434,58 @@
     "GA": -40.0,
     "SV": 96.0,
     "SHO": 10.0
+   }
+  },
+  {
+   "owner": "PAT CLARK",
+   "player": "Jake Sanderson",
+   "team": "OTT",
+   "pos": "D",
+   "elig": "D",
+   "gp": 12,
+   "points": 143.0,
+   "fpg": 11.92,
+   "stats": {
+    "G": 1.0,
+    "A": 7.0,
+    "+/-": 0.0,
+    "PIM": 4.0,
+    "PPP": 0.0,
+    "SOG": 24.0
+   },
+   "pts_by_cat": {
+    "G": 15.0,
+    "A": 70.0,
+    "+/-": 0.0,
+    "PIM": 10.0,
+    "PPP": 0.0,
+    "SOG": 48.0
+   }
+  },
+  {
+   "owner": "ADAM B",
+   "player": "Zach Hyman",
+   "team": "EDM",
+   "pos": "F",
+   "elig": "LW,RW",
+   "gp": 12,
+   "points": 143.0,
+   "fpg": 11.92,
+   "stats": {
+    "G": 4.0,
+    "A": 2.0,
+    "+/-": -1.0,
+    "PIM": 2.0,
+    "PPP": 3.0,
+    "SOG": 24.0
+   },
+   "pts_by_cat": {
+    "G": 60.0,
+    "A": 20.0,
+    "+/-": -5.0,
+    "PIM": 5.0,
+    "PPP": 15.0,
+    "SOG": 48.0
    }
   },
   {
@@ -4418,9 +4520,9 @@
    "team": "WPG",
    "pos": "D",
    "elig": "D",
-   "gp": 7,
+   "gp": 8,
    "points": 140.0,
-   "fpg": 20.0,
+   "fpg": 17.5,
    "stats": {
     "G": 0.0,
     "A": 5.0,
@@ -4436,58 +4538,6 @@
     "PIM": 10.0,
     "PPP": 10.0,
     "SOG": 40.0
-   }
-  },
-  {
-   "owner": "PAT CLARK",
-   "player": "Jake Sanderson",
-   "team": "OTT",
-   "pos": "D",
-   "elig": "D",
-   "gp": 11,
-   "points": 139.0,
-   "fpg": 12.64,
-   "stats": {
-    "G": 1.0,
-    "A": 7.0,
-    "+/-": 0.0,
-    "PIM": 4.0,
-    "PPP": 0.0,
-    "SOG": 22.0
-   },
-   "pts_by_cat": {
-    "G": 15.0,
-    "A": 70.0,
-    "+/-": 0.0,
-    "PIM": 10.0,
-    "PPP": 0.0,
-    "SOG": 44.0
-   }
-  },
-  {
-   "owner": "PEDRO",
-   "player": "Mika Zibanejad",
-   "team": "NYR",
-   "pos": "F",
-   "elig": "C,RW",
-   "gp": 7,
-   "points": 138.0,
-   "fpg": 19.71,
-   "stats": {
-    "G": 2.0,
-    "A": 6.0,
-    "+/-": 1.0,
-    "PIM": 2.0,
-    "PPP": 2.0,
-    "SOG": 14.0
-   },
-   "pts_by_cat": {
-    "G": 30.0,
-    "A": 60.0,
-    "+/-": 5.0,
-    "PIM": 5.0,
-    "PPP": 10.0,
-    "SOG": 28.0
    }
   },
   {
@@ -4517,51 +4567,51 @@
    }
   },
   {
-   "owner": "ADAM B",
-   "player": "Zach Hyman",
-   "team": "EDM",
-   "pos": "F",
-   "elig": "LW,RW",
-   "gp": 11,
-   "points": 128.0,
-   "fpg": 11.64,
-   "stats": {
-    "G": 4.0,
-    "A": 1.0,
-    "+/-": -1.0,
-    "PIM": 2.0,
-    "PPP": 2.0,
-    "SOG": 24.0
-   },
-   "pts_by_cat": {
-    "G": 60.0,
-    "A": 10.0,
-    "+/-": -5.0,
-    "PIM": 5.0,
-    "PPP": 10.0,
-    "SOG": 48.0
-   }
-  },
-  {
    "owner": "SCOTTY",
    "player": "Lukas Dostal",
    "team": "ANA",
    "pos": "G",
    "elig": "G",
-   "gp": 10,
-   "points": 128.0,
-   "fpg": 12.8,
+   "gp": 11,
+   "points": 131.0,
+   "fpg": 11.91,
    "stats": {
     "W": 4.0,
     "GA": 34.0,
-    "SV": 218.0,
+    "SV": 221.0,
     "SHO": 0.0
    },
    "pts_by_cat": {
     "W": 80.0,
     "GA": -170.0,
-    "SV": 218.0,
+    "SV": 221.0,
     "SHO": 0.0
+   }
+  },
+  {
+   "owner": "ADAM B",
+   "player": "Victor Hedman",
+   "team": "TB",
+   "pos": "D",
+   "elig": "D",
+   "gp": 16,
+   "points": 124.0,
+   "fpg": 7.75,
+   "stats": {
+    "G": 3.0,
+    "A": 2.0,
+    "+/-": 3.0,
+    "PIM": 2.0,
+    "PPP": 1.0,
+    "SOG": 17.0
+   },
+   "pts_by_cat": {
+    "G": 45.0,
+    "A": 20.0,
+    "+/-": 15.0,
+    "PIM": 5.0,
+    "PPP": 5.0,
+    "SOG": 34.0
    }
   },
   {
@@ -4588,28 +4638,6 @@
   },
   {
    "owner": "ADAM B",
-   "player": "Sergei Bobrovsky",
-   "team": "TOR",
-   "pos": "G",
-   "elig": "G",
-   "gp": 12,
-   "points": 123.0,
-   "fpg": 10.25,
-   "stats": {
-    "W": 2.0,
-    "GA": 44.0,
-    "SV": 303.0,
-    "SHO": 0.0
-   },
-   "pts_by_cat": {
-    "W": 40.0,
-    "GA": -220.0,
-    "SV": 303.0,
-    "SHO": 0.0
-   }
-  },
-  {
-   "owner": "ADAM B",
    "player": "Igor Shesterkin",
    "team": "NYR",
    "pos": "G",
@@ -4628,32 +4656,6 @@
     "GA": -40.0,
     "SV": 102.0,
     "SHO": 0.0
-   }
-  },
-  {
-   "owner": "ADAM B",
-   "player": "Victor Hedman",
-   "team": "TB",
-   "pos": "D",
-   "elig": "D",
-   "gp": 15,
-   "points": 119.0,
-   "fpg": 7.93,
-   "stats": {
-    "G": 3.0,
-    "A": 2.0,
-    "+/-": 2.0,
-    "PIM": 2.0,
-    "PPP": 1.0,
-    "SOG": 17.0
-   },
-   "pts_by_cat": {
-    "G": 45.0,
-    "A": 20.0,
-    "+/-": 10.0,
-    "PIM": 5.0,
-    "PPP": 5.0,
-    "SOG": 34.0
    }
   },
   {
@@ -4683,29 +4685,51 @@
    }
   },
   {
-   "owner": "PHIL",
-   "player": "Joel Eriksson Ek",
-   "team": "MIN",
-   "pos": "F",
-   "elig": "C",
-   "gp": 5,
-   "points": 101.0,
-   "fpg": 20.2,
+   "owner": "ADAM B",
+   "player": "Sergei Bobrovsky",
+   "team": "TOR",
+   "pos": "G",
+   "elig": "G",
+   "gp": 13,
+   "points": 112.0,
+   "fpg": 8.62,
    "stats": {
-    "G": 1.0,
-    "A": 2.0,
-    "+/-": 5.0,
-    "PIM": 4.0,
-    "PPP": 1.0,
-    "SOG": 13.0
+    "W": 2.0,
+    "GA": 50.0,
+    "SV": 322.0,
+    "SHO": 0.0
    },
    "pts_by_cat": {
-    "G": 15.0,
-    "A": 20.0,
+    "W": 40.0,
+    "GA": -250.0,
+    "SV": 322.0,
+    "SHO": 0.0
+   }
+  },
+  {
+   "owner": "FUR",
+   "player": "Carter Verhaeghe",
+   "team": "FLA",
+   "pos": "F",
+   "elig": "LW",
+   "gp": 5,
+   "points": 99.0,
+   "fpg": 19.8,
+   "stats": {
+    "G": 0.0,
+    "A": 5.0,
+    "+/-": 5.0,
+    "PIM": 0.0,
+    "PPP": 0.0,
+    "SOG": 12.0
+   },
+   "pts_by_cat": {
+    "G": 0.0,
+    "A": 50.0,
     "+/-": 25.0,
-    "PIM": 10.0,
-    "PPP": 5.0,
-    "SOG": 26.0
+    "PIM": 0.0,
+    "PPP": 0.0,
+    "SOG": 24.0
    }
   },
   {
@@ -4779,29 +4803,51 @@
    }
   },
   {
-   "owner": "FUR",
-   "player": "Carter Verhaeghe",
-   "team": "FLA",
-   "pos": "F",
-   "elig": "LW",
-   "gp": 4,
-   "points": 80.0,
-   "fpg": 20.0,
+   "owner": "SCOTTY",
+   "player": "Stuart Skinner",
+   "team": "WPG",
+   "pos": "G",
+   "elig": "G",
+   "gp": 6,
+   "points": 79.0,
+   "fpg": 13.17,
    "stats": {
-    "G": 0.0,
-    "A": 4.0,
-    "+/-": 4.0,
-    "PIM": 0.0,
-    "PPP": 0.0,
-    "SOG": 10.0
+    "W": 3.0,
+    "GA": 19.0,
+    "SV": 114.0,
+    "SHO": 0.0
    },
    "pts_by_cat": {
-    "G": 0.0,
-    "A": 40.0,
-    "+/-": 20.0,
-    "PIM": 0.0,
-    "PPP": 0.0,
-    "SOG": 20.0
+    "W": 60.0,
+    "GA": -95.0,
+    "SV": 114.0,
+    "SHO": 0.0
+   }
+  },
+  {
+   "owner": "MARZ",
+   "player": "Mikael Granlund",
+   "team": "ANA",
+   "pos": "F",
+   "elig": "C,LW",
+   "gp": 3,
+   "points": 74.0,
+   "fpg": 24.67,
+   "stats": {
+    "G": 2.0,
+    "A": 2.0,
+    "+/-": 0.0,
+    "PIM": 2.0,
+    "PPP": 1.0,
+    "SOG": 7.0
+   },
+   "pts_by_cat": {
+    "G": 30.0,
+    "A": 20.0,
+    "+/-": 0.0,
+    "PIM": 5.0,
+    "PPP": 5.0,
+    "SOG": 14.0
    }
   },
   {
@@ -4862,9 +4908,9 @@
    "team": "WPG",
    "pos": "F",
    "elig": "LW,RW",
-   "gp": 5,
+   "gp": 6,
    "points": 64.0,
-   "fpg": 12.8,
+   "fpg": 10.67,
    "stats": {
     "G": 1.0,
     "A": 1.0,
@@ -4880,28 +4926,6 @@
     "PIM": 5.0,
     "PPP": 10.0,
     "SOG": 34.0
-   }
-  },
-  {
-   "owner": "SCOTTY",
-   "player": "Stuart Skinner",
-   "team": "WPG",
-   "pos": "G",
-   "elig": "G",
-   "gp": 5,
-   "points": 64.0,
-   "fpg": 12.8,
-   "stats": {
-    "W": 3.0,
-    "GA": 17.0,
-    "SV": 89.0,
-    "SHO": 0.0
-   },
-   "pts_by_cat": {
-    "W": 60.0,
-    "GA": -85.0,
-    "SV": 89.0,
-    "SHO": 0.0
    }
   },
   {
@@ -4946,6 +4970,32 @@
     "GA": -10.0,
     "SV": 42.0,
     "SHO": 10.0
+   }
+  },
+  {
+   "owner": "SCOTTY",
+   "player": "Darren Raddysh",
+   "team": "TOR",
+   "pos": "D",
+   "elig": "D",
+   "gp": 4,
+   "points": 61.0,
+   "fpg": 15.25,
+   "stats": {
+    "G": 1.0,
+    "A": 3.0,
+    "+/-": -2.0,
+    "PIM": 4.0,
+    "PPP": 0.0,
+    "SOG": 8.0
+   },
+   "pts_by_cat": {
+    "G": 15.0,
+    "A": 30.0,
+    "+/-": -10.0,
+    "PIM": 10.0,
+    "PPP": 0.0,
+    "SOG": 16.0
    }
   },
   {
@@ -5019,6 +5069,32 @@
    }
   },
   {
+   "owner": "MARZ",
+   "player": "Roope Hintz",
+   "team": "DAL",
+   "pos": "F",
+   "elig": "C",
+   "gp": 3,
+   "points": 59.0,
+   "fpg": 19.67,
+   "stats": {
+    "G": 0.0,
+    "A": 4.0,
+    "+/-": 1.0,
+    "PIM": 2.0,
+    "PPP": 1.0,
+    "SOG": 2.0
+   },
+   "pts_by_cat": {
+    "G": 0.0,
+    "A": 40.0,
+    "+/-": 5.0,
+    "PIM": 5.0,
+    "PPP": 5.0,
+    "SOG": 4.0
+   }
+  },
+  {
    "owner": "SCOTTY",
    "player": "Seth Jarvis",
    "team": "CAR",
@@ -5064,6 +5140,32 @@
     "GA": -145.0,
     "SV": 181.0,
     "SHO": 0.0
+   }
+  },
+  {
+   "owner": "SCOTTY",
+   "player": "Brock Faber",
+   "team": "MIN",
+   "pos": "D",
+   "elig": "D",
+   "gp": 2,
+   "points": 53.0,
+   "fpg": 26.5,
+   "stats": {
+    "G": 1.0,
+    "A": 1.0,
+    "+/-": 4.0,
+    "PIM": 0.0,
+    "PPP": 0.0,
+    "SOG": 4.0
+   },
+   "pts_by_cat": {
+    "G": 15.0,
+    "A": 10.0,
+    "+/-": 20.0,
+    "PIM": 0.0,
+    "PPP": 0.0,
+    "SOG": 8.0
    }
   },
   {
@@ -5115,55 +5217,29 @@
    }
   },
   {
-   "owner": "PEDRO",
-   "player": "Travis Konecny",
-   "team": "PHI",
+   "owner": "PHIL",
+   "player": "Morgan Geekie",
+   "team": "BOS",
    "pos": "F",
-   "elig": "LW,RW",
-   "gp": 5,
-   "points": 49.0,
-   "fpg": 9.8,
-   "stats": {
-    "G": 1.0,
-    "A": 0.0,
-    "+/-": -2.0,
-    "PIM": 2.0,
-    "PPP": 1.0,
-    "SOG": 17.0
-   },
-   "pts_by_cat": {
-    "G": 15.0,
-    "A": 0.0,
-    "+/-": -10.0,
-    "PIM": 5.0,
-    "PPP": 5.0,
-    "SOG": 34.0
-   }
-  },
-  {
-   "owner": "MARZ",
-   "player": "Mikael Granlund",
-   "team": "ANA",
-   "pos": "F",
-   "elig": "C,LW",
+   "elig": "C,LW,RW",
    "gp": 2,
-   "points": 43.0,
-   "fpg": 21.5,
+   "points": 46.0,
+   "fpg": 23.0,
    "stats": {
     "G": 1.0,
-    "A": 1.0,
+    "A": 0.0,
     "+/-": 1.0,
     "PIM": 2.0,
-    "PPP": 0.0,
-    "SOG": 4.0
+    "PPP": 1.0,
+    "SOG": 8.0
    },
    "pts_by_cat": {
     "G": 15.0,
-    "A": 10.0,
+    "A": 0.0,
     "+/-": 5.0,
     "PIM": 5.0,
-    "PPP": 0.0,
-    "SOG": 8.0
+    "PPP": 5.0,
+    "SOG": 16.0
    }
   },
   {
@@ -5215,29 +5291,29 @@
    }
   },
   {
-   "owner": "SCOTTY",
-   "player": "Darren Raddysh",
-   "team": "TOR",
-   "pos": "D",
-   "elig": "D",
-   "gp": 3,
-   "points": 40.0,
-   "fpg": 13.33,
+   "owner": "PEDRO",
+   "player": "Travis Konecny",
+   "team": "PHI",
+   "pos": "F",
+   "elig": "LW,RW",
+   "gp": 6,
+   "points": 41.0,
+   "fpg": 6.83,
    "stats": {
     "G": 1.0,
-    "A": 2.0,
-    "+/-": -3.0,
-    "PIM": 4.0,
-    "PPP": 0.0,
-    "SOG": 5.0
+    "A": 0.0,
+    "+/-": -4.0,
+    "PIM": 2.0,
+    "PPP": 1.0,
+    "SOG": 18.0
    },
    "pts_by_cat": {
     "G": 15.0,
-    "A": 20.0,
-    "+/-": -15.0,
-    "PIM": 10.0,
-    "PPP": 0.0,
-    "SOG": 10.0
+    "A": 0.0,
+    "+/-": -20.0,
+    "PIM": 5.0,
+    "PPP": 5.0,
+    "SOG": 36.0
    }
   },
   {
@@ -5393,32 +5469,6 @@
    }
   },
   {
-   "owner": "PHIL",
-   "player": "Morgan Geekie",
-   "team": "BOS",
-   "pos": "F",
-   "elig": "C,LW,RW",
-   "gp": 1,
-   "points": 35.0,
-   "fpg": 35.0,
-   "stats": {
-    "G": 1.0,
-    "A": 0.0,
-    "+/-": 1.0,
-    "PIM": 0.0,
-    "PPP": 1.0,
-    "SOG": 5.0
-   },
-   "pts_by_cat": {
-    "G": 15.0,
-    "A": 0.0,
-    "+/-": 5.0,
-    "PIM": 0.0,
-    "PPP": 5.0,
-    "SOG": 10.0
-   }
-  },
-  {
    "owner": "PEDRO",
    "player": "John Gibson",
    "team": "DET",
@@ -5442,13 +5492,13 @@
   },
   {
    "owner": "MARZ",
-   "player": "Roope Hintz",
-   "team": "DAL",
+   "player": "Mathew Barzal",
+   "team": "NYI",
    "pos": "F",
-   "elig": "C",
-   "gp": 2,
+   "elig": "C,RW",
+   "gp": 1,
    "points": 34.0,
-   "fpg": 17.0,
+   "fpg": 34.0,
    "stats": {
     "G": 0.0,
     "A": 2.0,
@@ -5463,32 +5513,6 @@
     "+/-": 5.0,
     "PIM": 0.0,
     "PPP": 5.0,
-    "SOG": 4.0
-   }
-  },
-  {
-   "owner": "SCOTTY",
-   "player": "Brock Faber",
-   "team": "MIN",
-   "pos": "D",
-   "elig": "D",
-   "gp": 1,
-   "points": 34.0,
-   "fpg": 34.0,
-   "stats": {
-    "G": 0.0,
-    "A": 1.0,
-    "+/-": 4.0,
-    "PIM": 0.0,
-    "PPP": 0.0,
-    "SOG": 2.0
-   },
-   "pts_by_cat": {
-    "G": 0.0,
-    "A": 10.0,
-    "+/-": 20.0,
-    "PIM": 0.0,
-    "PPP": 0.0,
     "SOG": 4.0
    }
   },
@@ -5541,6 +5565,28 @@
    }
   },
   {
+   "owner": "FUR",
+   "player": "Devon Levi",
+   "team": "EDM",
+   "pos": "G",
+   "elig": "G",
+   "gp": 1,
+   "points": 30.0,
+   "fpg": 30.0,
+   "stats": {
+    "W": 1.0,
+    "GA": 2.0,
+    "SV": 20.0,
+    "SHO": 0.0
+   },
+   "pts_by_cat": {
+    "W": 20.0,
+    "GA": -10.0,
+    "SV": 20.0,
+    "SHO": 0.0
+   }
+  },
+  {
    "owner": "MARZ",
    "player": "Stuart Skinner",
    "team": "WPG",
@@ -5586,6 +5632,32 @@
     "PIM": 5.0,
     "PPP": 0.0,
     "SOG": 8.0
+   }
+  },
+  {
+   "owner": "MARZ",
+   "player": "Thomas Chabot",
+   "team": "OTT",
+   "pos": "D",
+   "elig": "D",
+   "gp": 4,
+   "points": 26.0,
+   "fpg": 6.5,
+   "stats": {
+    "G": 0.0,
+    "A": 1.0,
+    "+/-": 0.0,
+    "PIM": 4.0,
+    "PPP": 0.0,
+    "SOG": 3.0
+   },
+   "pts_by_cat": {
+    "G": 0.0,
+    "A": 10.0,
+    "+/-": 0.0,
+    "PIM": 10.0,
+    "PPP": 0.0,
+    "SOG": 6.0
    }
   },
   {
@@ -5889,32 +5961,6 @@
    }
   },
   {
-   "owner": "MARZ",
-   "player": "Thomas Chabot",
-   "team": "OTT",
-   "pos": "D",
-   "elig": "D",
-   "gp": 3,
-   "points": 9.0,
-   "fpg": 3.0,
-   "stats": {
-    "G": 0.0,
-    "A": 0.0,
-    "+/-": -1.0,
-    "PIM": 4.0,
-    "PPP": 0.0,
-    "SOG": 2.0
-   },
-   "pts_by_cat": {
-    "G": 0.0,
-    "A": 0.0,
-    "+/-": -5.0,
-    "PIM": 10.0,
-    "PPP": 0.0,
-    "SOG": 4.0
-   }
-  },
-  {
    "owner": "MEANY",
    "player": "Daniil Tarasov",
    "team": "DET",
@@ -5937,29 +5983,25 @@
    }
   },
   {
-   "owner": "ADAM B",
-   "player": "Ryan O'Reilly",
-   "team": "NSH",
-   "pos": "F",
-   "elig": "C",
+   "owner": "MEANY",
+   "player": "Alex Lyon",
+   "team": "BUF",
+   "pos": "G",
+   "elig": "G",
    "gp": 1,
-   "points": 8.0,
-   "fpg": 8.0,
+   "points": 9.0,
+   "fpg": 9.0,
    "stats": {
-    "G": 0.0,
-    "A": 1.0,
-    "+/-": -3.0,
-    "PIM": 0.0,
-    "PPP": 1.0,
-    "SOG": 4.0
+    "W": 0.0,
+    "GA": 4.0,
+    "SV": 29.0,
+    "SHO": 0.0
    },
    "pts_by_cat": {
-    "G": 0.0,
-    "A": 10.0,
-    "+/-": -15.0,
-    "PIM": 0.0,
-    "PPP": 5.0,
-    "SOG": 8.0
+    "W": 0.0,
+    "GA": -20.0,
+    "SV": 29.0,
+    "SHO": 0.0
    }
   },
   {
@@ -6134,6 +6176,32 @@
     "PIM": 5.0,
     "PPP": 0.0,
     "SOG": 2.0
+   }
+  },
+  {
+   "owner": "ADAM B",
+   "player": "Ryan O'Reilly",
+   "team": "NSH",
+   "pos": "F",
+   "elig": "C",
+   "gp": 2,
+   "points": -3.0,
+   "fpg": -1.5,
+   "stats": {
+    "G": 0.0,
+    "A": 1.0,
+    "+/-": -6.0,
+    "PIM": 0.0,
+    "PPP": 1.0,
+    "SOG": 6.0
+   },
+   "pts_by_cat": {
+    "G": 0.0,
+    "A": 10.0,
+    "+/-": -30.0,
+    "PIM": 0.0,
+    "PPP": 5.0,
+    "SOG": 12.0
    }
   },
   {
